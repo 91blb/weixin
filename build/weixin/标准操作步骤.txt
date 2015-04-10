@@ -1,0 +1,4 @@
+1. 在src下进行开发，使用fiddler映射本地文件
+2. 提交src
+3. 运行build_wx.bat，将src代码构建到WebHtml目录中
+4. 提交WebHtml代码

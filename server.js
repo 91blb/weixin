@@ -18,7 +18,7 @@ process.on('uncaughtException', function(e) {
 
 app.use(session({
   name:'token',
-  secret: 'keyboard cat',
+  secret: 'secret.91blb.com',
   resave: false,
   saveUninitialized: false,
   cookie: {
@@ -126,7 +126,7 @@ function handler(req, res) { //处理所有服务请求
 
     console.log(("method=" + method).green);
 
-    var fn = require("./src/handler/" + method + ".js");
+    var fn = require("./handler/" + method + ".js");
     var result = fn(req, res); //也允许异步返回
     //console.log("result=["+result+"]");
   } catch (e) {
@@ -158,6 +158,7 @@ app.listen(port, host);
 var watch = require('watch')
 
 watch.watchTree(__dirname + "/lib/", handlerChange); //handler文件发生变化清除改项缓存
+watch.watchTree(__dirname + "/handler/", handlerChange); //handler文件发生变化清除改项缓存
 
 function handlerChange(f, curr, prev) { //服务变化
   if (typeof f == "object" && prev === null && curr === null) {
