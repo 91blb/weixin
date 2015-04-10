@@ -14,10 +14,10 @@ module.exports=function(req,res,cb){//微信校验
 	var result=check(signature,timestamp,nonce,echostr);
 	console.log("check result=["+result+"]");
 	if(result){
-		return "true";
+		return echostr;
 	}
 	else{
-		return "false";
+		return false;
 	}
 	//return result;
 }
