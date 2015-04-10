@@ -140,8 +140,8 @@ function handler(req, res) { //处理所有服务请求
 }
 
 
-
 app.use("/handler/", handler); //服务处理程序 handler
+app.use("/", express.static(__dirname + "/src/")); //服务处理程序 handler
 app.use("/src/", express.static(__dirname + "/src/")); //静态资源web
 
 

@@ -13,6 +13,11 @@ module.exports=function(req,res,cb){//微信校验
 	console.log("wexin check",req.query);
 	var result=check(signature,timestamp,nonce,echostr);
 	console.log("check result=["+result+"]");
-
-	return result;
+	if(result!="false"){
+		return "true";
+	}
+	else{
+		return "false";
+	}
+	//return result;
 }
