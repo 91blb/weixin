@@ -10,10 +10,10 @@ module.exports=function(req,res,cb){//微信校验
 	
 	console.log(now.getHours()+":"+now.getMinutes()+":"+now.getSeconds()+" "+now.getMilliseconds());
 
-	console.log("wexin check",req.query);
+	//console.log("wexin check",req.query);
 	var result=check(signature,timestamp,nonce,echostr);
 	console.log("check result=["+result+"]");
-	if(result!="false"){
+	if(result){
 		return "true";
 	}
 	else{
