@@ -102,24 +102,6 @@ var request = require("request");
 var fs = require("fs-extra");
 
 function handler(req, res) { //处理所有服务请求
-  console.log("handler is doing his job!");
-  var sess = req.session;
-  console.log("session",sess);
-
-  if (sess&&sess.views) {
-    sess.views++
-    res.setHeader('views', sess.views);
-    //res.write('<p>views: ' + sess.views + '</p>')
-    //res.write('<p>expires in: ' + (sess.cookie.maxAge / 1000) + 's</p>')
-    //res.end()
-  } else {
-    if(req.path.indexOf("login")>-1){//登录动作才设置session
-      sess.views = 1
-      res.setHeader('views', sess.views);
-    }
-    //res.end('welcome to the session demo. refresh!')
-  }
-
   try {
     var method = req.path.replace(/^.*?\/data/g, "");
     method = method.replace(/\.(js|txt|json).*$/, ""); //忽略后面的任意参数  捕获rest请求
