@@ -7,7 +7,7 @@ var bodyParser = require("body-parser");
 var session = require('express-session');
 var favicon = require('serve-favicon');
  
-app.use(favicon(__dirname + '/src/app/favicon.ico'));
+app.use(favicon(__dirname + '/src/favicon.ico'));
 
 var colors = require('colors');
 process.on('uncaughtException', function(e) {
