@@ -14,7 +14,7 @@ module.exports=function(req,res,cb){//微信校验
 	var result=check(signature,timestamp,nonce,echostr);
 	console.log("check result=["+result+"]");
 	if(result){
-		return echostr;
+		return echostr;//如果校验通过 按照微信要求 原样返回echostr
 	}
 	else{
 		return false;
