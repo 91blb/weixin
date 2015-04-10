@@ -61,29 +61,29 @@ function errorHandler(err, req, res, next) {
   });
 }
 
-app.all('*', function(req, res, next) {
-  //res.header("Access-Control-Allow-Origin", "*");
-  //res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With,Cookie");
-  //res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
-  //res.header("Access-Control-Request-Headers","Content-Type,Content-Length, Authorization, Accept,X-Requested-With,Cookie");
-  //res.header('Set-Cookie','myCookie=test');
-  res.header('Cache-Control', 'no-cache');
-  //console.log("node receive reqest " + req.path);
-  var fs = require("fs");
-  var encoding = {
-    encoding: "utf8"
-  };
-
-  if (req.method == "OPTIONS") res.send(200); /*让options快速返回*/
-  if (/\.(js|css|txt|json|html|png|jpeg|jpg|gif|tpl|ico|woff)/ig.test(req.path)) {
-    //如果是文件名
-    next();
-    console.log("is File");
-  }
-  else{
-    next();
-  }
-});
+//app.all('*', function(req, res, next) {
+//  //res.header("Access-Control-Allow-Origin", "*");
+//  //res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With,Cookie");
+//  //res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
+//  //res.header("Access-Control-Request-Headers","Content-Type,Content-Length, Authorization, Accept,X-Requested-With,Cookie");
+//  //res.header('Set-Cookie','myCookie=test');
+//  //res.header('Cache-Control', 'no-cache');
+//  //console.log("node receive reqest " + req.path);
+//  var fs = require("fs");
+//  var encoding = {
+//    encoding: "utf8"
+//  };
+//
+//  if (req.method == "OPTIONS") res.send(200); /*让options快速返回*/
+//  if (/\.(js|css|txt|json|html|png|jpeg|jpg|gif|tpl|ico|woff)/ig.test(req.path)) {
+//    //如果是文件名
+//    next();
+//    console.log("is File");
+//  }
+//  else{
+//    next();
+//  }
+//});
 
 function getBodyStr(obj) {
   var str = "";
