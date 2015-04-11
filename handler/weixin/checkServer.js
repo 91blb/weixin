@@ -20,7 +20,7 @@ module.exports=function(req,res,cb){//微信校验
 			return echostr;//如果校验通过 按照微信要求 原样返回echostr
 		}
 		else{
-			return false;
+			return "false";
 		}
 	}
 	else{
