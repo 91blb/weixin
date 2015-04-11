@@ -43,10 +43,11 @@ module.exports = function(req, res, cb) { //微信校验
 
 		var result = "";
 		//result += '<?xml version="1.0" encoding="utf-8"?>';
+		var xml=req.body.xml;
 		result += "<xml>";
-		result += "<ToUserName><![CDATA[" + req.body.tousername + "]]></ToUserName>";
-		result += "<FromUserName><![CDATA[" + req.body.fromusername + "]></FromUserName>";
-		result += "<CreateTime>" + req.body.createtime + "</CreateTime>";
+		result += "<ToUserName><![CDATA[" + xml.tousername + "]]></ToUserName>";
+		result += "<FromUserName><![CDATA[" + xml.fromusername + "]></FromUserName>";
+		result += "<CreateTime>" + xml.createtime + "</CreateTime>";
 		result += "<MsgType><![CDATA[text]]></MsgType>";
 		result += "<Content><![CDATA[你好>]]></Content>";
 		result += "</xml>";
