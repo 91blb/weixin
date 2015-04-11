@@ -39,18 +39,18 @@ module.exports = function(req, res, cb) { //微信校验
 		console.log("headers", req.headers);
 		console.log("body", req.body);
 
-		res.header('Content-Type', 'text/xml;charset=utf-8');
+		res.header('Content-Type', 'text/xml');
 
 		var result = "";
-		//result += '<?xml version="1.0" encoding="utf-8"?>';
-		var xml=req.body.xml;
-		result += "<xml>";
+		result += '<?xml version="1.0" encoding="utf-8"?>';
+		var xml=req.body.xml||{};
+		result += "<data>";
 		result += "<ToUserName><![CDATA[" + xml.tousername + "]]></ToUserName>";
-		result += "<FromUserName><![CDATA[" + xml.fromusername + "]></FromUserName>";
+		result += "<FromUserName><![CDATA[" + xml.fromusername + "]]></FromUserName>";
 		result += "<CreateTime>" + xml.createtime + "</CreateTime>";
 		result += "<MsgType><![CDATA[text]]></MsgType>";
 		result += "<Content><![CDATA[你好,测试被动推送消息]]></Content>";
-		result += "</xml>";
+		result += "</data>";
 		
 		console.log("return content:",result);
 		return result;
