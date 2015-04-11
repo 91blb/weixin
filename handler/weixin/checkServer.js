@@ -42,15 +42,15 @@ module.exports = function(req, res, cb) { //微信校验
 		res.header('Content-Type', 'text/xml');
 
 		var result = "";
-		result += '<?xml version="1.0" encoding="utf-8"?>';
+		//result += '<?xml version="1.0" encoding="utf-8"?>';
 		var xml=req.body.xml||{};
-		result += "<data>";
+		result += "<xml>";
 		result += "<ToUserName><![CDATA[" + xml.tousername + "]]></ToUserName>";
 		result += "<FromUserName><![CDATA[" + xml.fromusername + "]]></FromUserName>";
 		result += "<CreateTime>" + xml.createtime + "</CreateTime>";
 		result += "<MsgType><![CDATA[text]]></MsgType>";
 		result += "<Content><![CDATA[你好,测试被动推送消息]]></Content>";
-		result += "</data>";
+		result += "</xml>";
 		
 		console.log("return content:",result);
 		return result;
