@@ -1,4 +1,14 @@
 var check=require("../../lib/weixin/checkToken");
+var bodyParser = require('body-parser')
+// create application/json parser 
+var jsonParser = bodyParser.json()
+// create application/x-www-form-urlencoded parser 
+
+
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
+
+
+
 module.exports=function(req,res,cb){//微信校验
 
 	console.log("method",req.method);
@@ -20,11 +30,12 @@ module.exports=function(req,res,cb){//微信校验
 			return echostr;//如果校验通过 按照微信要求 原样返回echostr
 		}
 		else{
-			return "false";
+			return false;
 		}
 	}
 	else{
 		console.log("body",req.body);
+		return req.body;
 	}
 	//return result;
 }
