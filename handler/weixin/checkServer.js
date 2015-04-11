@@ -16,7 +16,7 @@ module.exports = function(req, res, cb) { //微信校验
 	console.log("method", req.method);
 	console.log(now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " " + now.getMilliseconds());
 
-	var support_get_flag = false; //调试标记
+	var support_get_flag = true; //调试标记
 
 	if (req.method == "GET" && support_get_flag) {
 		var query = req.query;
@@ -49,7 +49,7 @@ module.exports = function(req, res, cb) { //微信校验
 		result += "<FromUserName><![CDATA[" + xml.fromusername + "]></FromUserName>";
 		result += "<CreateTime>" + xml.createtime + "</CreateTime>";
 		result += "<MsgType><![CDATA[text]]></MsgType>";
-		result += "<Content><![CDATA[你好>]]></Content>";
+		result += "<Content><![CDATA[你好,测试被动推送消息]]></Content>";
 		result += "</xml>";
 		
 		console.log("return content:",result);
