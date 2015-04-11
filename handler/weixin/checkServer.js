@@ -42,14 +42,16 @@ module.exports = function(req, res, cb) { //微信校验
 		res.header('Content-Type', 'text/xml;charset=utf-8');
 
 		var result = "";
-		result += '<?xml version="1.0" encoding="utf-8"?>';
+		//result += '<?xml version="1.0" encoding="utf-8"?>';
 		result += "<xml>";
 		result += "<ToUserName><![CDATA[" + req.body.tousername + "]]></ToUserName>";
-		result += "<FromUserName><![CDATA[" + req.body.fromusername + "]]></FromUserName>";
+		result += "<FromUserName><![CDATA[" + req.body.fromusername + "]></FromUserName>";
 		result += "<CreateTime>" + req.body.createtime + "</CreateTime>";
 		result += "<MsgType><![CDATA[text]]></MsgType>";
-		result += "<Content><![CDATA[你好]]></Content>";
+		result += "<Content><![CDATA[你好>]]></Content>";
 		result += "</xml>";
+		
+		console.log("return content:",result);
 		return result;
 	}
 	//return result;
