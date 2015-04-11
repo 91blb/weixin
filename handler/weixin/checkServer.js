@@ -16,7 +16,9 @@ module.exports = function(req, res, cb) { //微信校验
 	console.log("method", req.method);
 	console.log(now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + " " + now.getMilliseconds());
 
-	if (req.method == "GET") {
+	var support_get_flag = false; //调试标记
+
+	if (req.method == "GET" && support_get_flag) {
 		var query = req.query;
 
 		var signature = query.signature;
@@ -37,10 +39,14 @@ module.exports = function(req, res, cb) { //微信校验
 		console.log("headers", req.headers);
 		console.log("body", req.body);
 
-		var result = "<xml>";
-		result += "<ToUserName><![CDATA["+req.body.tousername+"]]></ToUserName>";
-		result += "<FromUserName><![CDATA["+req.body.fromusername+"]]></FromUserName>";
-		result += "<CreateTime>"+req.body.createtime+"</CreateTime>";
+		res.header('Content-Type', 'text/xml;charset=utf-8');
+
+		var result = "";
+		result += '<?xml version="1.0" encoding="utf-8"?>';
+		result += "<xml>";
+		result += "<ToUserName><![CDATA[" + req.body.tousername + "]]></ToUserName>";
+		result += "<FromUserName><![CDATA[" + req.body.fromusername + "]]></FromUserName>";
+		result += "<CreateTime>" + req.body.createtime + "</CreateTime>";
 		result += "<MsgType><![CDATA[text]]></MsgType>";
 		result += "<Content><![CDATA[你好]]></Content>";
 		result += "</xml>";
