@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/91blb/weixin/issues"
   },
-  "devDependencies": {
+  "dependencies": {
     "MD5": "^1.2.1",
     "beautifier": "^0.1.7",
     "body-parser": "^1.10.2",
@@ -38,13 +38,12 @@
     "request": "^2.51.0",
     "shelljs": "^0.3.0",
     "strip-json-comments": "^1.0.2",
-    "watch": "^0.13.0"
-  },
-  "dependencies": {
-    "express-session": "^1.10.4",
+    "watch": "^0.13.0",
+	  "express-session": "^1.10.4",
     "grunt-contrib-uglify": "^0.6.0",
     "serve-favicon": "^2.1.7",
     "sha1": "^1.1.0"
+
   },
   "homepage": "https://github.com/91blb/weixin"
 }
