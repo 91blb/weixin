@@ -10,12 +10,11 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 
 module.exports=function(req,res,cb){//微信校验
-
+	var now=new Date();
 	console.log("method",req.method);
 	console.log(now.getHours()+":"+now.getMinutes()+":"+now.getSeconds()+" "+now.getMilliseconds());
 
 	if(req.method=="GET"){
-		var now=new Date();
 		var query=req.query;
 		
 		var signature=query.signature;
