@@ -44,7 +44,7 @@ module.exports = function(req, res, cb) { //微信校验
 		result += "<MsgType><![CDATA[text]]></MsgType>";
 		result += "<Content><![CDATA[你好]]></Content>";
 		result += "</xml>";
-		return req.body;
+		return result;
 	}
 	//return result;
 }
