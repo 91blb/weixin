@@ -12,6 +12,8 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 module.exports=function(req,res,cb){//微信校验
 
 	console.log("method",req.method);
+	console.log(now.getHours()+":"+now.getMinutes()+":"+now.getSeconds()+" "+now.getMilliseconds());
+
 	if(req.method=="GET"){
 		var now=new Date();
 		var query=req.query;
@@ -21,7 +23,6 @@ module.exports=function(req,res,cb){//微信校验
 		var nonce=query.nonce;
 		var echostr=query.echostr;
 		
-		console.log(now.getHours()+":"+now.getMinutes()+":"+now.getSeconds()+" "+now.getMilliseconds());
 
 		console.log("wexin check",req.query);
 		var result=check(signature,timestamp,nonce,echostr);
@@ -34,6 +35,7 @@ module.exports=function(req,res,cb){//微信校验
 		}
 	}
 	else{
+		console.log("headers",req.headers);
 		console.log("body",req.body);
 		return req.body;
 	}

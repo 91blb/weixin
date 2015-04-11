@@ -4,6 +4,7 @@ var fs = require("fs");
 var util = require('util');
 var cookieParser = require('cookie-parser');
 var bodyParser = require("body-parser");
+var xmlparser = require('express-xml-bodyparser');
 var session = require('express-session');
 var favicon = require('serve-favicon');
  
@@ -33,10 +34,11 @@ app.use(errorHandler);
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({
   extended: false
-}))
+}));
 
 // parse application/json
-app.use(bodyParser.json())
+app.use(bodyParser.json());
+app.use(xmlparser());
 
 function logErrors(err, req, res, next) {
   console.log("logErrors");
@@ -118,7 +120,7 @@ function handler(req, res) { //处理所有服务请求
     };
   }
 
-  if (result) res.send(result); //直接返回结果
+  if (result!==undefined) res.send(result); //直接返回结果
 }
 
 
