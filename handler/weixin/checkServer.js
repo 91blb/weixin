@@ -45,8 +45,8 @@ module.exports = function(req, res, cb) { //微信校验
 		//result += '<?xml version="1.0" encoding="utf-8"?>';
 		var xml=req.body.xml||{};
 		result += "<xml>";
-		result += "<ToUserName><![CDATA[" + xml.tousername + "]]></ToUserName>";
-		result += "<FromUserName><![CDATA[" + xml.fromusername + "]]></FromUserName>";
+		result += "<ToUserName><![CDATA[" + xml.fromusername + "]]></ToUserName>";
+		result += "<FromUserName><![CDATA[" + xml.tousername + "]]></FromUserName>";
 		result += "<CreateTime>" + xml.createtime + "</CreateTime>";
 		result += "<MsgType><![CDATA[text]]></MsgType>";
 		result += "<Content><![CDATA[你好,测试被动推送消息]]></Content>";
