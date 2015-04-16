@@ -86,9 +86,9 @@ body {
 	background-image:-webkit-linear-gradient(0deg, rgba(0, 204, 255,0.95), rgba(0, 204, 255,1));
 	z-index:2;
 	-webkit-animation-name: animate_mask;
-	-webkit-animation-duration: 2.1s;
+	-webkit-animation-duration: 2.6s;
 	-webkit-animation-timing-function: ease-in;/*ease-in-out;*/
-	-webkit-animation-delay: 2.0s;
+	-webkit-animation-delay: 1.8s;
 
 	-webkit-animation-iteration-count: 1;
 	-webkit-animation-direction: alternate;
@@ -111,7 +111,7 @@ animation-direction: alternate, reverse, normal;*/
 	letter-spacing:0;
 	margin:0;
 	
-	-webkit-transform:translateY(0px);
+	-webkit-transform:translateY(0px) scale(0.5);
 	-webkit-transform-origin:center center;
 	font-style:normal;
 	
@@ -163,13 +163,15 @@ animation-direction: alternate, reverse, normal;*/
  0% {
 -webkit-transform:translateY(0px);
 }
+ 50% {
+-webkit-transform:translateY(0px) scale(1);
+/*color:#fff;
+*/}
  100% {
 -webkit-transform:translateY(0px) scale(0.6);
 /*color:#fff;
 */}
 }
-
-
 
 
 @-webkit-keyframes 'animate_mask' {
@@ -181,26 +183,13 @@ animation-direction: alternate, reverse, normal;*/
 }
 }
 
-@-webkit-keyframes 'animate_font' {
- 0% {
--webkit-transform:scale(1,1);
-}
- 0% {
--webkit-transform:scale(2,2);
-}
- 100% {
--webkit-transform:scale(1,1);
-}
-}
 
 @-webkit-keyframes 'animate_wobble' {
-     from {
+      0%  {
        width:0px;
      }
-    50% {
-      width:150px;
-    }
-   to {
+
+    100%  {
      width:300px;
     }
   }
