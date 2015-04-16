@@ -86,9 +86,10 @@ body {
 	background-image:-webkit-linear-gradient(0deg, rgba(0, 204, 255,0.95), rgba(0, 204, 255,1));
 	z-index:2;
 	-webkit-animation-name: animate_mask;
-	-webkit-animation-duration: 3.1s;
+	-webkit-animation-duration: 2.1s;
 	-webkit-animation-timing-function: ease-in;/*ease-in-out;*/
 	-webkit-animation-delay: 2.0s;
+
 	-webkit-animation-iteration-count: 1;
 	-webkit-animation-direction: alternate;
 	/*animation-direction: normal;
@@ -109,24 +110,18 @@ animation-direction: alternate, reverse, normal;*/
 	color:#d9ffec;
 	letter-spacing:0;
 	margin:0;
+	
 	-webkit-transform:translateY(0px);
 	-webkit-transform-origin:center center;
 	font-style:normal;
 	
-	-webkit-transform: translateZ(0);
+	-webkit-transform: translateZ(0)  scale(1);
 	
 	-webkit-animation-name: preloader_1;
 	-webkit-animation-duration: 1.0s;
-	-webkit-animation-timing-function: linear;/*ease-in-out;*/
+	-webkit-animation-timing-function: linear;
 	-webkit-animation-delay: 2.0s;
 	-webkit-animation-iteration-count: 1;
-	-webkit-animation-direction: alternate;
-	/*animation-direction: normal;
-animation-direction: reverse;
-animation-direction: alternate;
-animation-direction: alternate-reverse;
-animation-direction: normal, reverse;
-animation-direction: alternate, reverse, normal;*/
 	-webkit-animation-play-state: running;
 	-webkit-animation-fill-mode:forwards;
 
@@ -135,34 +130,34 @@ animation-direction: alternate, reverse, normal;*/
 	-webkit-animation-delay: 2.0s;
 }
 .text i:nth-child(2) {
-	-webkit-animation-delay: 2.15s;
+	-webkit-animation-delay: 2.2s;
 }
 .text i:nth-child(3) {
-	-webkit-animation-delay: 2.3s;
+	-webkit-animation-delay: 2.4s;
 }
 .text i:nth-child(4) {
-	-webkit-animation-delay: 2.45s;
-}
-.text i:nth-child(5) {
 	-webkit-animation-delay: 2.6s;
 }
-.text i:nth-child(6) {
-	-webkit-animation-delay: 2.75s;
+.text i:nth-child(5) {
+	-webkit-animation-delay: 2.8s;
 }
-.text i:nth-child(7) {
+.text i:nth-child(6) {
 	-webkit-animation-delay: 3.0s;
 }
+.text i:nth-child(7) {
+	-webkit-animation-delay: 3.2s;
+}
 .text i:nth-child(8) {
-	-webkit-animation-delay: 3.15s;
+	-webkit-animation-delay: 3.4s;
 }
 .text i:nth-child(9) {
-	-webkit-animation-delay: 3.3s;
+	-webkit-animation-delay: 3.6s;
 }
 .text i:nth-child(10) {
-	-webkit-animation-delay: 3.45s;
+	-webkit-animation-delay: 3.8s;
 }
 .text i:nth-child(11) {
-	-webkit-animation-delay: 3.6s;
+	-webkit-animation-delay: 4.0s;
 }
 @-webkit-keyframes preloader_1 {
  0% {
@@ -179,22 +174,22 @@ animation-direction: alternate, reverse, normal;*/
 
 @-webkit-keyframes 'animate_mask' {
  0% {
-transform:translateX(0px);
+-webkit-transform:translateX(0px);
 }
  100% {
-transform:translateX(300px);
+-webkit-transform:translateX(300px);
 }
 }
 
 @-webkit-keyframes 'animate_font' {
  0% {
-transform:scale(1,1);
+-webkit-transform:scale(1,1);
 }
  0% {
-transform:scale(2,2);
+-webkit-transform:scale(2,2);
 }
  100% {
-transform:scale(1,1);
+-webkit-transform:scale(1,1);
 }
 }
 
