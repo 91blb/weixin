@@ -213,28 +213,6 @@ animation-direction: alternate, reverse, normal;*/
         <div class="mask_con des"><div class="text"><i>原</i><i>来</i><i>投</i><i>资</i><i>可</i><i>以</i><i>这</i><i>样</i><i>放</i><i>心</i><i>的</i></div><div class="mask"></div></div>
 	</div>
 </div>
-<div class="con" id="con">
-  <div class="top">
-    <a class="top_logo" href="#" id="top_logo"></a>
-    <div class="top_curr" id="top_curr"><span id="btn_goBack" class="icon">&#xe601;</span><span id="curr_mod">注册</span></div>
-    <div class="top_div top_login" id="top_login"> <a href="#mod=reg">免费注册</a> <a href="#mod=login">登录</a> </div>
-    <div class="top_div top_balance" id="wx_topBalance">
-      <p>可用余额</p>
-      <p><em id="myBalance">元</em></p>
-    </div>
-    <div class="top_div top_logout" id=> <a class="" href="logout.html">安全退出</a> </div>
-  </div>
-  <div class="main" id="main">
-  </div>
-  <div class="foot" id="foot">
-      <ul class="nav_list">
-        <li class="nav active"> <a class="nav_index"><i></i><em class="icon">首页&#xe601;</em></a> </li>
-        <li class="nav"> <a href="list.html#axn" class="nav_invest"><i></i><em>我要投资</em></a> </li>
-        <li class="nav"> <a href="account.html" class="nav_account"><i></i><em>我的账户</em></a> </li>
-        <li class="nav"> <a href="aboutus.html" class="nav_about"><i></i><em>关于小牛</em></a> </li>
-      </ul>
-    </div>
-</div>
 <script>
 	var startTime=new Date();
 </script>
@@ -250,9 +228,9 @@ animation-direction: alternate, reverse, normal;*/
 		if(!window.errorMod&&mod!="index"){/*如果还没有出错过，重新加载首页模块，如果已经出错，放弃治疗 避免死循环*/
 			window.errorMod=mod;
 			mod="index";
-			require(["./js/mod/"+mod],function(module){
-						module.init();//模块初始化
-					})
+			//require(["./js/mod/"+mod],function(module){
+						//module.init();//模块初始化
+					//})
 		}
 	}
 	setTimeout(function(){
