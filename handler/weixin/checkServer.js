@@ -80,7 +80,7 @@ module.exports = function(req, res, cb) { //微信校验
 			}
 		});
 		console.log("do handler",typeof("handler"));
-		process(req,res);
+		handler(req,res);
 		return;
 		console.log("headers", req.headers);
 		console.log("body", req.body);
