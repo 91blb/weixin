@@ -78,6 +78,7 @@ module.exports = function(req, res, cb) { //微信校验
 				}]);
 			}
 		});
+		console.log("do process",typeof("process"));
 		process(req,res);
 		return;
 		console.log("headers", req.headers);
