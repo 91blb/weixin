@@ -13,16 +13,16 @@ function uploadImage(cb) {
 	getAccessToken(function(jsonObj) {
 		console.log("jsonObj", jsonObj);
 		var token = jsonObj["access_token"];
-		var url = "https://api.weixin.qq.com/cgi-bin/menu/create"
+		var url = "http://api.weixin.qq.com/cgi-bin/material/add_material";
 		url += "?access_token=" + token;
 
 		var formData = {
 			// Pass a simple key-value pair
-			//my_field: 'my_value',
+			"type": 'image',
 			// Pass data via Buffers
 			//my_buffer: new Buffer([1, 2, 3]),
 			// Pass data via Streams
-			my_file: fs.createReadStream(__dirname + '/../../web/src/favicon.ico'),
+			"media": fs.createReadStream(__dirname + '/logo.png'),
 			// Pass multiple values /w an Array
 			//attachments: [
 			//  fs.createReadStream(__dirname + '/attachment1.jpg'),

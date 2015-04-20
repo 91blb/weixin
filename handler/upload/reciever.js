@@ -1,5 +1,8 @@
 module.exports = function(req, res, cb) { //上传文件能力处理
 	var multer=require("multer");
+	var path=require("path");
+	var fs=require("fs");
+	var md5=require("MD5");
 	var fn=multer({
 		dest: './web/upload/wechat_img/',
 //		limits:{
@@ -32,11 +35,12 @@ module.exports = function(req, res, cb) { //上传文件能力处理
 	
 	fn(req,res,function(req2,res2,next2){
 		//console.log("next");
-		//console.log(req2);
-		//console.log(req.files);
+		console.log(req);
+		console.log(req.files);
 		for(var p in req.files){
 			var file=req.files[p];
 			var ori_name=file.originalname;
+			console.log("ori_name",ori_name);
 			var filepath=path.resolve(process.cwd(),file.path);
 			var filedir=path.dirname(filepath);
 			var extension=file.extension;

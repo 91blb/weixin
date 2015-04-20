@@ -8,7 +8,7 @@ var xmlparser = require('express-xml-bodyparser');
 var session = require('express-session');
 var favicon = require('serve-favicon');
  
-app.use(favicon(__dirname + '/src/favicon.ico'));
+app.use(favicon(__dirname + '/web/src/favicon.ico'));
 
 var colors = require('colors');
 process.on('uncaughtException', function(e) {
@@ -110,7 +110,7 @@ function handler(req, res) { //处理所有服务请求
 
     console.log(("method=" + method).green);
 
-    var fn = require("./handler/" + method + ".js");
+    var fn = require("./handler" + method + ".js");
     var result = fn(req, res); //也允许异步返回
     //console.log("result=["+result+"]");
   } catch (e) {
