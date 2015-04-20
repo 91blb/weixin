@@ -26,6 +26,7 @@
     "express": "^4.10.5",
     "express-session": "^1.10.4",
     "express-xml-bodyparser": "0.0.7",
+    "formstream": "^1.0.0",
     "fs-extra": "^0.13.0",
     "grunt-contrib-concat": "^0.5.0",
     "grunt-contrib-cssmin": "^0.12.2",
@@ -45,6 +46,7 @@
     "shelljs": "^0.3.0",
     "should": "^6.0.1",
     "strip-json-comments": "^1.0.2",
+    "urllib": "^2.3.4",
     "watch": "^0.13.0",
     "wechat": "^1.2.4"
   },

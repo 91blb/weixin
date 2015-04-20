@@ -8,6 +8,26 @@ var encoding = {
 };
 var url = "";
 var getAccessToken = require("./getAccessToken");
+var formstream=require("formstream");
+var urllib=require("urllib");
+function sendRequest(url, opts, callback) {
+	var options = {};
+	//extend(options, this.defaults);
+	for (var key in opts) {
+		if (key !== 'headers') {
+			options[key] = opts[key];
+		} else {
+			if (opts.headers) {
+				options.headers = options.headers || {};
+				console.log("opts.headers",opts.headers);
+				console.log("");
+				options.headers=opts.headers;
+				//extend(options.headers, opts.headers);
+			}
+		}
+	}
+	urllib.request(url, options, callback);
+}
 
 function uploadImage(cb) {
 	getAccessToken(function(jsonObj) {
@@ -16,45 +36,31 @@ function uploadImage(cb) {
 		var url = "http://api.weixin.qq.com/cgi-bin/material/add_material";
 		url += "?access_token=" + token;
 
-		var formData = {
-			// Pass a simple key-value pair
-			"type": 'image',
-			// Pass data via Buffers
-			//my_buffer: new Buffer([1, 2, 3]),
-			// Pass data via Streams
-			"media": fs.createReadStream(__dirname + '/logo.png'),
-			// Pass multiple values /w an Array
-			//attachments: [
-			//  fs.createReadStream(__dirname + '/attachment1.jpg'),
-			//  fs.createReadStream(__dirname + '/attachment2.jpg')
-			//],
-			// Pass optional meta-data with an 'options' object with style: {value: DATA, options: OPTIONS}
-			// Use case: for some types of streams, you'll need to provide "file"-related information manually.
-			// See the `form-data` README for more information about options: https://github.com/felixge/node-form-data
-			//custom_file: {
-			//  value: fs.createReadStream('/dev/urandom'),
-			//  options: {
-			//    filename: 'topsecret.jpg',
-			//    contentType: 'image/jpg'
-			//  }
-			//}
+
+		var filepath = __dirname + "/logo.png";
+		var callback = function() {
+			console.log("send request callback");
+			console.log(arguments);
 		};
-
-		//var url = "http://service.com/upload";
-		//var url = "http://127.0.0.1:3000/handler/upload/reciever";
-		request.post({
-			url: url,
-			formData: formData
-		}, function optionalCallback(err, httpResponse, body) {
+		var type = 'image';
+		fs.stat(filepath, function(err, stat) {
 			if (err) {
-				return console.error('upload failed:', err);
+				return callback(err);
 			}
-			console.log('Upload successful!  Server responded with:', body);
+			var form = formstream();
+			form.file('media', filepath, path.basename(filepath), stat.size);
+			var url2 = url + '&type=' + type;
+			console.log("url2",url2);
+			var opts = {
+				dataType: 'json',
+				type: 'POST',
+				timeout: 60000, // 60秒超时
+				headers: form.headers(),
+				stream: form
+			};
+			sendRequest(url2, opts, callback);
 		});
+		//https://api.weixin.qq.com/cgi-bin/menu/create?access_token=ACCESS_TOKEN
 	});
-	//https://api.weixin.qq.com/cgi-bin/menu/create?access_token=ACCESS_TOKEN
 }
-
-
-
 uploadImage();

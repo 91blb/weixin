@@ -56,8 +56,11 @@ module.exports = function(req, res, cb) { //微信校验
 			result += "<ToUserName><![CDATA[" + xml.fromusername + "]]></ToUserName>";
 			result += "<FromUserName><![CDATA[" + xml.tousername + "]]></FromUserName>";
 			result += "<CreateTime>" + xml.createtime + "</CreateTime>";
-			result += "<MsgType><![CDATA[text]]></MsgType>";
-			result += "<Content><![CDATA[" + getNowStr() + "你好,测试被动推送消息]]></Content>";
+			result += "<MsgType><![CDATA[image]]></MsgType>";
+			result += "<Image>";
+			result += "<MediaId><![CDATA[Nst3OlirgKwCPzS6FLNfom0aRwz-pGIZNOEByG3GrVc]]></MediaId>";
+			result += "</Image>";
+			//result += "<Content><![CDATA[" + getNowStr() + "你好,测试被动推送消息]]></Content>";
 			result += "</xml>";
 		}
 
