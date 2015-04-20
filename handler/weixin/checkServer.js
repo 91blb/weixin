@@ -43,7 +43,7 @@ module.exports = function(req, res, cb) { //微信校验
 			return false;
 		}
 	} else {
-		var process=wechat(config, function(req, res, next) {
+		var handler=wechat(config, function(req, res, next) {
 			// 微信输入信息都在req.weixin上
 			var message = req.weixin;
 			console.log("!!!!weixinmsg",message);
@@ -78,7 +78,7 @@ module.exports = function(req, res, cb) { //微信校验
 				}]);
 			}
 		});
-		console.log("do process",typeof("process"));
+		console.log("do handler",typeof("handler"));
 		process(req,res);
 		return;
 		console.log("headers", req.headers);
