@@ -11,6 +11,7 @@ var urlencodedParser = bodyParser.urlencoded({
 
 
 var wechat = require('wechat');
+console.log("!!! wechat ",wechat);
 var config = {
 	token: 'randomstr123QQ',
 	appid: 'wx4b6e962611f5e662',
