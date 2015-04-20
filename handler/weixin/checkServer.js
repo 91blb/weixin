@@ -42,24 +42,36 @@ module.exports = function(req, res, cb) { //微信校验
 		var result = "";
 		//result += '<?xml version="1.0" encoding="utf-8"?>';
 		var xml = req.body.xml || {};
-		result += "<xml>";
-		result += "<ToUserName><![CDATA[" + xml.fromusername + "]]></ToUserName>";
-		result += "<FromUserName><![CDATA[" + xml.tousername + "]]></FromUserName>";
-		result += "<CreateTime>" + xml.createtime + "</CreateTime>";
-		result += "<MsgType><![CDATA[text]]></MsgType>";
-		result += "<Content><![CDATA["+getNowStr()+"你好,测试被动推送消息]]></Content>";
-		result += "</xml>";
+		if (xml.eventkey && xml.eventkey[0] == "CMD1") {
+			console.log("CMD1");
+			result += "<xml>";
+			result += "<ToUserName><![CDATA[" + xml.fromusername + "]]></ToUserName>";
+			result += "<FromUserName><![CDATA[" + xml.tousername + "]]></FromUserName>";
+			result += "<CreateTime>" + xml.createtime + "</CreateTime>";
+			result += "<MsgType><![CDATA[text]]></MsgType>";
+			result += "<Content><![CDATA[" + getNowStr() + "你好,测试被动推送消息]]></Content>";
+			result += "</xml>";
+		} else if (xml.eventkey && xml.eventkey[0] == "CMD2") {
+			result += "<xml>";
+			result += "<ToUserName><![CDATA[" + xml.fromusername + "]]></ToUserName>";
+			result += "<FromUserName><![CDATA[" + xml.tousername + "]]></FromUserName>";
+			result += "<CreateTime>" + xml.createtime + "</CreateTime>";
+			result += "<MsgType><![CDATA[text]]></MsgType>";
+			result += "<Content><![CDATA[" + getNowStr() + "你好,测试被动推送消息]]></Content>";
+			result += "</xml>";
+		}
 
-		console.log("return content:", result);
+
+		//console.log("return content:", result);
 		return result;
 	}
 	//return result;
 }
 
-function getNowStr(){
-	var now=new Date();
-	var str=now.getFullYear()+"-"+(now.getMonth()+1)+"-"+now.getDate()+" ";
-	str+=now.getHours()+":"+now.getMinutes()+":"+now.getSeconds();
+function getNowStr() {
+	var now = new Date();
+	var str = now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate() + " ";
+	str += now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
 	return str;
 }
 
