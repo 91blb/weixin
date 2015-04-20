@@ -52,6 +52,30 @@ module.exports = function(req, res, cb) { //微信校验
 			result += "<Content><![CDATA[" + getNowStr() + "你好,测试被动推送消息]]></Content>";
 			result += "</xml>";
 		} else if (xml.eventkey && xml.eventkey[0] == "CMD2") {
+
+
+			result += "<xml>";
+			result += "<ToUserName><![CDATA["+xml.fromusername+"]]></ToUserName>";
+			result += "<FromUserName><![CDATA["+xml.tousername+"]]></FromUserName>";
+			result += "<CreateTime>"+xml.createtime+"</CreateTime>";
+			result += "<MsgType><![CDATA[news]]></MsgType>";
+			result += "<ArticleCount>2</ArticleCount>";
+			result += "<Articles>";
+			result += "<item>";
+			result += "<Title><![CDATA[测试标题1]]></Title>";
+			result += "<Description><![CDATA[测试描述1]]></Description>";
+			result += "<PicUrl><![CDATA[http://www.51blb.com/static/images/logo.png]]></PicUrl>";
+			result += "<Url><![CDATA[http://www.51blb.com]]></Url>";
+			result += "</item>";
+			result += "<item>";
+			result += "<Title><![CDATA[测试标题2]]></Title>";
+			result += "<Description><![CDATA[测试描述2]]></Description>";
+			result += "<PicUrl><![CDATA[http://www.51blb.com/static/images/mt004.png]]></PicUrl>";
+			result += "<Url><![CDATA[http://www.51blb.com]]></Url>";
+			result += "</item>";
+			result += "</Articles>";
+			result += "</xml>";
+		} else if (xml.eventkey && xml.eventkey[0] == "CMD2") {
 			result += "<xml>";
 			result += "<ToUserName><![CDATA[" + xml.fromusername + "]]></ToUserName>";
 			result += "<FromUserName><![CDATA[" + xml.tousername + "]]></FromUserName>";
