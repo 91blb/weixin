@@ -106,12 +106,14 @@ var fs = require("fs-extra");
 function handler(req, res) { //处理所有服务请求
   try {
     var method = req.path.replace(/^.*?\/data/g, "");
-    method = method.replace(/\.(js|txt|json).*$/, ""); //忽略后面的任意参数  捕获rest请求
+    method = method.replace(/\..*$/, ""); //忽略后面的任意参数  捕获rest请求
 
     console.log(("method=" + method).green);
 
     var fn = require("./handler" + method + ".js");
-    var result = fn(req, res); //也允许异步返回
+	var opt={};
+	opt.basePath=__dirname;
+    var result = fn(req, res,opt); //也允许异步返回
     //console.log("result=["+result+"]");
   } catch (e) {
     console.log(e);
@@ -123,12 +125,14 @@ function handler(req, res) { //处理所有服务请求
   if (result!==undefined) res.send(result); //直接返回结果
 }
 
+app.set('views', __dirname + '/web/views');
+app.set('view engine', 'jade');
 
 app.use("/handler/", handler); //服务处理程序 handler
 app.use("/", express.static(__dirname + "/web/src/")); //服务处理程序 handler
 app.use("/src/", express.static(__dirname + "/web/src/")); //静态资源web
-
-
+app.use("/web/src/", express.static(__dirname + "/web/src/")); //静态资源web
+app.use("/test/", express.static(__dirname + "/test/")); //静态资源web
 
 var port = 3000;
 var host = "127.0.0.1";
