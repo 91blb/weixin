@@ -21,7 +21,7 @@ app.use(session({
   name:'token',
   secret: 'secret.91blb.com',
   resave: false,
-  saveUninitialized: false,
+  saveUninitialized: true,
   cookie: {
     secure: false
   },
