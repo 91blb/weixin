@@ -1,3 +1,3 @@
-require("should");
+var a=1>2?1:2;
 
-require("./wechat/test1");
+console.log(a);
