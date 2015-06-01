@@ -82,7 +82,7 @@ module.exports=function(req,res,opt){
 	console.log("bonus query param:",req.query);
 	//console.log(req.query);
 	//console.log("opt",opt);
- 
+ 	var code=req.query.code;
 	//console.log("RSVP",RSVP);
 	getOuthToken(code)	
 	.then(getUserInfo)
