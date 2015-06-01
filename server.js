@@ -10,6 +10,22 @@ var favicon = require('serve-favicon');
  
 app.use(favicon(__dirname + '/web/src/favicon.ico'));
 
+//var express = require('express');
+//var app = express();
+
+/*模板部分*/
+var vm = require('express-velocity');
+var path=require("path");
+var assert=require('assert');
+
+
+app.engine(".vm", vm({
+  root: __dirname + "/web/src/view"  //duplicated with views setting but required for velocity template
+}))
+app.set("views", __dirname + "/web/src/view");
+/*模板部分配置借宿*/
+
+
 var colors = require('colors');
 process.on('uncaughtException', function(e) {
   console.log("server on error");　　
@@ -125,8 +141,6 @@ function handler(req, res) { //处理所有服务请求
   if (result!==undefined) res.send(result); //直接返回结果
 }
 
-app.set('views', __dirname + '/web/views');
-app.set('view engine', 'jade');
 
 app.use("/handler/", handler); //服务处理程序 handler
 app.use("/", express.static(__dirname + "/web/src/")); //服务处理程序 handler

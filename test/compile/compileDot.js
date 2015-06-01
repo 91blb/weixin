@@ -12,7 +12,8 @@ function test() {
 	compile("a", "./data/a.js")
 }
 
-function compile(fileName, dataFnPath) {
+function compile(fileName, dataFnPath,baseDir) {
+	baseDir=
 	var dataFn = require(dataFnPath);
 	var data = dataFn();
 	var snippet = fs.readFileSync("./tpl/" + fileName + ".tpl", encoding);
