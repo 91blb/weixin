@@ -92,7 +92,7 @@ module.exports=function(req,res,opt){
 		res.render("bonus.vm",data);
 	})
 	.catch(function(err){
-
+		res.send(err);
 	})
 
 	//var path=require("path");
