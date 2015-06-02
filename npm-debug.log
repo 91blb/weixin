@@ -1,0 +1,525 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'D:\\tools\\nodejs\\\\node.exe',
+1 verbose cli   'D:\\tools\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'canvas',
+1 verbose cli   '--save' ]
+2 info using npm@2.9.1
+3 info using node@v0.12.3
+4 verbose node symlink D:\tools\nodejs\\node.exe
+5 verbose install initial load of D:\github\weixin\package.json
+6 warn package.json wexin.91blb.com@1.0.0 No description
+7 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\MD5\package.json
+8 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\beautifier\package.json
+9 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\body-parser\package.json
+10 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\colors\package.json
+11 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\cookie-parser\package.json
+12 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\dot\package.json
+13 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\dot-include\package.json
+14 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\expect.js\package.json
+15 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\express\package.json
+16 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\express-session\package.json
+17 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\express-velocity\package.json
+18 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\express-xml-bodyparser\package.json
+19 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\formstream\package.json
+20 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\fs-extra\package.json
+21 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\grunt\package.json
+22 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\grunt-contrib-concat\package.json
+23 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\grunt-contrib-cssmin\package.json
+24 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\grunt-contrib-requirejs\package.json
+25 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\grunt-contrib-uglify\package.json
+26 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\grunt-contrib-watch\package.json
+27 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\js-beautify\package.json
+28 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\matchdep\package.json
+29 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\muk\package.json
+30 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\multer\package.json
+31 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\node-js-beautify\package.json
+32 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\node-rsa\package.json
+33 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\path\package.json
+34 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\request\package.json
+35 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\rsvp\package.json
+36 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\serve-favicon\package.json
+37 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\sha1\package.json
+38 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\shelljs\package.json
+39 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\should\package.json
+40 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\strip-json-comments\package.json
+41 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\urllib\package.json
+42 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\velocity\package.json
+43 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\watch\package.json
+44 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\wechat\package.json
+45 verbose installManyTop reading scoped package data from D:\github\weixin\node_modules\wechat-api\package.json
+46 warn package.json path@0.4.10 path is also the name of a node core module.
+47 verbose readDependencies loading dependencies from D:\github\weixin\package.json
+48 silly cache add args [ 'canvas', null ]
+49 verbose cache add spec canvas
+50 silly cache add parsed spec { raw: 'canvas',
+50 silly cache add   scope: null,
+50 silly cache add   name: 'canvas',
+50 silly cache add   rawSpec: '',
+50 silly cache add   spec: '*',
+50 silly cache add   type: 'range' }
+51 silly addNamed canvas@*
+52 verbose addNamed "*" is a valid semver range for canvas
+53 silly addNameRange { name: 'canvas', range: '*', hasData: false }
+54 silly mapToRegistry name canvas
+55 silly mapToRegistry using default registry
+56 silly mapToRegistry registry https://registry.npmjs.org/
+57 silly mapToRegistry uri https://registry.npmjs.org/canvas
+58 verbose addNameRange registry:https://registry.npmjs.org/canvas not in flight; fetching
+59 verbose request uri https://registry.npmjs.org/canvas
+60 verbose request no auth needed
+61 info attempt registry request try #1 at 17:34:19
+62 verbose request id 2cb58d752d4dcb4b
+63 verbose etag "7OBRNWZD9Z2H2QMEMAL6A9LQZ"
+64 http request GET https://registry.npmjs.org/canvas
+65 http 304 https://registry.npmjs.org/canvas
+66 silly get cb [ 304,
+66 silly get   { date: 'Tue, 02 Jun 2015 09:31:42 GMT',
+66 silly get     via: '1.1 varnish',
+66 silly get     'cache-control': 'max-age=60',
+66 silly get     etag: '"7OBRNWZD9Z2H2QMEMAL6A9LQZ"',
+66 silly get     age: '0',
+66 silly get     connection: 'keep-alive',
+66 silly get     'x-served-by': 'cache-sjc3134-SJC',
+66 silly get     'x-cache': 'HIT',
+66 silly get     'x-cache-hits': '1',
+66 silly get     'x-timer': 'S1433237502.761223,VS0,VE150',
+66 silly get     vary: 'Accept' } ]
+67 verbose etag https://registry.npmjs.org/canvas from cache
+68 verbose get saving canvas to C:\Users\Administrator\AppData\Roaming\npm-cache\registry.npmjs.org\canvas\.cache.json
+69 silly addNameRange number 2 { name: 'canvas', range: '*', hasData: true }
+70 silly addNameRange versions [ 'canvas',
+70 silly addNameRange   [ '0.0.1',
+70 silly addNameRange     '0.0.2',
+70 silly addNameRange     '0.0.3',
+70 silly addNameRange     '0.0.4',
+70 silly addNameRange     '0.0.5',
+70 silly addNameRange     '0.0.6',
+70 silly addNameRange     '0.0.7',
+70 silly addNameRange     '0.0.8',
+70 silly addNameRange     '0.1.0',
+70 silly addNameRange     '0.2.0',
+70 silly addNameRange     '0.2.1',
+70 silly addNameRange     '0.3.0',
+70 silly addNameRange     '0.3.1',
+70 silly addNameRange     '0.3.2',
+70 silly addNameRange     '0.3.3',
+70 silly addNameRange     '0.4.0',
+70 silly addNameRange     '0.4.1',
+70 silly addNameRange     '0.4.2',
+70 silly addNameRange     '0.4.3',
+70 silly addNameRange     '0.5.0',
+70 silly addNameRange     '0.5.1',
+70 silly addNameRange     '0.5.2',
+70 silly addNameRange     '0.5.3',
+70 silly addNameRange     '0.5.4',
+70 silly addNameRange     '0.6.0',
+70 silly addNameRange     '0.7.0',
+70 silly addNameRange     '0.7.1',
+70 silly addNameRange     '0.7.2',
+70 silly addNameRange     '0.7.3',
+70 silly addNameRange     '0.8.0',
+70 silly addNameRange     '0.8.1',
+70 silly addNameRange     '0.8.2',
+70 silly addNameRange     '0.8.3',
+70 silly addNameRange     '0.9.0',
+70 silly addNameRange     '0.10.0',
+70 silly addNameRange     '0.10.1',
+70 silly addNameRange     '0.10.2',
+70 silly addNameRange     '0.10.3',
+70 silly addNameRange     '0.11.0',
+70 silly addNameRange     '0.11.1',
+70 silly addNameRange     '0.11.2',
+70 silly addNameRange     '0.11.3',
+70 silly addNameRange     '0.12.0',
+70 silly addNameRange     '0.12.1',
+70 silly addNameRange     '0.13.0',
+70 silly addNameRange     '0.13.1',
+70 silly addNameRange     '1.0.0',
+70 silly addNameRange     '1.0.1',
+70 silly addNameRange     '1.0.2',
+70 silly addNameRange     '1.0.3',
+70 silly addNameRange     '1.0.4',
+70 silly addNameRange     '1.1.0',
+70 silly addNameRange     '1.1.1',
+70 silly addNameRange     '1.1.2',
+70 silly addNameRange     '1.1.3',
+70 silly addNameRange     '1.1.4',
+70 silly addNameRange     '1.1.5',
+70 silly addNameRange     '1.1.6',
+70 silly addNameRange     '1.2.0',
+70 silly addNameRange     '1.2.1',
+70 silly addNameRange     '1.2.2',
+70 silly addNameRange     '1.2.3' ] ]
+71 silly addNamed canvas@1.2.3
+72 verbose addNamed "1.2.3" is a plain semver version for canvas
+73 silly cache afterAdd canvas@1.2.3
+74 verbose afterAdd C:\Users\Administrator\AppData\Roaming\npm-cache\canvas\1.2.3\package\package.json not in flight; writing
+75 verbose afterAdd C:\Users\Administrator\AppData\Roaming\npm-cache\canvas\1.2.3\package\package.json written
+76 silly install resolved [ { name: 'canvas',
+76 silly install resolved     description: 'Canvas graphics API backed by Cairo',
+76 silly install resolved     version: '1.2.3',
+76 silly install resolved     author: { name: 'TJ Holowaychuk', email: 'tj@learnboost.com' },
+76 silly install resolved     contributors: [ [Object], [Object], [Object] ],
+76 silly install resolved     keywords:
+76 silly install resolved      [ 'canvas',
+76 silly install resolved        'graphic',
+76 silly install resolved        'graphics',
+76 silly install resolved        'pixman',
+76 silly install resolved        'cairo',
+76 silly install resolved        'image',
+76 silly install resolved        'images',
+76 silly install resolved        'pdf' ],
+76 silly install resolved     homepage: 'https://github.com/learnboost/node-canvas',
+76 silly install resolved     repository:
+76 silly install resolved      { type: 'git',
+76 silly install resolved        url: 'git://github.com/learnboost/node-canvas.git' },
+76 silly install resolved     scripts: { test: 'make test', install: 'node-gyp rebuild' },
+76 silly install resolved     dependencies: { nan: '^1.8.4' },
+76 silly install resolved     devDependencies: { express: '3.0', jade: '0.28.1', mocha: '*', should: '*' },
+76 silly install resolved     engines: { node: '>= 0.6.0' },
+76 silly install resolved     main: './lib/canvas.js',
+76 silly install resolved     license: 'MIT',
+76 silly install resolved     gypfile: true,
+76 silly install resolved     gitHead: 'a7c9c0ddb556d8a5c5f683e9f41075ad9cda94e8',
+76 silly install resolved     bugs: { url: 'https://github.com/learnboost/node-canvas/issues' },
+76 silly install resolved     _id: 'canvas@1.2.3',
+76 silly install resolved     _shasum: 'bf4124cc360854a67486211120106cdd69744a58',
+76 silly install resolved     _from: 'canvas@*',
+76 silly install resolved     _npmVersion: '2.9.1',
+76 silly install resolved     _nodeVersion: '0.12.3',
+76 silly install resolved     _npmUser: { name: 'tootallnate', email: 'nathan@tootallnate.net' },
+76 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object] ],
+76 silly install resolved     dist:
+76 silly install resolved      { shasum: 'bf4124cc360854a67486211120106cdd69744a58',
+76 silly install resolved        tarball: 'http://registry.npmjs.org/canvas/-/canvas-1.2.3.tgz' },
+76 silly install resolved     directories: {},
+76 silly install resolved     _resolved: 'https://registry.npmjs.org/canvas/-/canvas-1.2.3.tgz',
+76 silly install resolved     readme: 'ERROR: No README data found!' } ]
+77 info install canvas@1.2.3 into D:\github\weixin
+78 info installOne canvas@1.2.3
+79 verbose installOne of canvas to D:\github\weixin not in flight; installing
+80 verbose lock using C:\Users\Administrator\AppData\Roaming\npm-cache\_locks\canvas-69c0472ba40bc1d9.lock for D:\github\weixin\node_modules\canvas
+81 silly install write writing canvas 1.2.3 to D:\github\weixin\node_modules\canvas
+82 verbose unbuild node_modules\canvas
+83 silly gentlyRm D:\github\weixin\node_modules\canvas is being purged from base D:\github\weixin
+84 verbose gentlyRm don't care about contents; nuking D:\github\weixin\node_modules\canvas
+85 verbose tar unpack C:\Users\Administrator\AppData\Roaming\npm-cache\canvas\1.2.3\package.tgz
+86 verbose tar unpacking to D:\github\weixin\node_modules\canvas
+87 silly gentlyRm D:\github\weixin\node_modules\canvas is being purged
+88 verbose gentlyRm don't care about contents; nuking D:\github\weixin\node_modules\canvas
+89 silly gunzTarPerm modes [ '777', '666' ]
+90 silly gunzTarPerm extractEntry package.json
+91 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+92 silly gunzTarPerm extractEntry .npmignore
+93 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+94 silly gunzTarPerm extractEntry index.js
+95 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+96 silly gunzTarPerm extractEntry History.md
+97 silly gunzTarPerm modified mode [ 'History.md', 420, 438 ]
+98 silly gunzTarPerm extractEntry Makefile
+99 silly gunzTarPerm modified mode [ 'Makefile', 420, 438 ]
+100 silly gunzTarPerm extractEntry Readme.md
+101 silly gunzTarPerm modified mode [ 'Readme.md', 420, 438 ]
+102 silly gunzTarPerm extractEntry binding.gyp
+103 silly gunzTarPerm modified mode [ 'binding.gyp', 493, 511 ]
+104 silly gunzTarPerm extractEntry .gitmodules
+105 silly gunzTarPerm modified mode [ '.gitmodules', 420, 438 ]
+106 silly gunzTarPerm extractEntry install
+107 silly gunzTarPerm modified mode [ 'install', 493, 511 ]
+108 silly gunzTarPerm extractEntry lib/bindings.js
+109 silly gunzTarPerm modified mode [ 'lib/bindings.js', 420, 438 ]
+110 silly gunzTarPerm extractEntry lib/canvas.js
+111 silly gunzTarPerm modified mode [ 'lib/canvas.js', 420, 438 ]
+112 silly gunzTarPerm extractEntry lib/context2d.js
+113 silly gunzTarPerm modified mode [ 'lib/context2d.js', 420, 438 ]
+114 silly gunzTarPerm extractEntry lib/image.js
+115 silly gunzTarPerm modified mode [ 'lib/image.js', 420, 438 ]
+116 silly gunzTarPerm extractEntry lib/jpegstream.js
+117 silly gunzTarPerm modified mode [ 'lib/jpegstream.js', 420, 438 ]
+118 silly gunzTarPerm extractEntry lib/pixelarray.js
+119 silly gunzTarPerm modified mode [ 'lib/pixelarray.js', 420, 438 ]
+120 silly gunzTarPerm extractEntry lib/pngstream.js
+121 silly gunzTarPerm modified mode [ 'lib/pngstream.js', 420, 438 ]
+122 silly gunzTarPerm extractEntry .travis.yml
+123 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+124 silly gunzTarPerm extractEntry src/Image.h
+125 silly gunzTarPerm modified mode [ 'src/Image.h', 420, 438 ]
+126 silly gunzTarPerm extractEntry src/Canvas.cc
+127 silly gunzTarPerm modified mode [ 'src/Canvas.cc', 420, 438 ]
+128 silly gunzTarPerm extractEntry src/CanvasGradient.cc
+129 silly gunzTarPerm modified mode [ 'src/CanvasGradient.cc', 420, 438 ]
+130 silly gunzTarPerm extractEntry src/CanvasGradient.h
+131 silly gunzTarPerm modified mode [ 'src/CanvasGradient.h', 420, 438 ]
+132 silly gunzTarPerm extractEntry src/CanvasPattern.cc
+133 silly gunzTarPerm modified mode [ 'src/CanvasPattern.cc', 420, 438 ]
+134 silly gunzTarPerm extractEntry src/CanvasPattern.h
+135 silly gunzTarPerm modified mode [ 'src/CanvasPattern.h', 420, 438 ]
+136 silly gunzTarPerm extractEntry src/CanvasRenderingContext2d.cc
+137 silly gunzTarPerm modified mode [ 'src/CanvasRenderingContext2d.cc', 493, 511 ]
+138 silly gunzTarPerm extractEntry src/CanvasRenderingContext2d.h
+139 silly gunzTarPerm modified mode [ 'src/CanvasRenderingContext2d.h', 420, 438 ]
+140 silly gunzTarPerm extractEntry src/FontFace.cc
+141 silly gunzTarPerm modified mode [ 'src/FontFace.cc', 493, 511 ]
+142 silly gunzTarPerm extractEntry src/FontFace.h
+143 silly gunzTarPerm modified mode [ 'src/FontFace.h', 420, 438 ]
+144 silly gunzTarPerm extractEntry src/Image.cc
+145 silly gunzTarPerm modified mode [ 'src/Image.cc', 420, 438 ]
+146 silly gunzTarPerm extractEntry src/Canvas.h
+147 silly gunzTarPerm modified mode [ 'src/Canvas.h', 420, 438 ]
+148 silly gunzTarPerm extractEntry src/ImageData.cc
+149 silly gunzTarPerm modified mode [ 'src/ImageData.cc', 420, 438 ]
+150 silly gunzTarPerm extractEntry src/ImageData.h
+151 silly gunzTarPerm modified mode [ 'src/ImageData.h', 420, 438 ]
+152 silly gunzTarPerm extractEntry src/JPEGStream.h
+153 silly gunzTarPerm modified mode [ 'src/JPEGStream.h', 420, 438 ]
+154 silly gunzTarPerm extractEntry src/PNG.h
+155 silly gunzTarPerm modified mode [ 'src/PNG.h', 420, 438 ]
+156 silly gunzTarPerm extractEntry src/PixelArray.cc
+157 silly gunzTarPerm modified mode [ 'src/PixelArray.cc', 420, 438 ]
+158 silly gunzTarPerm extractEntry src/PixelArray.h
+159 silly gunzTarPerm modified mode [ 'src/PixelArray.h', 420, 438 ]
+160 silly gunzTarPerm extractEntry src/Point.h
+161 silly gunzTarPerm modified mode [ 'src/Point.h', 420, 438 ]
+162 silly gunzTarPerm extractEntry src/closure.h
+163 silly gunzTarPerm modified mode [ 'src/closure.h', 420, 438 ]
+164 silly gunzTarPerm extractEntry src/color.cc
+165 silly gunzTarPerm modified mode [ 'src/color.cc', 420, 438 ]
+166 silly gunzTarPerm extractEntry src/color.h
+167 silly gunzTarPerm modified mode [ 'src/color.h', 420, 438 ]
+168 silly gunzTarPerm extractEntry src/init.cc
+169 silly gunzTarPerm modified mode [ 'src/init.cc', 493, 511 ]
+170 silly gunzTarPerm extractEntry util/cairo_include.sh
+171 silly gunzTarPerm modified mode [ 'util/cairo_include.sh', 493, 511 ]
+172 silly gunzTarPerm extractEntry util/has_cairo_freetype.sh
+173 silly gunzTarPerm modified mode [ 'util/has_cairo_freetype.sh', 493, 511 ]
+174 silly gunzTarPerm extractEntry util/has_lib.sh
+175 silly gunzTarPerm modified mode [ 'util/has_lib.sh', 493, 511 ]
+176 silly gunzTarPerm extractEntry util/lib_lookup.sh
+177 silly gunzTarPerm modified mode [ 'util/lib_lookup.sh', 493, 511 ]
+178 verbose write writing to D:\github\weixin\node_modules\canvas\package.json
+179 info preinstall canvas@1.2.3
+180 verbose readDependencies loading dependencies from D:\github\weixin\node_modules\canvas\package.json
+181 silly prepareForInstallMany adding nan@^1.8.4 from canvas dependencies
+182 verbose readDependencies loading dependencies from D:\github\weixin\node_modules\canvas\package.json
+183 silly cache add args [ 'nan@^1.8.4', null ]
+184 verbose cache add spec nan@^1.8.4
+185 silly cache add parsed spec { raw: 'nan@^1.8.4',
+185 silly cache add   scope: null,
+185 silly cache add   name: 'nan',
+185 silly cache add   rawSpec: '^1.8.4',
+185 silly cache add   spec: '>=1.8.4 <2.0.0',
+185 silly cache add   type: 'range' }
+186 silly addNamed nan@>=1.8.4 <2.0.0
+187 verbose addNamed ">=1.8.4 <2.0.0" is a valid semver range for nan
+188 silly addNameRange { name: 'nan', range: '>=1.8.4 <2.0.0', hasData: false }
+189 silly mapToRegistry name nan
+190 silly mapToRegistry using default registry
+191 silly mapToRegistry registry https://registry.npmjs.org/
+192 silly mapToRegistry uri https://registry.npmjs.org/nan
+193 verbose addNameRange registry:https://registry.npmjs.org/nan not in flight; fetching
+194 verbose request uri https://registry.npmjs.org/nan
+195 verbose request no auth needed
+196 info attempt registry request try #1 at 17:34:20
+197 verbose etag "8OKNOQTK5I3E2DYN4ME7PZ551"
+198 http request GET https://registry.npmjs.org/nan
+199 http 304 https://registry.npmjs.org/nan
+200 silly get cb [ 304,
+200 silly get   { date: 'Tue, 02 Jun 2015 09:31:43 GMT',
+200 silly get     via: '1.1 varnish',
+200 silly get     'cache-control': 'max-age=60',
+200 silly get     etag: '"8OKNOQTK5I3E2DYN4ME7PZ551"',
+200 silly get     age: '54',
+200 silly get     connection: 'keep-alive',
+200 silly get     'x-served-by': 'cache-sjc3122-SJC',
+200 silly get     'x-cache': 'HIT',
+200 silly get     'x-cache-hits': '3',
+200 silly get     'x-timer': 'S1433237503.748941,VS0,VE0',
+200 silly get     vary: 'Accept' } ]
+201 verbose etag https://registry.npmjs.org/nan from cache
+202 verbose get saving nan to C:\Users\Administrator\AppData\Roaming\npm-cache\registry.npmjs.org\nan\.cache.json
+203 silly addNameRange number 2 { name: 'nan', range: '>=1.8.4 <2.0.0', hasData: true }
+204 silly addNameRange versions [ 'nan',
+204 silly addNameRange   [ '0.3.0-wip',
+204 silly addNameRange     '0.3.0-wip2',
+204 silly addNameRange     '0.3.0',
+204 silly addNameRange     '0.3.1',
+204 silly addNameRange     '0.3.2',
+204 silly addNameRange     '0.4.0',
+204 silly addNameRange     '0.4.1',
+204 silly addNameRange     '0.4.2',
+204 silly addNameRange     '0.4.3',
+204 silly addNameRange     '0.4.4',
+204 silly addNameRange     '0.5.0',
+204 silly addNameRange     '0.5.1',
+204 silly addNameRange     '0.5.2',
+204 silly addNameRange     '0.6.0',
+204 silly addNameRange     '0.7.0',
+204 silly addNameRange     '0.7.1',
+204 silly addNameRange     '0.8.0',
+204 silly addNameRange     '1.0.0',
+204 silly addNameRange     '1.1.0',
+204 silly addNameRange     '1.1.1',
+204 silly addNameRange     '1.1.2',
+204 silly addNameRange     '1.2.0',
+204 silly addNameRange     '1.3.0',
+204 silly addNameRange     '1.4.0',
+204 silly addNameRange     '1.4.1',
+204 silly addNameRange     '1.5.0',
+204 silly addNameRange     '1.4.2',
+204 silly addNameRange     '1.4.3',
+204 silly addNameRange     '1.5.1',
+204 silly addNameRange     '1.5.2',
+204 silly addNameRange     '1.6.0',
+204 silly addNameRange     '1.5.3',
+204 silly addNameRange     '1.6.1',
+204 silly addNameRange     '1.6.2',
+204 silly addNameRange     '1.7.0',
+204 silly addNameRange     '1.8.0',
+204 silly addNameRange     '1.8.1',
+204 silly addNameRange     '1.8.2',
+204 silly addNameRange     '1.8.3',
+204 silly addNameRange     '1.8.4' ] ]
+205 silly addNamed nan@1.8.4
+206 verbose addNamed "1.8.4" is a plain semver version for nan
+207 silly cache afterAdd nan@1.8.4
+208 verbose afterAdd C:\Users\Administrator\AppData\Roaming\npm-cache\nan\1.8.4\package\package.json not in flight; writing
+209 verbose afterAdd C:\Users\Administrator\AppData\Roaming\npm-cache\nan\1.8.4\package\package.json written
+210 silly install resolved [ { name: 'nan',
+210 silly install resolved     version: '1.8.4',
+210 silly install resolved     description: 'Native Abstractions for Node.js: C++ header for Node 0.8->0.12 compatibility',
+210 silly install resolved     main: 'include_dirs.js',
+210 silly install resolved     repository: { type: 'git', url: 'git://github.com/iojs/nan.git' },
+210 silly install resolved     scripts:
+210 silly install resolved      { test: 'tap --gc test/js/*-test.js',
+210 silly install resolved        'rebuild-tests': 'pangyp rebuild --directory test' },
+210 silly install resolved     contributors:
+210 silly install resolved      [ [Object],
+210 silly install resolved        [Object],
+210 silly install resolved        [Object],
+210 silly install resolved        [Object],
+210 silly install resolved        [Object],
+210 silly install resolved        [Object],
+210 silly install resolved        [Object] ],
+210 silly install resolved     devDependencies:
+210 silly install resolved      { bindings: '~1.2.1',
+210 silly install resolved        'node-gyp': '~1.0.2',
+210 silly install resolved        pangyp: '~2.0.1',
+210 silly install resolved        tap: '~0.7.1',
+210 silly install resolved        xtend: '~4.0.0' },
+210 silly install resolved     license: 'MIT',
+210 silly install resolved     gitHead: 'ed3bbf4ced0cf7937b4e4164766797f71aa97f3d',
+210 silly install resolved     bugs: { url: 'https://github.com/iojs/nan/issues' },
+210 silly install resolved     homepage: 'https://github.com/iojs/nan#readme',
+210 silly install resolved     _id: 'nan@1.8.4',
+210 silly install resolved     _shasum: '3c76b5382eab33e44b758d2813ca9d92e9342f34',
+210 silly install resolved     _from: 'nan@>=1.8.4 <2.0.0',
+210 silly install resolved     _npmVersion: '2.8.3',
+210 silly install resolved     _nodeVersion: '0.12.2',
+210 silly install resolved     _npmUser: { name: 'kkoopa', email: 'bbyholm@abo.fi' },
+210 silly install resolved     maintainers: [ [Object], [Object] ],
+210 silly install resolved     dist:
+210 silly install resolved      { shasum: '3c76b5382eab33e44b758d2813ca9d92e9342f34',
+210 silly install resolved        tarball: 'http://registry.npmjs.org/nan/-/nan-1.8.4.tgz' },
+210 silly install resolved     directories: {},
+210 silly install resolved     _resolved: 'https://registry.npmjs.org/nan/-/nan-1.8.4.tgz',
+210 silly install resolved     readme: 'ERROR: No README data found!' } ]
+211 info install nan@1.8.4 into D:\github\weixin\node_modules\canvas
+212 info installOne nan@1.8.4
+213 verbose installOne of nan to D:\github\weixin\node_modules\canvas not in flight; installing
+214 verbose lock using C:\Users\Administrator\AppData\Roaming\npm-cache\_locks\nan-e94ac9dfbcb2bffd.lock for D:\github\weixin\node_modules\canvas\node_modules\nan
+215 silly install write writing nan 1.8.4 to D:\github\weixin\node_modules\canvas\node_modules\nan
+216 verbose unbuild node_modules\canvas\node_modules\nan
+217 silly gentlyRm D:\github\weixin\node_modules\canvas\node_modules\nan is being purged from base D:\github\weixin
+218 verbose gentlyRm don't care about contents; nuking D:\github\weixin\node_modules\canvas\node_modules\nan
+219 verbose tar unpack C:\Users\Administrator\AppData\Roaming\npm-cache\nan\1.8.4\package.tgz
+220 verbose tar unpacking to D:\github\weixin\node_modules\canvas\node_modules\nan
+221 silly gentlyRm D:\github\weixin\node_modules\canvas\node_modules\nan is being purged
+222 verbose gentlyRm don't care about contents; nuking D:\github\weixin\node_modules\canvas\node_modules\nan
+223 silly gunzTarPerm modes [ '777', '666' ]
+224 silly gunzTarPerm extractEntry package.json
+225 silly gunzTarPerm modified mode [ 'package.json', 436, 438 ]
+226 silly gunzTarPerm extractEntry README.md
+227 silly gunzTarPerm modified mode [ 'README.md', 436, 438 ]
+228 silly gunzTarPerm extractEntry include_dirs.js
+229 silly gunzTarPerm modified mode [ 'include_dirs.js', 436, 438 ]
+230 silly gunzTarPerm extractEntry LICENSE.md
+231 silly gunzTarPerm modified mode [ 'LICENSE.md', 436, 438 ]
+232 silly gunzTarPerm extractEntry .dntrc
+233 silly gunzTarPerm modified mode [ '.dntrc', 436, 438 ]
+234 silly gunzTarPerm extractEntry appveyor.yml
+235 silly gunzTarPerm modified mode [ 'appveyor.yml', 436, 438 ]
+236 silly gunzTarPerm extractEntry nan.h
+237 silly gunzTarPerm modified mode [ 'nan.h', 436, 438 ]
+238 silly gunzTarPerm extractEntry nan_implementation_12_inl.h
+239 silly gunzTarPerm modified mode [ 'nan_implementation_12_inl.h', 436, 438 ]
+240 silly gunzTarPerm extractEntry nan_implementation_pre_12_inl.h
+241 silly gunzTarPerm modified mode [ 'nan_implementation_pre_12_inl.h', 436, 438 ]
+242 silly gunzTarPerm extractEntry nan_new.h
+243 silly gunzTarPerm modified mode [ 'nan_new.h', 436, 438 ]
+244 silly gunzTarPerm extractEntry nan_string_bytes.h
+245 silly gunzTarPerm modified mode [ 'nan_string_bytes.h', 436, 438 ]
+246 silly gunzTarPerm extractEntry CHANGELOG.md
+247 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 436, 438 ]
+248 verbose write writing to D:\github\weixin\node_modules\canvas\node_modules\nan\package.json
+249 info preinstall nan@1.8.4
+250 verbose readDependencies loading dependencies from D:\github\weixin\node_modules\canvas\node_modules\nan\package.json
+251 verbose readDependencies loading dependencies from D:\github\weixin\node_modules\canvas\node_modules\nan\package.json
+252 silly install resolved []
+253 verbose about to build D:\github\weixin\node_modules\canvas\node_modules\nan
+254 info build D:\github\weixin\node_modules\canvas\node_modules\nan
+255 info linkStuff nan@1.8.4
+256 silly linkStuff nan@1.8.4 has D:\github\weixin\node_modules\canvas\node_modules as its parent node_modules
+257 verbose linkBins nan@1.8.4
+258 verbose linkMans nan@1.8.4
+259 verbose rebuildBundles nan@1.8.4
+260 info install nan@1.8.4
+261 info postinstall nan@1.8.4
+262 verbose unlock done using C:\Users\Administrator\AppData\Roaming\npm-cache\_locks\nan-e94ac9dfbcb2bffd.lock for D:\github\weixin\node_modules\canvas\node_modules\nan
+263 verbose about to build D:\github\weixin\node_modules\canvas
+264 info build D:\github\weixin\node_modules\canvas
+265 info linkStuff canvas@1.2.3
+266 silly linkStuff canvas@1.2.3 has D:\github\weixin\node_modules as its parent node_modules
+267 verbose linkBins canvas@1.2.3
+268 verbose linkMans canvas@1.2.3
+269 verbose rebuildBundles canvas@1.2.3
+270 verbose rebuildBundles [ 'nan' ]
+271 info install canvas@1.2.3
+272 verbose unsafe-perm in lifecycle true
+273 info canvas@1.2.3 Failed to exec install script
+274 verbose unlock done using C:\Users\Administrator\AppData\Roaming\npm-cache\_locks\canvas-69c0472ba40bc1d9.lock for D:\github\weixin\node_modules\canvas
+275 verbose stack Error: canvas@1.2.3 install: `node-gyp rebuild`
+275 verbose stack Exit status 1
+275 verbose stack     at EventEmitter.<anonymous> (D:\tools\nodejs\node_modules\npm\lib\utils\lifecycle.js:213:16)
+275 verbose stack     at EventEmitter.emit (events.js:110:17)
+275 verbose stack     at ChildProcess.<anonymous> (D:\tools\nodejs\node_modules\npm\lib\utils\spawn.js:24:14)
+275 verbose stack     at ChildProcess.emit (events.js:110:17)
+275 verbose stack     at maybeClose (child_process.js:1015:16)
+275 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1087:5)
+276 verbose pkgid canvas@1.2.3
+277 verbose cwd D:\github\weixin
+278 error Windows_NT 6.1.7601
+279 error argv "D:\\tools\\nodejs\\\\node.exe" "D:\\tools\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "canvas" "--save"
+280 error node v0.12.3
+281 error npm  v2.9.1
+282 error code ELIFECYCLE
+283 error canvas@1.2.3 install: `node-gyp rebuild`
+283 error Exit status 1
+284 error Failed at the canvas@1.2.3 install script 'node-gyp rebuild'.
+284 error This is most likely a problem with the canvas package,
+284 error not with npm itself.
+284 error Tell the author that this fails on your system:
+284 error     node-gyp rebuild
+284 error You can get their info via:
+284 error     npm owner ls canvas
+284 error There is likely additional logging output above.
+285 verbose exit [ 1, true ]
+286 verbose unbuild node_modules\canvas
+287 info preuninstall canvas@1.2.3
+288 info uninstall canvas@1.2.3
+289 verbose unbuild rmStuff canvas@1.2.3 from D:\github\weixin\node_modules
+290 info postuninstall canvas@1.2.3
+291 silly gentlyRm D:\github\weixin\node_modules\canvas is being purged from base D:\github\weixin
+292 verbose gentlyRm don't care about contents; nuking D:\github\weixin\node_modules\canvas
+293 silly vacuum-fs purging D:\github\weixin\node_modules\canvas
+294 silly vacuum-fs quitting because other entries in D:\github\weixin\node_modules
