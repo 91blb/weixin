@@ -177,7 +177,7 @@ html, body {
 		wx.openCard({
 			cardList: [{
 				cardId: 'po2HJszYamo5Vqz5cR5xMQ-XtP7s',
-				//code: ''
+				code: ''
 			}]// 需要打开的卡券列表
 			,success:function(res){
 				alert(res);
@@ -186,10 +186,22 @@ html, body {
 
 	}
 	
-	function addWXCard(){/*发送微信卡券*/
+	function checkAPI(){/*检查接口是否存在*/
+		
+		
+		wx.checkJsApi({
+			jsApiList: ['openCard'], // 需要检测的JS接口列表，所有JS接口列表见附录2,
+			success: function(res) {
+				alert(res);
+				// 以键值对的形式返回，可用的api值true，不可用为false
+				// 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
+			}
+		});
 	}
 	
+	
 	wx.ready(function() {
+		checkAPI();
 		openWXCard();
 		//bindWeixinEvent();
 
