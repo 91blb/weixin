@@ -53,6 +53,47 @@ html, body {
 <script src="../js/lib/zepto/min/zepto.min.js"></script>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script>
+	var g_data = [{
+		title: "《港囧》贴心派送大额利是，让你赴港购物不再囧。",
+		abstract: "在成交额超过25亿之际，农发贷携手《港囧》贴心派送_____元，让你赴港购物不再囧。"
+	}, {
+		title: "《失孤》给影迷赠送贴心利是，为美好生活助力加油！",
+		abstract: "在成交额超过25亿之际，农发贷携手《失孤》给影迷赠送贴心利是，为美好生活助力加油！"
+	}, {
+		title: "《速度与激情7》给小伙伴们派利是了，愿你是速度与激情的化身！",
+		abstract: "在成交额超过25亿之际，农发贷携手《速度与激情》给小伙伴们派利是了，愿你是速度与激情的化身！"
+	}, {
+		title: "《王牌特工》派王牌利是，你就是王牌！",
+		abstract: "在成交额超过25亿之际，农发贷携手《王牌特工》派王牌利是，你就是王牌！"
+	}, {
+		title: "《西游记之孙悟空三打白骨精》派大圣给孩儿们派利是啦，快抢啊！！",
+		abstract: "在成交额超过25亿之际，农发贷携手《西游记之孙悟空三打白骨精》派大圣给孩儿们派利是啦，快抢啊！！！"
+	}, {
+		title: "《星球大战7：原力觉醒》的利是，抢到，你就是王者",
+		abstract: "在成交额超过25亿之际，农发贷携手《星球大战7：原力觉醒》给小伙伴们派利是，抢到，你就是王者！"
+	}, {
+		title: "《咱们结婚吧》给小伙伴们派结婚利是，愿有情人终成眷属！",
+		abstract: "农发贷成交额突破25亿啦，在此携手鸳鸯配给小伙伴们派结婚利是，愿有情人终成眷属！"
+	}, {
+		title: "《战狼》给你派利是，愿你2015年越战越勇！",
+		abstract: "在成交额超过25亿之际，农发贷携手《战狼》给你派利是，愿你2015年越战越勇！"
+	}, {
+		title: "《侏罗纪世界》从远古送来的利是，你肯定想要！",
+		abstract: "在成交额超过25亿之际，农发贷携手《侏罗纪世界》从远古送来的利是，你肯定想要！"
+	}];
+	var g_urls = ["http://a2.qpic.cn/psb?/19a0e58d-2fd7-40d3-861d-bccfaf5c9ba2/FRya2C1ILArwvRxcBkQROGm4LkICT0jzudOidg7SCxM!/m/dAkAAAAAAAAA&ek=1&kp=1&pt=0&bo=PAA8AAAAAAAFByQ!&t=5&sce=0-12-12&rf=0-18", /*港囧*/
+		"http://a3.qpic.cn/psb?/19a0e58d-2fd7-40d3-861d-bccfaf5c9ba2/pF48seHnCpr5KqbVcwVvhr44rGGQfyHiupQXcsH1qGU!/m/dAoAAAAAAAAA&ek=1&kp=1&pt=0&bo=PAA8AAAAAAAFByQ!&t=5&sce=0-12-12&rf=0-18", /*失孤*/
+		"http://a4.qpic.cn/psb?/19a0e58d-2fd7-40d3-861d-bccfaf5c9ba2/eNYOKqWLco7JSeUYiBSfOMtSBevS8ENF.hISzC8mHPU!/m/dFMAAAAAAAAA&ek=1&kp=1&pt=0&bo=PAA8AAAAAAAFByQ!&t=5&sce=0-12-12&rf=0-18",/*速度与激情7*/
+		"http://a3.qpic.cn/psb?/19a0e58d-2fd7-40d3-861d-bccfaf5c9ba2/uhVnytb6MK2sZOA3M5Dz6lUa7VR4n*xJmaCRLNRLF7o!/m/dAoAAAAAAAAA&ek=1&kp=1&pt=0&bo=PAA8AAAAAAAFByQ!&t=5&sce=0-12-12&rf=0-18",/*王牌特工*/
+		"http://a3.qpic.cn/psb?/19a0e58d-2fd7-40d3-861d-bccfaf5c9ba2/FwWkqe.C4xj4rrrHuwEV65osk3ONCBFmshunoVXyrWE!/m/dAoAAAAAAAAA&ek=1&kp=1&pt=0&bo=PAA8AAAAAAAFByQ!&t=5&sce=0-12-12&rf=0-18", /*西游记之孙悟空三打白骨精*/
+		"http://a4.qpic.cn/psb?/19a0e58d-2fd7-40d3-861d-bccfaf5c9ba2/V4R2.c4ZeiOR6HoUBbk141eCJ3FcgQ5HBf7WTlghKSI!/m/dAMAAAAAAAAA&ek=1&kp=1&pt=0&bo=PAA8AAAAAAAFByQ!&t=5&sce=0-12-12&rf=0-18", /*星球大战7：原力觉醒*/
+		//"http://a2.qpic.cn/psb?/19a0e58d-2fd7-40d3-861d-bccfaf5c9ba2/iJtL6ZP5hP8SKjzzlTbx7RfRAjFBj1sR8XMzp16b4jo!/m/dAkAAAAAAAAA&ek=1&kp=1&pt=0&bo=PAA8AAAAAAAFByQ!&t=5&sce=0-12-12&rf=0-18", /*咱们结婚吧*/
+		"http://a3.qpic.cn/psb?/V10c5w0u04dUDy/zSa9Y*22lSEqcbxrydGfUhBImUshkxxl9DQIlvrFdYg!/m/dGoAAAAAAAAAnull&bo=PAA8AAAAAAAFByQ!&rf=photolist&t=5",/*咱们结婚吧*/
+		"http://a1.qpic.cn/psb?/19a0e58d-2fd7-40d3-861d-bccfaf5c9ba2/v1EFdX5dxN9uenK8rvJPE2jlm5qExxstOevo9MSGrTg!/m/dFQAAAAAAAAA&ek=1&kp=1&pt=0&bo=PAA8AAAAAAAFByQ!&t=5&sce=0-12-12&rf=0-18", /*战狼*/
+		"http://a1.qpic.cn/psb?/19a0e58d-2fd7-40d3-861d-bccfaf5c9ba2/pNfYymrg9kSDSXnAqqtoIVXfU0ciO8xqvYSEm2k33Fc!/m/dAgAAAAAAAAA&ek=1&kp=1&pt=0&bo=PAA8AAAAAAAFByQ!&t=5&sce=0-12-12&rf=0-18" /*侏罗纪世界*/
+	];
+
+
 	wx.config({
 		debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
 		appId: 'wx4b6e962611f5e662', // 必填，公众号的唯一标识
@@ -84,7 +125,7 @@ html, body {
 			});
 
 			bindWeixinEvent();
-			alert("微信接口调用成功");
+			//alert("微信接口调用成功");
 		});
 		wx.error(function(res) {
 			console.log("error", arguments);
@@ -95,8 +136,11 @@ html, body {
 		});
 
 
-		function bindWeixinEvent() {
+		function bindWeixinEvent() {//确保分享出去的是领红包的页面，而且要加上加密字段，确保关系链
 			//alert("shareURL:"+data.shareURL);
+			g_stage=1;
+			
+			var shareURL="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx4b6e962611f5e662&redirect_uri=http%3A%2F%2Fwww.51blb.com%2Fhandler%2Fweixin%2Fbonus.html&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect";
 			window.g_url = data.shareURL;
 			if (typeof(g_stage) == "undefined") {
 				g_stage = 0;
@@ -160,7 +204,6 @@ html, body {
 				}
 			});
 			//alert("bindWeixinEvent succ");
-
 		}
 
 	
