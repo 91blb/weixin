@@ -50,7 +50,6 @@ html, body {
   <div class="content">农发贷送您50元礼品券红包</div>
   <div id="btn_bonus" class="btn">点击领取</div>
 </div>
-<script src="../js/lib/zepto/min/zepto.min.js"></script>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script>
 	var g_data = [{
@@ -103,108 +102,110 @@ html, body {
 		jsApiList: ["onMenuShareAppMessage", "onMenuShareTimeline","hideMenuItems","onMenuShareQQ","onMenuShareWeibo"] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
 	});
 	
+	function bindWeixinEvent() {//确保分享出去的是领红包的页面，而且要加上加密字段，确保关系链
+		alert("绑定微信分享事件:");
+		g_stage=1;
+		
+		var shareURL="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx4b6e962611f5e662&redirect_uri=http%3A%2F%2Fwww.51blb.com%2Fhandler%2Fweixin%2Fbonus.html&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect";
+		window.g_url = shareURL;
+		if (typeof(g_stage) == "undefined") {
+			g_stage = 0;
+		}
+		var title = g_data[g_stage].title;
+		var des = g_data[g_stage].abstract;
+		var imgUrl = g_urls[g_stage];
+		var linkUrl = shareURL;
+		
+		wx.onMenuShareTimeline({
+			title: title + des, // 分享标题
+			link: linkUrl, // 分享链接
+			imgUrl: imgUrl, // 分享图标
+			success: function() {
+				// 用户确认分享后执行的回调函数
+				//alert("分享成功");
+			},
+			cancel: function() {
+				// 用户取消分享后执行的回调函数
+			}
+		});
+					
+		wx.onMenuShareAppMessage({
+			title: title, // 分享标题
+			desc: des, // 分享描述
+			link: linkUrl, // 分享链接
+			imgUrl: imgUrl, // 分享图标
+			type: '', // 分享类型,music、video或link，不填默认为link
+			dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+			success: function() {
+				// 用户确认分享后执行的回调函数
+				//alert("分享成功");
+			},
+			cancel: function() {
+				// 用户取消分享后执行的回调函数
+			}
+		});
+
+		wx.onMenuShareQQ({
+			title: title, // 分享标题
+			desc: des, // 分享描述
+			link: linkUrl, // 分享链接
+			imgUrl: imgUrl, // 分享图标
+			success: function () { 
+			   // 用户确认分享后执行的回调函数
+			},
+			cancel: function () { 
+			   // 用户取消分享后执行的回调函数
+			}
+		});
+		
+		wx.onMenuShareWeibo({
+			title: title, // 分享标题
+			desc: des, // 分享描述
+			link: linkUrl, // 分享链接
+			imgUrl: imgUrl, // 分享图标
+			success: function () { 
+			   // 用户确认分享后执行的回调函数
+			},
+			cancel: function () { 
+				// 用户取消分享后执行的回调函数
+			}
+		});
+		//alert("bindWeixinEvent succ");
+	}
 	
 	wx.ready(function() {
-			wx.hideMenuItems({
-				menuList: [
-						"menuItem:share:qq",
-						"menuItem:share:QZone",
-						"menuItem:share:weiboApp",
-						"menuItem:copyUrl",
-						"menuItem:jsDebug",
-						"menuItem:editTag",
-						"menuItem:delete",
-						"menuItem:originPage",
-						"menuItem:readMode",
-						"menuItem:openWithQQBrowser",
-						"menuItem:openWithSafari",
-						"menuItem:share:email",
-						"menuItem:share:brand",
-						"menuItem:favorite"
-					] // 要隐藏的菜单项，只能隐藏“传播类”和“保护类”按钮，所有menu项见附录3
-			});
+		bindWeixinEvent();
 
-			bindWeixinEvent();
+			//wx.hideMenuItems({
+//				menuList: [
+//						"menuItem:share:qq",
+//						"menuItem:share:QZone",
+//						"menuItem:share:weiboApp",
+//						"menuItem:copyUrl",
+//						"menuItem:jsDebug",
+//						"menuItem:editTag",
+//						"menuItem:delete",
+//						"menuItem:originPage",
+//						"menuItem:readMode",
+//						"menuItem:openWithQQBrowser",
+//						"menuItem:openWithSafari",
+//						"menuItem:share:email",
+//						"menuItem:share:brand",
+//						"menuItem:favorite"
+//					] // 要隐藏的菜单项，只能隐藏“传播类”和“保护类”按钮，所有menu项见附录3
+//			});
+
 			//alert("微信接口调用成功");
 		});
-		wx.error(function(res) {
-			alert("error" + res);
-		});
+	wx.error(function(res) {
+		alert("error" + res);
+	});
 
-		window.onerror=function(){
-			alert("window onerror"+arguments);
-		}
+	window.onerror=function(){
+		alert("window onerror"+arguments);
+	}
 
-		function bindWeixinEvent() {//确保分享出去的是领红包的页面，而且要加上加密字段，确保关系链
-			alert("绑定微信分享事件:");
-			g_stage=1;
-			
-			var shareURL="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx4b6e962611f5e662&redirect_uri=http%3A%2F%2Fwww.51blb.com%2Fhandler%2Fweixin%2Fbonus.html&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect";
-			window.g_url = shareURL;
-			if (typeof(g_stage) == "undefined") {
-				g_stage = 0;
-			}
-			var title = g_data[g_stage].title;
-			var des = g_data[g_stage].abstract;
-			var imgUrl = g_urls[g_stage];
-			var linkUrl = shareURL;
-			
-			wx.onMenuShareTimeline({
-				title: title + des, // 分享标题
-				link: linkUrl, // 分享链接
-				imgUrl: imgUrl, // 分享图标
-				success: function() {
-					// 用户确认分享后执行的回调函数
-					//alert("分享成功");
-				},
-				cancel: function() {
-					// 用户取消分享后执行的回调函数
-				}
-			});
-						
-			wx.onMenuShareAppMessage({
-				title: title, // 分享标题
-				desc: des, // 分享描述
-				link: linkUrl, // 分享链接
-				imgUrl: imgUrl, // 分享图标
-				type: '', // 分享类型,music、video或link，不填默认为link
-				dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-				success: function() {
-					// 用户确认分享后执行的回调函数
-					//alert("分享成功");
-				},
-				cancel: function() {
-					// 用户取消分享后执行的回调函数
-				}
-			});
-
-			wx.onMenuShareQQ({
-				title: title, // 分享标题
-				desc: des, // 分享描述
-				link: linkUrl, // 分享链接
-				imgUrl: imgUrl, // 分享图标
-				success: function () { 
-				   // 用户确认分享后执行的回调函数
-				},
-				cancel: function () { 
-				   // 用户取消分享后执行的回调函数
-				}
-			});
-			
-			wx.onMenuShareWeibo({
-				title: title, // 分享标题
-				desc: des, // 分享描述
-				link: linkUrl, // 分享链接
-				imgUrl: imgUrl, // 分享图标
-				success: function () { 
-				   // 用户确认分享后执行的回调函数
-				},
-				cancel: function () { 
-					// 用户取消分享后执行的回调函数
-				}
-			});
-			//alert("bindWeixinEvent succ");
-		}
+	
 
 	
 	$("#btn_bonus").on("click",function(){
