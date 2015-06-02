@@ -7,17 +7,38 @@
 <meta content="yes" name="apple-mobile-web-app-capable" />
 <meta content="black" name="apple-mobile-web-app-status-bar-style" />
 <meta content="telephone=no" name="format-detection" />
-<title>无标题文档</title>
+<title>水果季，农发贷送您50元水果兑换券</title>
 <style>
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: "Helvetica Neue", Helvetica, STHeiTi, "Roboto Regular", Roboto, "Droid Sans", "Microsoft Yahei", sans-serif;
+}
 .user_ico_div {
-	text-align:center;
+	text-align: center;
+	margin-top: 24px;
 }
 .user_ico {
 	border-radius: 50px;
-	margin:0 auto;
+	margin: 0 auto;
 }
-.username{
-	text-align:center;
+.username {
+	text-align: center;
+}
+.content {
+	margin-top: 16px;
+	text-align: center;
+}
+.btn {
+	text-align: center;
+	width: 80%;
+	line-height: 36px;
+	border-radius: 5px;
+	background-color: #28a8ff;
+	color: #fff;
+	margin: 0 auto;
+	margin-top: 24px;
 }
 </style>
 </head>
@@ -26,6 +47,8 @@
 <div>
   <div class="user_ico_div"><img class="user_ico" src="$headimgurl" width="100"></div>
   <div class="username">$nickname</div>
+  <div class="content">农发贷送您50元礼品券红包</div>
+  <div id="btn_bonus" class="btn">点击领取</div>
 </div>
 </body>
 </html>

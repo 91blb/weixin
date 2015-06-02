@@ -8,6 +8,11 @@
 <meta content="black" name="apple-mobile-web-app-status-bar-style" />
 <meta content="telephone=no" name="format-detection" />
 <title>农发贷送您50元礼品券</title>
+<!--功能介绍
+	1. 配置微信JSSDK接口
+    2. 调用微信API隐藏菜单
+    3. 调用微信API 控制分享事件
+-->
 <style>
 html, body {
 	margin: 0;
@@ -94,12 +99,12 @@ html, body {
 
 
 	wx.config({
-		debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+		debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
 		appId: 'wx4b6e962611f5e662', // 必填，公众号的唯一标识
 		timestamp: '1433204183', // 必填，生成签名的时间戳
 		nonceStr: 'randomstr123QQ', // 必填，生成签名的随机串
 		signature: '8f3fa3a1994b2df4e163b7aaa475a9f3aa42dce8',// 必填，签名，见附录1
-		jsApiList: ["openCard","onMenuShareAppMessage", "onMenuShareTimeline","hideMenuItems","onMenuShareQQ","onMenuShareWeibo"] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+		jsApiList: ["onMenuShareAppMessage", "onMenuShareTimeline","hideMenuItems","onMenuShareQQ","onMenuShareWeibo"] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
 	});
 	
 	function bindWeixinEvent() {//确保分享出去的是领红包的页面，而且要加上加密字段，确保关系链
@@ -173,25 +178,8 @@ html, body {
 		//alert("bindWeixinEvent succ");
 	}
 	
-	function openWXCard(){
-		wx.openCard({
-			cardList: [{
-				cardId: 'po2HJszYamo5Vqz5cR5xMQ-XtP7s',
-				//code: ''
-			}]// 需要打开的卡券列表
-			,success:function(res){
-				alert(res);
-			}
-		});
-
-	}
-	
-	function addWXCard(){/*发送微信卡券*/
-	}
-	
 	wx.ready(function() {
-		openWXCard();
-		//bindWeixinEvent();
+		bindWeixinEvent();
 
 			//wx.hideMenuItems({
 //				menuList: [
