@@ -95,7 +95,7 @@ html, body {
 
 
 	wx.config({
-		debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+		debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
 		appId: 'wx4b6e962611f5e662', // 必填，公众号的唯一标识
 		timestamp: '1433204183', // 必填，生成签名的时间戳
 		nonceStr: 'randomstr123QQ', // 必填，生成签名的随机串
@@ -128,27 +128,27 @@ html, body {
 			//alert("微信接口调用成功");
 		});
 		wx.error(function(res) {
-			console.log("error", arguments);
-			g_log("error" + res);
-			if (/xiaoniu88\.com/.test(document.location.href)) {
-				//alert("微信接口调用失败");
-			}
+			alert("error" + res);
 		});
 
+		window.onerror=function(){
+			alert("window onerror"+arguments);
+		}
 
 		function bindWeixinEvent() {//确保分享出去的是领红包的页面，而且要加上加密字段，确保关系链
-			//alert("shareURL:"+data.shareURL);
+			alert("绑定微信分享事件:");
 			g_stage=1;
 			
 			var shareURL="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx4b6e962611f5e662&redirect_uri=http%3A%2F%2Fwww.51blb.com%2Fhandler%2Fweixin%2Fbonus.html&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect";
-			window.g_url = data.shareURL;
+			window.g_url = shareURL;
 			if (typeof(g_stage) == "undefined") {
 				g_stage = 0;
 			}
 			var title = g_data[g_stage].title;
 			var des = g_data[g_stage].abstract;
 			var imgUrl = g_urls[g_stage];
-			var linkUrl = window.g_url || document.location.href.split('#')[0];
+			var linkUrl = shareURL;
+			
 			wx.onMenuShareTimeline({
 				title: title + des, // 分享标题
 				link: linkUrl, // 分享链接
