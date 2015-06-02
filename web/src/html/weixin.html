@@ -222,9 +222,9 @@ html, body {
 	wx.ready(function() {
 		checkAPI();
 		//openWXCard();
-		addWXCard();
+		//addWXCard();
 		
-		//bindWeixinEvent();
+		bindWeixinEvent();
 
 			//wx.hideMenuItems({
 //				menuList: [
@@ -247,6 +247,8 @@ html, body {
 
 			//alert("微信接口调用成功");
 		});
+	
+	
 	wx.error(function(res) {
 		alert("error" + res);
 	});
@@ -257,7 +259,10 @@ html, body {
 
 	
 
-	
+	var btn_bonus=document.getElementById("btn_bonus");
+	btn_bonus.onclick=function(){
+			addWXCard();
+		}
 	//$("#btn_bonus").on("click",function(){
 		//});
 </script>
