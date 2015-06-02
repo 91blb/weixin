@@ -186,6 +186,24 @@ html, body {
 
 	}
 	
+	function addWXCard(){
+		var cardExt={
+				timestamp:"1433151416",
+				signature:"df93a946d51918414db58b1b16b50d6b1a8c93ed"
+			};
+		wx.addCard({
+			cardList: [{
+				cardId: 'po2HJszYamo5Vqz5cR5xMQ-XtP7s',
+				cardExt: JSON.stringify(cardExt)
+			}], // 需要添加的卡券列表
+			success: function (res) {
+				var cardList = res.cardList; // 添加的卡券列表信息
+				alert(res);
+			}
+		});
+
+	}
+	
 	function checkAPI(){/*检查接口是否存在*/
 		
 		
@@ -203,7 +221,9 @@ html, body {
 	
 	wx.ready(function() {
 		checkAPI();
-		openWXCard();
+		//openWXCard();
+		addWXCard();
+		
 		//bindWeixinEvent();
 
 			//wx.hideMenuItems({
