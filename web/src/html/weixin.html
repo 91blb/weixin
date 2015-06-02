@@ -54,31 +54,31 @@ html, body {
 <script>
 	var g_data = [{
 		title: "《港囧》贴心派送大额利是，让你赴港购物不再囧。",
-		abstract: "在成交额超过25亿之际，农发贷携手《港囧》贴心派送_____元，让你赴港购物不再囧。"
+		abstract: "在成交额超过2亿之际，农发贷携手《港囧》贴心派送_____元，让你赴港购物不再囧。"
 	}, {
 		title: "《失孤》给影迷赠送贴心利是，为美好生活助力加油！",
-		abstract: "在成交额超过25亿之际，农发贷携手《失孤》给影迷赠送贴心利是，为美好生活助力加油！"
+		abstract: "在成交额超过2亿之际，农发贷携手《失孤》给影迷赠送贴心利是，为美好生活助力加油！"
 	}, {
 		title: "《速度与激情7》给小伙伴们派利是了，愿你是速度与激情的化身！",
-		abstract: "在成交额超过25亿之际，农发贷携手《速度与激情》给小伙伴们派利是了，愿你是速度与激情的化身！"
+		abstract: "在成交额超过2亿之际，农发贷携手《速度与激情》给小伙伴们派利是了，愿你是速度与激情的化身！"
 	}, {
 		title: "《王牌特工》派王牌利是，你就是王牌！",
-		abstract: "在成交额超过25亿之际，农发贷携手《王牌特工》派王牌利是，你就是王牌！"
+		abstract: "在成交额超过2亿之际，农发贷携手《王牌特工》派王牌利是，你就是王牌！"
 	}, {
 		title: "《西游记之孙悟空三打白骨精》派大圣给孩儿们派利是啦，快抢啊！！",
-		abstract: "在成交额超过25亿之际，农发贷携手《西游记之孙悟空三打白骨精》派大圣给孩儿们派利是啦，快抢啊！！！"
+		abstract: "在成交额超过2亿之际，农发贷携手《西游记之孙悟空三打白骨精》派大圣给孩儿们派利是啦，快抢啊！！！"
 	}, {
 		title: "《星球大战7：原力觉醒》的利是，抢到，你就是王者",
-		abstract: "在成交额超过25亿之际，农发贷携手《星球大战7：原力觉醒》给小伙伴们派利是，抢到，你就是王者！"
+		abstract: "在成交额超过2亿之际，农发贷携手《星球大战7：原力觉醒》给小伙伴们派利是，抢到，你就是王者！"
 	}, {
 		title: "《咱们结婚吧》给小伙伴们派结婚利是，愿有情人终成眷属！",
-		abstract: "农发贷成交额突破25亿啦，在此携手鸳鸯配给小伙伴们派结婚利是，愿有情人终成眷属！"
+		abstract: "农发贷成交额突破2亿啦，在此携手鸳鸯配给小伙伴们派结婚利是，愿有情人终成眷属！"
 	}, {
 		title: "《战狼》给你派利是，愿你2015年越战越勇！",
-		abstract: "在成交额超过25亿之际，农发贷携手《战狼》给你派利是，愿你2015年越战越勇！"
+		abstract: "在成交额超过2亿之际，农发贷携手《战狼》给你派利是，愿你2015年越战越勇！"
 	}, {
 		title: "《侏罗纪世界》从远古送来的利是，你肯定想要！",
-		abstract: "在成交额超过25亿之际，农发贷携手《侏罗纪世界》从远古送来的利是，你肯定想要！"
+		abstract: "在成交额超过2亿之际，农发贷携手《侏罗纪世界》从远古送来的利是，你肯定想要！"
 	}];
 	var g_urls = ["http://a2.qpic.cn/psb?/19a0e58d-2fd7-40d3-861d-bccfaf5c9ba2/FRya2C1ILArwvRxcBkQROGm4LkICT0jzudOidg7SCxM!/m/dAkAAAAAAAAA&ek=1&kp=1&pt=0&bo=PAA8AAAAAAAFByQ!&t=5&sce=0-12-12&rf=0-18", /*港囧*/
 		"http://a3.qpic.cn/psb?/19a0e58d-2fd7-40d3-861d-bccfaf5c9ba2/pF48seHnCpr5KqbVcwVvhr44rGGQfyHiupQXcsH1qGU!/m/dAoAAAAAAAAA&ek=1&kp=1&pt=0&bo=PAA8AAAAAAAFByQ!&t=5&sce=0-12-12&rf=0-18", /*失孤*/
@@ -103,8 +103,8 @@ html, body {
 	});
 	
 	function bindWeixinEvent() {//确保分享出去的是领红包的页面，而且要加上加密字段，确保关系链
-		alert("绑定微信分享事件:");
-		g_stage=1;
+		//alert("绑定微信分享事件:");
+		g_stage=6;
 		
 		var shareURL="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx4b6e962611f5e662&redirect_uri=http%3A%2F%2Fwww.51blb.com%2Fhandler%2Fweixin%2Fbonus.html&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect";
 		window.g_url = shareURL;
