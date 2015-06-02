@@ -99,7 +99,7 @@ html, body {
 		timestamp: '1433204183', // 必填，生成签名的时间戳
 		nonceStr: 'randomstr123QQ', // 必填，生成签名的随机串
 		signature: '8f3fa3a1994b2df4e163b7aaa475a9f3aa42dce8',// 必填，签名，见附录1
-		jsApiList: ["openCard","onMenuShareAppMessage", "onMenuShareTimeline","hideMenuItems","onMenuShareQQ","onMenuShareWeibo"] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+		jsApiList: ["openCard","addCard","chooseCard","onMenuShareAppMessage", "onMenuShareTimeline","hideMenuItems","onMenuShareQQ","onMenuShareWeibo"] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
 	});
 	
 	function bindWeixinEvent() {//确保分享出去的是领红包的页面，而且要加上加密字段，确保关系链
