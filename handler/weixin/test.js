@@ -1,4 +1,5 @@
 function main(){
+	//生成一个要求weixin做oauth认证的url 
 	console.log("本利保");
 	var appid="wx4b6e962611f5e662";
 
