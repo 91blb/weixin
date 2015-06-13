@@ -149,7 +149,7 @@ app.use("/src/", express.static(__dirname + "/web/src/")); //静态资源web
 app.use("/web/src/", express.static(__dirname + "/web/src/")); //静态资源web
 app.use("/test/", express.static(__dirname + "/test/")); //静态资源web
 
-var port = 80;
+var port = 3000;
 
 //var port = 3000;
 var host = "127.0.0.1";
