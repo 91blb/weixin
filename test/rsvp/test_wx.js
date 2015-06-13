@@ -9,7 +9,6 @@ var encoding = {
 var url = "";
 var app_id = "wx4b6e962611f5e662";
 var app_secret = "78f0744a1d73bbbd423859840fd1255d";
-var noncestr = "randomstr123QQ";
 
 var sha1 = require("sha1");
 
@@ -46,15 +45,14 @@ function getAccessToken() {
 function getJSTicket(result) {
     //需要accesstoken 才能拉到 jsticket
     console.log("get js ticket");
-    var timestamp = parseInt(new Date().getTime() / 1000); /*秒数*/
+    var timestamp = parseInt(now.getTime() / 1000); /*秒数*/
 
 
 
     var promise = new RSVP.Promise(function(resolve, reject) {
         if (cachedAccessToken) {
-            //console.log("cachedAccessToken", cachedAccessToken);
+            console.log("cachedAccessToken", cachedAccessToken);
             if (cachedAccessToken && cachedAccessToken.timestamp + 7200 > timestamp) { /*还没失效*/
-                console.log("cachedAccessToken is valid");
                 if (cachedJSTicket) { //如果ticket也存在
                     resolve(cachedJSTicket);
                     return; //直接返回
@@ -81,7 +79,7 @@ function getJSTicket(result) {
 
 function gensignature(url) {
     console.log("gensignature");
-    var timestamp = parseInt(new Date().getTime() / 1000); /*秒数*/
+    var timestamp = parseInt(now.getTime() / 1000); /*秒数*/
 
     var dealData = function(result) {
         //console.log("deal data", result);
@@ -91,9 +89,9 @@ function gensignature(url) {
         //var api_ticket="E0o2-at6NcC2OsJiQTlwlJfajP7HsS98gcJSBUdYmmTpx1sgpRLCWgM2M9kISeJ_PoSsgCmFwk8UprE2FF7jRA";
         var data = {};
         data.jsapi_ticket = result.ticket;
-        data.noncestr = noncestr;
-        data.timestamp = timestamp;
-        data.url = url;
+        data.noncestr = "randomstr123QQ";
+        data.timestamp = "1434115401";
+        data.url = url || "http://m.nongfadai.com/npx.html?from=singlemessage&isappinstalled=0";
 
         //var sign = "8f3fa3a1994b2df4e163b7aaa475a9f3aa42dce8";
 
@@ -121,12 +119,11 @@ function gensignature(url) {
 
     var promise = new RSVP.Promise(function(resolve, reject) {
         if (cachedJSTicket) {
+            console.log("cachedJSTicket", cachedJSTicket);
             if (cachedJSTicket && cachedJSTicket.timestamp + 7200 > timestamp) { /*还没失效*/
-                console.log("cachedJSTicket is valid",cachedJSTicket.timestamp,timestamp);
                 var signedResult = dealData(cachedJSTicket);
-                //console.log("signedResult", signedResult);
+                console.log("signedResult", signedResult);
                 resolve(signedResult);
-                return;
             }
         }
 
@@ -140,7 +137,7 @@ function gensignature(url) {
 
             var signedResult = dealData(data);
 
-            //console.log("signedResult", signedResult);
+            console.log("signedResult", signedResult);
             resolve(signedResult);
         })
     });
@@ -154,39 +151,8 @@ function gensignature(url) {
 //getAccessToken();
 //main();
 
-// gensignature().then(function(result) {
-//     console.log("result", result);
-// });
+gensignature().then(function(result) {
+    console.log("result", result);
+});
 
 //gensignature();
-
-//main();
-
-//gensignature();
-module.exports = function(req, res) {
-    //console.log(req.headers);
-    var referer = req.headers.referer;
-    console.log("referer", referer);
-    var startTime=new Date();//记录开始时间
-
-    gensignature(referer).then(function(result) {
-        //console.log("result", result);
-        var wx_conf = {
-            debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-            appId: app_id, // 必填，公众号的唯一标识
-            timestamp: result.timestamp, // 必填，生成签名的时间戳
-            nonceStr: noncestr, // 必填，生成签名的随机串
-            signature: result.sign, // 必填，签名，见附录1
-            jsApiList: ["openCard", "addCard", "chooseCard", "onMenuShareAppMessage", "onMenuShareTimeline", "hideMenuItems", "onMenuShareQQ", "onMenuShareWeibo"] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
-        }
-
-        //console.log("wx_conf",wx_conf);
-        res.contentType("text/javascript");
-        var str = "wx.config(" + JSON.stringify(wx_conf) + ");";
-
-        var endTime=new Date();//记录方法结束时间
-        console.log("___________cost time",endTime-startTime);
-        res.send(str);
-    });
-    /*对referer进行签名*/
-}
