@@ -17,7 +17,7 @@ var RSVP = require('rsvp');
 function a_p(args){
     var promise = new RSVP.Promise(function(resolve, reject) {
         // succeed 
-        console.log("in excute");
+        //console.log("in excute");
         var random=Math.random();
         //console.log("random",random);
         if(args>0.5){
@@ -41,19 +41,18 @@ function b_p(args){
     });
     return promise;
 }
-var x1=a_p(1);
-var x2=x1.then(function(){
-    return b_p;
-});
-console.log("x2",x2);
-x2.then(function(result){
-    console.log("x2 result",result);
-})
-// a_p(1).then(function(result){
-//     console.log("result",result);
+// var x1=a_p(1);
+// var x2=x1.then(function(){
+//     return b_p;
 // });
-
-// b_p(1).then(function(result){
-//     console.log("result",result);
+// console.log("x2",x2);
+// x2.then(function(result){
+//     console.log("x2 result",result);
 // })
+a_p(1).then(function(result){
+    console.log("a result",result);
+    return b_p(1);
+}).then(function(result){
+    console.log("b result",result);
+})
 
