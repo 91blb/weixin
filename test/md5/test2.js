@@ -4,8 +4,8 @@ var path=require("path");
 var key = new NodeRSA();
 var key2 = new NodeRSA();
 var encoding={encoding:"utf8"};
-var str1=fs.readFileSync(path.resolve(__dirname,"pub.key"),encoding);
-var str2=fs.readFileSync(path.resolve(__dirname,"pri.key"),encoding);
+var str1=fs.readFileSync(path.resolve(__dirname,"pri.key"),encoding);
+var str2=fs.readFileSync(path.resolve(__dirname,"pub.key"),encoding);
 //console.log(key);
 
 key.importKey(str1, "private");

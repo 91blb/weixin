@@ -15,6 +15,21 @@ key2.importKey(str2, "public");
 var randomStr1="ltx0ttep-mznkc9d2-l24yz89u-nzffswns";
 var randomStr2="hvn5v7l9-crvl2b20-myzmdsgq-cvyfsd61";
 var max=2500;
+
+var csv=require("fast-csv");
+var fs=require("fs");
+var path=require("path");
+var csvStream = csv.createWriteStream({headers: true}),
+    writableStream = fs.createWriteStream(path.resolve(__dirname,"my.csv"));
+
+writableStream.on("finish", function(){
+  console.log("write csv DONE!");
+});
+
+csvStream.pipe(writableStream);
+
+
+
 for(var i=1;i<=max;i++){
 	var str=randomStr1+i+randomStr2;
 	var md5Str=MD5(str);
@@ -31,5 +46,11 @@ for(var i=1;i<=max;i++){
 	//console.log("output:",md5Str2,md5Str2.substr(0,8));
 
 	console.log(md5Str,signStr,md5Str2.substr(0,8));
+	csvStream.write({source: md5Str, sign: signStr,md5str:md5Str2.substr(0,8)});
 }
-
+// csvStream.write({a: "a0", b: "b0"});
+// csvStream.write({a: "a1", b: "b1"});
+// csvStream.write({a: "a2", b: "b2"});
+// csvStream.write({a: "a3", b: "b4"});
+// csvStream.write({a: "a3", b: "b4"});
+csvStream.end();
