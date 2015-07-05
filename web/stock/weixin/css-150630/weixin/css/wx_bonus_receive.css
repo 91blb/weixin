@@ -1,0 +1,441 @@
+@charset "utf-8";
+body {
+	background-color: #fff;
+}
+body.bg_black {
+	background-color: #000;
+}
+.wx_redbag_info{
+	color:#353434;
+	background-color:#ffb906;
+	line-height:20px;
+	padding:3% 5%;
+}
+.wx_redbag_info i{
+		color:#d63344;
+	font-weight:bold;
+}
+
+.wx_con {
+	max-width: 640px;
+	background-color: #000;
+	margin: 0 auto;
+	padding-bottom: 10px;/*此处额外留点空白*/
+}
+
+/*分享场景 9种背景图片  和对应的文字*/
+.wx_stage {
+	background-color: #000;
+	margin: 0 auto;
+	position:relative;
+	z-index:1;
+}
+.wx_stage_content{
+	top:4%;
+	left:10%;
+	right:10%;
+	z-index:2;
+	position:absolute;
+
+}
+.wx_stage_info {
+	background-color: rgba(255,255,255,0.85);
+	padding: 16px 24px;
+	margin-bottom: 32px;
+	min-height:60px;
+
+}
+
+.wx_stage_con{
+	background-color:#d83c49;
+	height:auto;
+	overflow:visible;
+	border-radius:6px;
+	margin-bottom:12px;
+}
+.wx_stage_box {
+	position: relative;
+	z-index:20;
+	background-color:#F00;
+	border-radius:10px;
+}
+
+.wx_box_content {
+	position: absolute;
+	z-index:21;
+	top:15%;
+	left:10%;
+	right:10%;
+
+}
+.wx_box_1{
+	text-align:center;
+	color:#ffd823;
+	font-size:14px;
+	padding-left:2px;
+	margin-bottom:8px;
+}
+/*分享场景*/
+
+/*分享场景的提示文字*/
+.wx_movie_black{
+	font-weight:bold;
+}
+
+.wx_money_red{
+	color:#d83c49;
+	padding-right:6px;
+	font-weight:bold;
+}
+
+
+/**/
+
+
+/*出错场景  样式开始*/
+.wx_stage_error{
+	top:12%;
+	left:10%;
+	right:10%;
+	z-index:2;
+	position:absolute;
+	display:none;
+}
+
+.stage_error .wx_stage_error{
+	display:block;
+}
+.stage_error .wx_stage_content{
+	display:none;
+}
+.error_text{
+	background-color: rgba(255,255,255,0.85);
+	padding: 12px 10px ;
+	text-align:center;
+	font-size:20px;
+	display:none;
+	height:52px;
+}
+
+.er_code{
+	border-top:4px solid #171505;
+	background-color: rgba(255,255,255,0.85);
+	padding: 16px;
+	padding-bottom:32px;
+}
+.er_code_title{
+	text-align:center;
+	font-size:14px;
+}
+.er_img{
+	margin:0 auto;
+	margin-top:12px;
+	width:60%;
+	display:block;
+}
+
+.stage_error_1 .error_1{
+	display:block;
+}
+.stage_error_2 .error_2{
+	display:block;
+	line-height:52px;
+}
+.stage_error_3 .error_3{
+	display:block;
+	font-size:16px;
+	line-height:26px;
+}
+/*出错场景  样式结束*/
+
+
+/*领取记录列表  样式开始*/
+.wx_record {
+	position: relative;
+	z-index: 200;
+	margin-top: 36px;
+}
+.wx_record_title {
+	padding-left: 4%;
+	padding-right: 4%;
+	height: 40px;
+	line-height: 40px;
+	font-size: 12px;
+	background-color: #d83c49;
+	color: #ffd823;
+}
+.wx_record_list {
+	margin: 0% 3%;
+	background-color: #f0f1f1;
+	padding-bottom: 0px;
+}
+
+.wx_record_nodata {
+	padding: 40px 0;
+	text-align: center;
+	color: #353434;
+	font-size: 14px;
+	margin: 0 3%;
+	background: #f0f1f1;
+}
+.wx_record_item {
+	padding: 10px 12px;
+	padding-top: 12px;
+	font-size: 14px;
+	line-height: 24px;
+	box-sizing: content-box;
+	border-bottom: solid 1px #b3b3b3;
+}
+.wx_record_item span {
+	display: inline-block;
+}
+.wx_phone {
+	color: #353434;
+}
+.wx_time {
+	color: #9f9f9f;
+}
+/*领取记录列表 结束*/
+
+
+
+
+/*遮罩样式 开始*/
+.wx_mask {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	z-index: 2000;
+	background-color: rgba(0,0,0,0.95);
+	display: none;
+}
+/*遮罩样式 结束*/
+
+
+/*活动规则样式  开始*/
+
+.wx_rule_con {
+	max-width: 640px;
+	margin: 0 auto;
+}
+.wx_btn_iknow {
+	background-image: url(../img/redbag/wx_btn_iknow_520.png);
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 260px;
+	height: 70px;
+	margin: 0 auto;
+}
+.wx_rule {
+	float: right;
+	display: inline-block;
+	padding: 4px 8px;
+	margin-top: 10px;
+	background-color: #efd731;
+	color: #2d3131;
+	font-size: 12px;
+	line-height: 14px;
+	border-radius: 14px;
+}
+.wx_share_title {
+	height: 45px;
+	line-height: 45px;
+	color: #cda148;
+	padding: 0 5% 0 7%;
+	border-top: #cda148 solid 1px;
+	border-bottom: #cda148 solid 1px;
+	font-weight: bold;
+	margin-top: 10px;
+}
+.wx_share_close {
+	width: 30px;
+	height: 30px;
+	background: url(../img/redbag/wx_redbag_close_60.png) left top no-repeat;
+	background-size: 30px 30px;
+	display: block;
+	float: right;
+	margin: 8px 0 0 0;
+}
+.wx_share_content {
+	color: #ebebe8;
+	font-size: 14px;
+	padding: 7%;
+	line-height: 25px;
+	margin-bottom: 65px;
+}
+.wx_line2 {
+	color: #909090;
+}
+.wx_money{
+	float:right;
+}
+/*活动规则样式  结束*/
+
+
+/*flexbox 布局样式 开始*/
+.valign {
+	display: -webkit-box;  /* 老版本语法: Safari,  iOS, Android browser, older WebKit browsers.  */
+	display: -moz-box;    /* 老版本语法: Firefox (buggy) */
+	display: -ms-flexbox;  /* 混合版本语法: IE 10 */
+	display: -webkit-flex;  /* 新版本语法： Chrome 21+ */
+	display: flex;       /* 新版本语法： Opera 12.1, Firefox 22+ */
+	/*垂直居中*/	
+  /*老版本语法*/
+	-webkit-box-align: center;
+	-moz-box-align: center;
+	/*混合版本语法*/
+	-ms-flex-align: center;
+	/*新版本语法*/
+	-webkit-align-items: center;
+	align-items: center;
+	/*水平居中*/
+  /*老版本语法*/
+	-webkit-box-pack: center;
+	-moz-box-pack: center;
+	/*混合版本语法*/
+	-ms-flex-pack: center;
+	/*新版本语法*/
+	-webkit-justify-content: center;
+	justify-content: center;
+	
+	-webkit-flex-flow: column wrap;
+	flex-flow: column wrap;
+	-webkit-box-pack: justify;
+	-moz-box-pack: justify;
+	-ms-flex-pack: justify;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+}
+/*flexbox 布局样式  结束*/
+
+
+/*输入手机号样式 开始*/
+.wx_input_div {
+	text-align: center;
+	color: #fff;
+	margin-bottom: 8px;
+	height:64px;
+}
+.wx_input_div input {
+	border:none;
+	font-size: 20px;
+	height: 44px;
+	line-height: 44px;
+	width: 100%;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	text-align: center;
+	font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif, "宋体";
+}
+
+.wx_input_div input::-webkit-input-placeholder{
+	color:#acacac;
+	font-size:16px;
+} 
+.wx_input_div.wx_input_error  input{
+	border: #F00 solid 2px;
+}
+.wx_input_tip {
+	color: #ffd823;
+	font-size: 14px;
+	text-align: center;
+	display:none;
+}
+.wx_input_div.wx_input_error  .wx_input_tip{
+	display:block;
+}
+/*输入手机号  结束*/
+
+
+
+/*按钮  开始*/
+.wx_redbag_btn {
+	height: 44px;
+	line-height: 44px;
+	text-align: center;
+	background-color: #ffb906;
+	color: #fff;
+	font-size: 20px;
+	display: block;
+	border: none;
+	cursor: default;
+	margin-bottom:12px;
+	margin-left:0px;
+	margin-right:0px;
+	width:100%;
+}
+.wx_redbag_btn.hide{
+	display:none;
+}
+.wx_redbag_btn:link, .wx_redbag_btn:visited, .wx_redbag_btn:hover, .wx_redbag_btn:active {
+	color: #fff;
+}
+.wx_redbag_btn:hover, .wx_redbag_btn:active {
+	background-color: #ff8706;
+}
+
+
+.wx_redbag_btn_disable {
+	background-color: #949292;
+}
+
+.wx_redbag_btn_disable:hover {
+	background-color: #949292;
+}
+
+
+.wx_btn_grey{
+	background-color:#949292;
+	color:#ffffff;
+}
+/*按钮  结束*/
+
+
+
+/*拆开红包后的样式  开始*/
+.wx_bonus_amt{/*领取红包金额*/
+	font-size:36px;
+}
+
+.wx_bonus_amt2{/*领取红包总额*/
+	font-size:12px;
+	color:#fff;
+	margin-top:-12px;
+	margin-bottom:4px;
+}
+.myBonusAmt{
+	font-size:12px;
+}
+
+/*拆开红包后的样式  结束*/
+
+
+/*针对不同屏幕下的自适应布局  开始*/
+@media only screen and (max-width: 320px) {
+.wx_share_gz {
+	height: 240px;
+	overflow-y: auto;
+}
+}
+#wx_redbag_received {
+	display: block;
+	z-index: 1000;
+	position: relative;
+	top: -180px;
+	margin: 4% 8%;
+}
+.wx_redbag_tip2 {
+	margin-bottom: 40px;
+}
+.wx_redbag2 {
+	min-height: 200px;
+}
+.wx_redbag_invalid {
+	padding-right: 28px;
+}
+.stage1 { padding-bottom:80px; }
+/*针对不同屏幕下的自适应布局  结束*/

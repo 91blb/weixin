@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 微信红包页面  发红包 -->
+<title>百万红包 谁都能抢！</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta content="telephone=no" name="format-detection" />
+<link rel="stylesheet" type="text/css" href="weixin/css-150630/weixin/css/wx_common.css?v=20150616">
+<link rel="stylesheet" type="text/css" href="weixin/css-150630/weixin/css/wx_bonus_send.css?v=20150616">
+<link rel="stylesheet" type="text/css" href="weixin/css-150630/weixin/css/wx_bonus_receive.css?v=20150616">
+<meta itemprop="name" content="小牛在线送红包了">
+<meta itemprop="image" content="weixin/css-150630/weixin/img/redbag_v2/redbag_send_top.png?v=20150616">
+<meta itemprop="description" content="红包多多，快来抢">
+</head>
+<body class="bg_black">
+<section class="wx_con">
+  <header></header>
+  <div class="wx_redbag">
+    <div class="wx_redbag_bg"></div>
+    <img class="wx_redbag_title" src="weixin/img/top.jpg" width="100%">
+    <div class="wx_redbag_info">我XXX承诺4500点以下绝不卖出。农发贷为大家准备了弹药，股市反击战我们一起打响第一枪。</div>
+    <div class="wx_redbag_money_con">
+      <div  class="wx_stage_con" id="wx_stage_con">
+        <div class="wx_stage_box" id="wx_stage_box">
+          <img class="wx_img_redbag" src="weixin/css-150630/weixin/img/redbag_v2/redbag_box.png?v=20150617" width="100%">
+          <div class="wx_box_content " id="wxRedbagForm">
+            <div class="wx_box_1 hide" id="result_1">亲,您领取的红包总额已达上限!</div>
+            <div class="wx_box_1 hide" id="result_8">亲,你已经领过了哦~</div>
+            <div class="wx_box_1 hide wx_bonus_amt" id="result_2" style="padding-top:15px;">￥20元</div>
+            <div class="wx_box_1" id="promot_1" style="padding-top:20px;">输入你的手机号，就能拆开红包</div>
+            <div class="wx_box_1 hide" id="result_4">手慢了，已经被领光了!</div>
+            <div class="wx_box_1 hide" id="result_5">活动已经结束了!</div>
+            <div class="wx_box_1 hide" id="result_6">红包链接已失效，请联系您的好友重新分享！</div>
+            <div class="wx_box_1 hide wx_bonus_amt2" id="result_7">已领取总额<i id="result_7_amt"></i>元</div>
+            <div class="wx_box_1 hide" id="result_3">恭喜您!现金红包已放入您的小牛在线账户，注册成功即可提现！</div>
+            <div class="wx_input_div" id="wx_input">
+              <input type="tel" style="line-height:normal" value="" id="mobile" maxlength="11" name="mobile" placeholder="请输入您的手机号" autocomplete="off"/>
+              <div class="wx_input_tip">请输入正确的手机号！</div>
+            </div>
+            <div class="wx_redbag_btn wx_redbag_btn_disable" id="wx_btn_submit">拆开红包</div>
+            <a class="wx_redbag_btn hide" href="#" target="_self" id="wx_redbag_draw">去提现</a>
+            <a class="wx_redbag_btn hide" href="#" target="_self" id="wx_redbag_share">我也要发</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+  <!--分享-->
+  <div class="wx_mask" id="wx_mask">
+    <div class="wx_share_guide">
+      <div class="wx_btn_iknow" id="wx_btn_iknow"></div>
+    </div>
+  </div>
+  <!--规则-->
+  <div class="wx_mask" id="wx_mask_gz">
+    <div class="wx_rule_con">
+      <div class="wx_share_title">
+        <a href="javascript:void(0);" class="wx_share_close"></a>
+        活动规则</div>
+      <div class="wx_share_content wx_share_gz"> 1. 活动时间2015.6.10~2015.7.9；<br/>
+        2. 本次红包是可以直接提现的，金额有限，抢完截止； <br/>
+        3. 请先关注小牛在线微信公众号：xiaoniuzaixian，且必须通过微信端绑卡；<br/>
+        4. 所有人都可以抢红包； <br/>
+        5. 每个红包链接有效时间为6个小时； <br/>
+        6. 在活动过程中，严禁违规操作，否则取消活动资格； <br/>
+        7. 红包分享后即可成为好友的理财师，推荐收益高达1%（好友投资额）+0.2%（好友的好友投资额），收益可观<br/>
+        8. 新用户领取红包后，若7天内未绑定银行卡，红包将自动过期；<br/>
+        9. 深圳市小牛互联网金融服务有限公司对本活动规则在法律允许的范围享有解释权。<br/>
+      </div>
+      <div class="wx_btn_iknow" id="wx_btn_iknow2"></div>
+    </div>
+  </div>
+  <!--提示-->
+  <div class="wx_mask" id="wx_mask_tip" style="display:none;">
+    <div class="wx_rule_con">
+      <div class="wx_share_title">
+        <a href="javascript:void(0);" class="wx_share_close"></a>
+        提示</div>
+      <div class="wx_share_content">亲，您好：<br/>
+        本页面需要在微信上打开，使用微信的“发送给好友”功能才能成功发红包哦！<br/>
+        <br/>
+        马上在微信上关注小牛在线公众号“xiaoniuzaixian”，参与本次活动。 </div>
+      <div class="wx_btn_iknow" id="wx_btn_iknow3"></div>
+    </div>
+  </div>
+</section>
+<script>
+    var g_amount=388.0;
+    var g_stage=0;//随机的场景
+    var g_url="";//分享出去的地址
+</script>
+<script type="text/javascript" src="weixin/css-150630/weixin/lib/zepto.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="weixin/css-150630/weixin/js/wx_bonus_receive.js?v=20150616"></script>
+<div style="display:none">
+  <!-- 百度 -->
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?bfadffd6cb8f795e488eccaeb28cab61";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</div>
+</body>
+</html>
