@@ -151,7 +151,7 @@ app.use("/test/", express.static(__dirname + "/test/")); //静态资源web
 
 var port = 3000;
 
-var port = 80;
+//var port = 80;
 var host = "127.0.0.1";
 var host = "0.0.0.0";
 
