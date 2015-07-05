@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>农发贷</title>
+<!-- 微信红包页面  抢红包 -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta content="telephone=no" name="format-detection" />
+<link rel="stylesheet" type="text/css" href="/stock/css/wx_common.css?v=20150617">
+<link rel="stylesheet" type="text/css" href="/stock/css/wx_bonus_send.css?v=20150617">
+<link rel="stylesheet" type="text/css" href="/stock/css/wx_bonus_receive.css?v=20150617">
+<meta itemprop="name" content="农发贷送红包了">
+<meta itemprop="description" content="红包多多，快来抢">
+</head>
+<body class="bg_black">
+<section class="wx_con">
+  <header></header>
+  <!--正常可领取红包-->
+  
+  <div class="wx_stage stage1">
+    <div class="wx_redbag_bg"></div>
+    <img class="wx_redbag_title" src="/stock/img/top.jpg" width="100%">
+    <div class="wx_redbag_info">股市反击战我要打响第一枪，与恶意做空者势不两立，4500点以下绝不卖出。农发贷为大家孝敬一点弹药，英雄来领一发！</div>
+    <div class="wx_redbag_money_con">
+      <div  class="wx_stage_con" id="wx_stage_con">
+        <div class="wx_stage_box" id="wx_stage_box">
+          <img class="wx_img_redbag" src="/stock/img/redbag_v2/redbag_box.png?v=20150617" width="100%">
+          <div class="wx_box_content " id="wxRedbagForm">
+            <div class="wx_box_1 hide" id="result_1">亲,您领取的红包总额已达上限!</div>
+            <div class="wx_box_1 hide" id="result_8">亲,你已经领过了哦~</div>
+            <div class="wx_box_1  wx_bonus_amt" id="result_2"  style="display:block">￥10元</div>
+            <div class="wx_box_1 hide" id="promot_1" style="padding-top:20px;">输入手机号，立刻领10元现金</div>
+            <div class="wx_box_1 hide" id="result_4">手慢了，已经被领光了!</div>
+            <div class="wx_box_1 hide" id="result_5">活动已经结束了!</div>
+            <div class="wx_box_1 hide" id="result_6">红包链接已失效，请联系您的好友重新分享！</div>
+            <div class="wx_box_1 hide wx_bonus_amt2" id="result_7">已领取总额<i id="result_7_amt"></i>元</div>
+            <div class="wx_box_1" id="result_3">恭喜您!现金已放入您的农发贷账户，注册成功即可提现！</div>
+            <div class="wx_input_div" id="wx_input"  style="display: none;">
+              <input type="tel" style="line-height:normal" value="" id="mobile" maxlength="11" name="mobile" placeholder="请输入您的手机号" autocomplete="off"/>
+              <div class="wx_input_tip">请输入正确的手机号！</div>
+            </div>
+            <div class="wx_redbag_btn wx_redbag_btn_disable" id="wx_btn_submit" style="display: none;">承诺4500不卖出</div>
+            <a class="wx_redbag_btn" href="https://m.nongfadai.com/register.html" target="_self" id="wx_redbag_draw">去提现</a>
+            <a class="wx_redbag_btn" href="#" target="_self" id="wx_redbag_share">再来一发</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<input type="hidden" name="weixin_uid" id="weixin_uid" value="$unionid">
+<script type="text/javascript" src="/stock/lib/zepto.min.js"></script>
+<script src="/stock/js/wx_bonus_receive.js"></script>
+</body>
+</html>

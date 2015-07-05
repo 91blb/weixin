@@ -145,7 +145,7 @@ a.wx_blue{
 	line-height:normal;
 	width: 95px;
 	vertical-align: middle;
-	background: url(../img/wx_logo.png?v=20150616) 15px 3px no-repeat;
+	background: url(../../../stock/weixin/css-150630/weixin/img/wx_logo.png?v=20150616) 15px 3px no-repeat;
 	background-size: 70px 33px;
 }
 .wx_top_gap {
@@ -224,7 +224,7 @@ a.wx_blue{
 	display:block;
 }
 .foot_nav a em { font-size:12px; }
-.foot_nav a i { display:block; width:22px; height:23px; margin:0 auto; background:url(../img/foot_icons.png) left top no-repeat; background-size:154px 52px; }
+.foot_nav a i { display:block; width:22px; height:23px; margin:0 auto; background:url(../../../stock/weixin/css-150630/weixin/img/foot_icons.png) left top no-repeat; background-size:154px 52px; }
 a.nav_index_cur,a.nav_invest_cur,a.nav_account_cur,a.nav_about_cur { color: #fd7500; }
 a.nav_index i { background-position:0 0; width:25px; }
 a.nav_index_cur i { background-position:0 -30px; width:25px; }
@@ -259,7 +259,7 @@ a.nav_about_cur i { background-position:-95px -25px; width:38px; }
 	margin-top: 20px;
 	height: 28px;
 	line-height:28px;
-	background: url(../img/wx_loading.gif) center center no-repeat;
+	background: url(../../../stock/weixin/css-150630/weixin/img/wx_loading.gif) center center no-repeat;
 	text-align: center;
 	background-size: 20px 20px;
 }
@@ -544,13 +544,13 @@ a.nav_about_cur i { background-position:-95px -25px; width:38px; }
 	float:left;
 }
 .wx_reward i { display:block; height:11px; line-height:11px; float:left; color:#fff !important; font-size:10px !important; }
-.wx_reward_nba { background:url(../img/wx_list/wx_icon_nba.gif) left top no-repeat; width:25px; height:23px; background-size:25px 13px; }
+.wx_reward_nba { background:url(../../../stock/weixin/css-150630/weixin/img/wx_list/wx_icon_nba.gif) left top no-repeat; width:25px; height:23px; background-size:25px 13px; }
 .wx_reward_nba2 {
 	height: 13px;
 	text-align: right;
 	padding-right: 31px;
 	padding-left: 1px;
-	background:url(../img/wx_list/wx_nba_rebate.png) right top no-repeat;
+	background:url(../../../stock/weixin/css-150630/weixin/img/wx_list/wx_nba_rebate.png) right top no-repeat;
     background-size:32px 13px;
 	overflow:hidden;
 }
@@ -575,7 +575,7 @@ a.nav_about_cur i { background-position:-95px -25px; width:38px; }
 	text-align: right;
 	padding-right: 31px;
 	padding-left: 1px;
-	background:url(../img/wx_list/wx_icon_518.gif) right top no-repeat;
+	background:url(../../../stock/weixin/css-150630/weixin/img/wx_list/wx_icon_518.gif) right top no-repeat;
     background-size:32px 13px;
 	overflow:hidden;
 }
@@ -595,7 +595,7 @@ a.nav_about_cur i { background-position:-95px -25px; width:38px; }
 	overflow: hidden;
 }
 
-.wx_reward_vip { background:url(../img/wx_list/wx_icon_vip.gif) left top no-repeat; width:25px; height:23px; background-size:25px 13px; }
+.wx_reward_vip { background:url(../../../stock/weixin/css-150630/weixin/img/wx_list/wx_icon_vip.gif) left top no-repeat; width:25px; height:23px; background-size:25px 13px; }
 
 .wx_transfer {
 	background: #4ba4ef;
@@ -612,24 +612,24 @@ a.nav_about_cur i { background-position:-95px -25px; width:38px; }
 }
 /*新手*/
 .wx_icon_hot {
-	background: url(../img/wx_list/wx_invest_hot.png) right top no-repeat;
+	background: url(../../../stock/weixin/css-150630/weixin/img/wx_list/wx_invest_hot.png) right top no-repeat;
 	background-size: 45px 45px;
 }
 .wx_icon_hq {
-	background: url(../img/wx_list/wx_invest_hq.png) right top no-repeat;
+	background: url(../../../stock/weixin/css-150630/weixin/img/wx_list/wx_invest_hq.png) right top no-repeat;
 	background-size: 45px 45px;
 }
 .wx_icon_new {
-	background: url(../img/wx_list/wx_invest_new.png) right top no-repeat;
+	background: url(../../../stock/weixin/css-150630/weixin/img/wx_list/wx_invest_new.png) right top no-repeat;
 	background-size: 45px 45px;
 }
 .wx_icon_vip {
-	background: url(../img/wx_list/wx_invest_vip.png) right top no-repeat;
+	background: url(../../../stock/weixin/css-150630/weixin/img/wx_list/wx_invest_vip.png) right top no-repeat;
 	background-size: 45px 45px;
 }
 
 .wx_icon_weixin {
-	background: url(../img/wx_list/wx_invest_weixin.png) right top no-repeat;
+	background: url(../../../stock/weixin/css-150630/weixin/img/wx_list/wx_invest_weixin.png) right top no-repeat;
 	background-size: 45px 45px;
 }
 /*加载更多*/
@@ -678,10 +678,10 @@ a.nav_about_cur i { background-position:-95px -25px; width:38px; }
 	outline:none;
 }
 .input-text-box { display:block; overflow:hidden; }
-.input-mobile { background:url("../img/register/tel.png") no-repeat 10px 10px; background-size:12px 20px; }
-.input-mobile:focus {  background:url("../img/register/tel_cur.png") no-repeat 10px 10px; background-size:12px 20px; }
-.input-password { background:url("../img/register/pass.png") no-repeat 10px 10px; background-size:12px 20px; }
-.input-password:focus {  background:url("../img/register/pass_cur.png") no-repeat 10px 10px; background-size:12px 20px; }
+.input-mobile { background:url("../../../stock/weixin/css-150630/weixin/img/register/tel.png") no-repeat 10px 10px; background-size:12px 20px; }
+.input-mobile:focus {  background:url("../../../stock/weixin/css-150630/weixin/img/register/tel_cur.png") no-repeat 10px 10px; background-size:12px 20px; }
+.input-password { background:url("../../../stock/weixin/css-150630/weixin/img/register/pass.png") no-repeat 10px 10px; background-size:12px 20px; }
+.input-password:focus {  background:url("../../../stock/weixin/css-150630/weixin/img/register/pass_cur.png") no-repeat 10px 10px; background-size:12px 20px; }
 .input-no-icon { padding-left:12px; }
 .input-captcha-img { position:absolute; right:-119px; top:0px; }
 .input-captcha-img img { border:none; width:109px;height:44px; }
@@ -710,21 +710,21 @@ a.nav_about_cur i { background-position:-95px -25px; width:38px; }
 	padding-top:15px;
 }
 .input-check-img {
-	display:inline-block;width:15px;height:15px;background:url('../img/register/checkbox.png') no-repeat;background-size:15px 15px; position:relative; top:2px; 
+	display:inline-block;width:15px;height:15px;background:url('../../../stock/weixin/css-150630/weixin/img/register/checkbox.png') no-repeat;background-size:15px 15px; position:relative; top:2px; 
 }
-.input-checked-img { background-image:url(../img/register/checked.png); }
+.input-checked-img { background-image:url(../../../stock/weixin/css-150630/weixin/img/register/checked.png); }
 
 .input-tip { position:absolute; right:10px; margin-top:-30px; width:16px; height:16px; display:none; }
-.input-checking { background:url(../img/wx_checking.gif) center center no-repeat; }
-.input-checking-ok { background:url(../img/wx_checking_ok.png) center center no-repeat; background-size:15px 15px; }
-.input-checking-fail { background:url(../img/wx_checking_fail.png) center center no-repeat;  background-size:15px 15px; }
+.input-checking { background:url(../../../stock/weixin/css-150630/weixin/img/wx_checking.gif) center center no-repeat; }
+.input-checking-ok { background:url(../../../stock/weixin/css-150630/weixin/img/wx_checking_ok.png) center center no-repeat; background-size:15px 15px; }
+.input-checking-fail { background:url(../../../stock/weixin/css-150630/weixin/img/wx_checking_fail.png) center center no-repeat;  background-size:15px 15px; }
 .input-code-box { display:block; overflow:hidden; padding-right:100px; width:auto; position:relative; }
 .input-code-box input { float:left; width:100%; border-right:none; }
 .input-code-box input::-webkit-input-placeholder { color:#dfdfdf; font-size:12px; }
 .input-code-btn { background: #f7ae48; height: 44px; line-height: 44px; float: right; width: 100px; text-align: center; color: #fff; font-size: 12px; position:absolute; right:0; top:0; }
 .input-disabled { background:#999; }
 .input-readonly { background-color:#fff; color:#9c9c9c }
-.input-select { background:url(../img/draw/draw-sel.png) right center no-repeat; background-size:27px 20px; color:#5ca3e1; padding-right:38px; }
+.input-select { background:url(../../../stock/weixin/css-150630/weixin/img/draw/draw-sel.png) right center no-repeat; background-size:27px 20px; color:#5ca3e1; padding-right:38px; }
 .input-select-disabled { background-color:#ededed; color:#c8c8cd; }
 
 /*成功提示页面*/
@@ -741,9 +741,9 @@ a.nav_about_cur i { background-position:-95px -25px; width:38px; }
 	-webkit-justify-content: center;
 	justify-content: center;
 }
-.wx_invest_ok { background:url(../img/wx_list/wx_arrow_icon.gif) left 5px no-repeat; background-size:28px 28px; margin:40px 0; padding-left:40px; max-width:80%; }
-.wx_invest_error { background-image:url(../img/wx_list/wx_error.gif); background-position:left center; }
-.wx_invest_tip { background-image:url(../img/wx_list/wx_tip.gif); background-position:left center; }
+.wx_invest_ok { background:url(../../../stock/weixin/css-150630/weixin/img/wx_list/wx_arrow_icon.gif) left 5px no-repeat; background-size:28px 28px; margin:40px 0; padding-left:40px; max-width:80%; }
+.wx_invest_error { background-image:url(../../../stock/weixin/css-150630/weixin/img/wx_list/wx_error.gif); background-position:left center; }
+.wx_invest_tip { background-image:url(../../../stock/weixin/css-150630/weixin/img/wx_list/wx_tip.gif); background-position:left center; }
 .wx_invest_ok p { color:#666; font-size:14px; line-height:24px; }
 .wx_invest_ok p i { color:#fd7500; }
 .wx_invest_ok p a { color:#3286c4; text-decoration:none; }
@@ -783,7 +783,7 @@ a.nav_about_cur i { background-position:-95px -25px; width:38px; }
 .fm-item fieldset { padding:0; margin:0; list-style:none; border:none; }
 .fm-label { width:53px; position:absolute; left:0; top:0; height:50px; display:block; z-index:9; }
 .fm-label i { display:block; position:absolute; right:0; bottom:0; width:1px; background-color:#e5e5e5; height:6px; }
-.fm-label span { display:block; width:100%; height:100%; background-image:url(../img/form/fm_icon.png); background-size:60px 300px; margin:15px auto 0; }
+.fm-label span { display:block; width:100%; height:100%; background-image:url(../../../stock/weixin/css-150630/weixin/img/form/fm_icon.png); background-size:60px 300px; margin:15px auto 0; }
 .fm-box { width:auto; display:block; height:50px; margin-left:60px; border-bottom:#e5e5e5 solid 1px; position:relative; }
 .fm-item-r .fm-box { margin-right:110px; position:relative; }
 .fm-item-btn { width:110px; position:absolute; right:-110px; top:0; display:block; height:50px; line-height:50px; font-size:13px; color:#fff; background:#f7ae48; text-align:center; text-decoration:none; }
@@ -792,13 +792,13 @@ a.nav_about_cur i { background-position:-95px -25px; width:38px; }
 .fm-input-val { height:50px; line-height:51px; color:#666; }
 
 .fm-arrow { position:absolute; right:10px; top:15px; color:#666; height:26px; overflow:hidden;}
-.fm-arrow i { display:block; width:10px; height:13px; background:url(../img/form/fm_icon.png) -50px -2px no-repeat; background-size:60px 300px; float:right; margin:3px 8px 0 20px; }
+.fm-arrow i { display:block; width:10px; height:13px; background:url(../../../stock/weixin/css-150630/weixin/img/form/fm_icon.png) -50px -2px no-repeat; background-size:60px 300px; float:right; margin:3px 8px 0 20px; }
 .fm-icon { position:absolute; right:16px; top:15px; width:17px; height:17px; overflow:hidden; display:none; }
-.fm-clear { background:url(../img/form/fm_icon.png) left -77px no-repeat; background-size:60px 300px; display:none; }
+.fm-clear { background:url(../../../stock/weixin/css-150630/weixin/img/form/fm_icon.png) left -77px no-repeat; background-size:60px 300px; display:none; }
 .fm-action { position:absolute; right:16px; top:0; width:27px; height:17px; overflow:hidden; color:#5ca3e1; font-size:13px; display:block; height:50px; line-height:50px; }
-.fm-checking { background:url(../img/wx_checking.gif) center center no-repeat; background-size:auto; }
-.fm-checking-ok { background:url(../img/wx_checking_ok.png) center center no-repeat; background-size:17px 17px; }
-.fm-checking-fail { background:url(../img/wx_checking_fail.png) center center no-repeat;  background-size:17px 17px; }
+.fm-checking { background:url(../../../stock/weixin/css-150630/weixin/img/wx_checking.gif) center center no-repeat; background-size:auto; }
+.fm-checking-ok { background:url(../../../stock/weixin/css-150630/weixin/img/wx_checking_ok.png) center center no-repeat; background-size:17px 17px; }
+.fm-checking-fail { background:url(../../../stock/weixin/css-150630/weixin/img/wx_checking_fail.png) center center no-repeat;  background-size:17px 17px; }
 
 
 .fm-error { display:none; line-height:20px; text-align:center; color:#ff0000; font-size:12px; padding-top:10px; }
@@ -818,7 +818,7 @@ a.nav_about_cur i { background-position:-95px -25px; width:38px; }
 .fm-tip a i { color:#666; display:block; }
 .fm-tip2 { padding:0 10px 0 20px; margin-top:0; border-top:0; height:42px; line-height:42px; border-bottom:#e5e5e5 solid 1px; background:#fff; }
 .fm-tip3 { padding:20px 40px; background:#fff; text-align:center; }
-.fm-tip3-icon { display:block; width:29px; height:29px; background:url(../img/form/fm_icon.png) 0 -181px no-repeat; background-size:60px 300px; position:absolute; left:0; top:0px; }
+.fm-tip3-icon { display:block; width:29px; height:29px; background:url(../../../stock/weixin/css-150630/weixin/img/form/fm_icon.png) 0 -181px no-repeat; background-size:60px 300px; position:absolute; left:0; top:0px; }
 .fm-tip3-main { padding:5px 0 0 40px; position:relative; text-align:left; margin:0 auto; display:block; }
 .fm-tip3-main h3 { font-size:16px; color:#666; padding-bottom:5px; }
 .fm-tip3-main p { color:#999; font-size:12px; line-height:22px; }

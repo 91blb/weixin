@@ -12,7 +12,7 @@ function main(){
 	url+=appid;
 	url+="&redirect_uri=";
 	url+=encodeURIComponent(myUrl);
-	url+="&response_type=code&scope=snsapi_userinfo";
+	url+="&response_type=code&scope=snsapi_base";
 	url+="&state=STATE&connect_redirect=1#wechat_redirect";
 
 	console.log(url);

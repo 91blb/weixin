@@ -58,6 +58,10 @@ body.bg_black {
 	z-index:20;
 	background-color:#F00;
 	border-radius:10px;
+	background-image:url(../img/redbag_v2/redbag_box.png);
+	background-position:center center;
+	background-size:contain;
+	background-repeat:no-repeat;
 }
 
 .wx_box_content {
@@ -221,7 +225,7 @@ body.bg_black {
 	margin: 0 auto;
 }
 .wx_btn_iknow {
-	background-image: url(../img/redbag/wx_btn_iknow_520.png);
+	background-image: url(../../../stock/weixin/css-150630/weixin/img/redbag/wx_btn_iknow_520.png);
 	background-position: top center;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -253,7 +257,7 @@ body.bg_black {
 .wx_share_close {
 	width: 30px;
 	height: 30px;
-	background: url(../img/redbag/wx_redbag_close_60.png) left top no-repeat;
+	background: url(../../../stock/weixin/css-150630/weixin/img/redbag/wx_redbag_close_60.png) left top no-repeat;
 	background-size: 30px 30px;
 	display: block;
 	float: right;

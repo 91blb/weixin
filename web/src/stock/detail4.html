@@ -8,9 +8,9 @@
 <meta content="yes" name="apple-mobile-web-app-capable" />
 <meta content="black" name="apple-mobile-web-app-status-bar-style" />
 <meta content="telephone=no" name="format-detection" />
-<link rel="stylesheet" type="text/css" href="weixin/css-150630/weixin/css/wx_common.css?v=20150616">
-<link rel="stylesheet" type="text/css" href="weixin/css-150630/weixin/css/wx_bonus_send.css?v=20150616">
-<link rel="stylesheet" type="text/css" href="weixin/css-150630/weixin/css/wx_bonus_receive.css?v=20150616">
+<link rel="stylesheet" type="text/css" href="css/wx_common.css?v=20150616">
+<link rel="stylesheet" type="text/css" href="css/wx_bonus_send.css?v=20150616">
+<link rel="stylesheet" type="text/css" href="css/wx_bonus_receive.css?v=20150616">
 <meta itemprop="name" content="小牛在线送红包了">
 <meta itemprop="image" content="weixin/css-150630/weixin/img/redbag_v2/redbag_send_top.png?v=20150616">
 <meta itemprop="description" content="红包多多，快来抢">
@@ -20,29 +20,29 @@
   <header></header>
   <div class="wx_redbag">
     <div class="wx_redbag_bg"></div>
-    <img class="wx_redbag_title" src="weixin/img/top.jpg" width="100%">
-    <div class="wx_redbag_info">我XXX承诺4500点以下绝不卖出。农发贷为大家准备了弹药，股市反击战我们一起打响第一枪。</div>
+    <img class="wx_redbag_title" src="img/top.jpg" width="100%">
+    <div class="wx_redbag_info">股市反击战我要打响第一枪，与恶意做空者势不两立，4500点以下绝不卖出。农发贷为大家孝敬一点弹药，英雄来领一发！</div>
     <div class="wx_redbag_money_con">
       <div  class="wx_stage_con" id="wx_stage_con">
         <div class="wx_stage_box" id="wx_stage_box">
-          <img class="wx_img_redbag" src="weixin/css-150630/weixin/img/redbag_v2/redbag_box.png?v=20150617" width="100%">
+          <img class="wx_img_redbag" src="img/redbag_v2/redbag_box.png?v=20150617" width="100%">
           <div class="wx_box_content " id="wxRedbagForm">
             <div class="wx_box_1 hide" id="result_1">亲,您领取的红包总额已达上限!</div>
             <div class="wx_box_1 hide" id="result_8">亲,你已经领过了哦~</div>
-            <div class="wx_box_1 hide wx_bonus_amt" id="result_2" style="padding-top:15px;">￥20元</div>
-            <div class="wx_box_1" id="promot_1" style="padding-top:20px;">输入你的手机号，就能拆开红包</div>
+            <div class="wx_box_1 hide wx_bonus_amt" id="result_2" style="display:block">￥11</div>
+            <div class="wx_box_1" id="promot_1" style="padding-top: 20px; display: none;">输入你的手机号，就能拆开红包</div>
             <div class="wx_box_1 hide" id="result_4">手慢了，已经被领光了!</div>
             <div class="wx_box_1 hide" id="result_5">活动已经结束了!</div>
             <div class="wx_box_1 hide" id="result_6">红包链接已失效，请联系您的好友重新分享！</div>
             <div class="wx_box_1 hide wx_bonus_amt2" id="result_7">已领取总额<i id="result_7_amt"></i>元</div>
-            <div class="wx_box_1 hide" id="result_3">恭喜您!现金红包已放入您的小牛在线账户，注册成功即可提现！</div>
-            <div class="wx_input_div" id="wx_input">
-              <input type="tel" style="line-height:normal" value="" id="mobile" maxlength="11" name="mobile" placeholder="请输入您的手机号" autocomplete="off"/>
+            <div class="wx_box_1 hide" id="result_3" style="display: block;">恭喜您!现金红包已放入您的农发贷账户，注册成功即可提现！</div>
+            <div class="wx_input_div" id="wx_input" style="display: none;">
+              <input type="tel" style="line-height:normal" value="" id="mobile" maxlength="11" name="mobile" placeholder="请输入您的手机号" autocomplete="off">
               <div class="wx_input_tip">请输入正确的手机号！</div>
             </div>
-            <div class="wx_redbag_btn wx_redbag_btn_disable" id="wx_btn_submit">拆开红包</div>
-            <a class="wx_redbag_btn hide" href="#" target="_self" id="wx_redbag_draw">去提现</a>
-            <a class="wx_redbag_btn hide" href="#" target="_self" id="wx_redbag_share">我也要发</a>
+            <div class="wx_redbag_btn wx_stage_btn_disabled" id="wx_btn_submit" style="display: none;">正在拆开红包...</div>
+            <a class="wx_redbag_btn" href="http://www.baidu.com" target="_self" id="wx_redbag_draw">去提现</a>
+            <a class="wx_redbag_btn" href="http://test.nfd.com/detail3.html" target="_self" id="wx_redbag_share">让子弹再飞</a>
           </div>
         </div>
       </div>
@@ -94,9 +94,9 @@
     var g_stage=0;//随机的场景
     var g_url="";//分享出去的地址
 </script>
-<script type="text/javascript" src="weixin/css-150630/weixin/lib/zepto.min.js"></script>
+<script type="text/javascript" src="lib/zepto.min.js"></script>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-<script type="text/javascript" src="weixin/css-150630/weixin/js/wx_bonus_receive.js?v=20150616"></script>
+<script type="text/javascript" src="js/wx_bonus_receive.js?v=20150616"></script>
 <div style="display:none">
   <!-- 百度 -->
   <script>

@@ -79,7 +79,7 @@ $(function(){
 		param["mobile"] = mobile.val();
 		/*param["amount"] = "";*/
 		$.ajax({
-			url:"/weixin/bonus/receive.json",
+			url:"/handler/weixin/getBullet.json",
 			beforeSend: function(){
 				$this.html("正在拆开红包...").addClass("wx_stage_btn_disabled");
 			},
@@ -138,15 +138,8 @@ $(function(){
 
 				}
 				if(data.myBonusShareUrl){//我的红包  我也要发
-					$("#wx_redbag_share").html("我也要发<i class='myBonusAmt'>(可发红包"+data.myBonusAmt+"元)</i>");
+					//$("#wx_redbag_share").html("我也要发");
 					$("#wx_redbag_share").removeClass("hide").attr("href",data.myBonusShareUrl);
-				}
-				
-				var box=$("#wx_stage_box")[0];
-				var fullHeight=(box.scrollHeight);
-				//alert("box"+fullHeight+"-"+box.clientHeight);
-				if(fullHeight>box.clientHeight){
-					$("#wx_stage_con").height(fullHeight+6);
 				}
 			},
 			error:function(xhr,err){
