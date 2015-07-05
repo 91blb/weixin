@@ -29,6 +29,13 @@ body.bg_black {
 	margin: 0 auto;
 	position:relative;
 	z-index:1;
+
+}
+.wx_redbag_title{
+	background-image:url(../img/top.jpg);
+	background-position:center center;
+	background-size:contain;
+	background-repeat:no-repeat;
 }
 .wx_stage_content{
 	top:4%;
