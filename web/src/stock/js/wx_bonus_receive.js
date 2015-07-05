@@ -130,13 +130,7 @@ $(function(){
 					$("#promot_1,#wx_input,#wx_btn_submit").hide();
 					$("#result_6").show().css("marginTop","32px");
 				}
-				
-				
-				if(data.totalRecievedAmt){/*领取红包总额*/
-					$("#result_7_amt").html(data.totalRecievedAmt);
-					$("#result_7").show();
 
-				}
 				if(data.myBonusShareUrl){//我的红包  我也要发
 					//$("#wx_redbag_share").html("我也要发");
 					$("#wx_redbag_share").removeClass("hide").attr("href",data.myBonusShareUrl);
