@@ -163,7 +163,7 @@ $(function(result) {
 	//alert(data.timestamp);
 	//alert(data.nonceStr);
 	wx.config({
-		debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+		debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
 		appId: 'wx4b6e962611f5e662', // 必填，公众号的唯一标识
 		//appId:"wxa1d1ccd49006b0c5",//测试公众号
 		timestamp: "" + data.timestamp, // 必填，生成签名的时间戳
@@ -193,13 +193,13 @@ $(function(result) {
 			] // 要隐藏的菜单项，只能隐藏“传播类”和“保护类”按钮，所有menu项见附录3
 		});
 
-		//bindWeixinEvent(data);
-		alert("微信接口调用成功");
+		bindWeixinEvent(data);
+		//alert("微信接口调用成功");
 	});
 	wx.error(function(res) {
 		console.log("error", arguments);
 		g_log("error" + res);
-		if (/xiaoniu88\.com/.test(document.location.href)) {
+		if (/51blb\.com/.test(document.location.href)) {
 			//alert("微信接口调用失败");
 		}
 	});
@@ -207,14 +207,14 @@ $(function(result) {
 
 	function bindWeixinEvent(data) {
 		//alert("shareURL:"+data.shareURL);
-		window.g_url = data.shareURL;
+		//window.g_url = data.shareURL;
 		if (typeof(g_stage) == "undefined") {
 			g_stage = 0;
 		}
-		var title = g_data[g_stage].title;
-		var des = g_data[g_stage].abstract;
-		var imgUrl = g_urls[g_stage];
-		var linkUrl = window.g_url || document.location.href.split('#')[0];
+		var title = "股市反击第一枪，有种你就来一发";
+		var des = "敢承诺4500点以下不卖出？壮士请受农发贷一拜，180元红包请您收下。";
+		var imgUrl = "http://www.51blb.com/stock/img/gun.jpg";//
+		var linkUrl = wxconf.shareUrl;//分享链接
 		wx.onMenuShareTimeline({
 			title: title + des, // 分享标题
 			link: linkUrl, // 分享链接

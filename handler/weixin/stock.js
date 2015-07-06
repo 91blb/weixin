@@ -3,6 +3,7 @@ console.log("本利保");
 var app_id = "wx4b6e962611f5e662";
 var app_secret = "78f0744a1d73bbbd423859840fd1255d";
 var getSign = require("./getSign");
+var getAuthUrl=require("./getAuthUrl");
 
 var RSVP = require('rsvp');
 //console.log("RSVP",RSVP);
@@ -108,6 +109,7 @@ module.exports = function(req, res, opt) {
 			})
 			.then(function(result) {
 				data.wxconf = JSON.stringify(result);
+				data.shareUrl=getAuthUrl(data.unionid);
 				console.log("data.wxconf", data);
 				res.render("stock.vm", data);
 			})
