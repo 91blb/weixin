@@ -87,13 +87,6 @@ module.exports = function(req, res, opt) {
 	//log(req);
 	//console.log("req.url",req.url);
 	var url=req.protocol+"://"+req.hostname+req.originalUrl;
-	getSign(url)
-	.then(function(result){
-		console.log("getSignResult",result);
-	})
-	.catch(function(err){
-		console.log("getSignError",err);
-	});
 	console.log("req.originalUrl",url);
 	console.log("bonus query param:", req.query);
 	//console.log(req.query);
@@ -115,7 +108,7 @@ module.exports = function(req, res, opt) {
 			})
 			.then(function(result){
 				data.wxconf=JSON.stringify(result);
-				console.log("data.wxconf",data.wxconf);
+				console.log("data.wxconf",data);
 				res.render("stock.vm", data);
 			})
 			.catch(function(err) {
