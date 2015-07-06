@@ -164,7 +164,7 @@ $(function(result) {
 		data = result.data;
 		//g_log(JSON.stringify(data));
 	}
-
+    return;
 	//alert(data.timestamp);
 	//alert(data.nonceStr);
 	wx.config({
