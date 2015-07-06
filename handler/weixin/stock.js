@@ -117,6 +117,7 @@ module.exports = function(req, res, opt) {
 			})
 	} else {
 		if (a) {
+			//该页面必须要在微信中打开
 			res.render("stock2.vm", {
 				unionid: ""
 			});
