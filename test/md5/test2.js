@@ -10,7 +10,7 @@ var str2=fs.readFileSync(path.resolve(__dirname,"pub.key"),encoding);
 
 key.importKey(str1, "private");
 //key.importKey(str2, "public");
-//console.log("isPrivate",key.isPrivate());
+console.log("isPrivate",key.isPrivate());
 key2.importKey(str2, "public");
 
 var str="123456"
