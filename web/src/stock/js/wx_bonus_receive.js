@@ -212,8 +212,8 @@ $(function(result) {
 			g_stage = 0;
 		}
 		var title = "股市反击第一枪，有种你就来一发";
-		var des = "敢承诺4500点以下不卖出？壮士请受农发贷一拜，180元红包请您收下。";
-		var imgUrl = "http://www.51blb.com/stock/img/gun.jpg";//
+		var des = "敢承诺4500点以下不卖出？壮士请受农发贷一拜，180元红包请笑纳。";
+		var imgUrl = "http://www.51blb.com/stock/img/gun2.jpg";//
 		var linkUrl = wxconf.shareUrl;//分享链接
 		wx.onMenuShareTimeline({
 			title: title + des, // 分享标题
