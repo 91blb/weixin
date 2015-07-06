@@ -24,10 +24,10 @@ function getURL(url) {
         // succeed 
         var request = require("request");
         request(url, function(err, res, body) {
-            if (err) reject(err);
-            else resolve(body);
-        })
-        // or reject 
+                if (err) reject(err);
+                else resolve(body);
+            })
+            // or reject 
     });
     return promise;
 }
@@ -122,7 +122,7 @@ function gensignature(url) {
     var promise = new RSVP.Promise(function(resolve, reject) {
         if (cachedJSTicket) {
             if (cachedJSTicket && cachedJSTicket.timestamp + 7200 > timestamp) { /*还没失效*/
-                console.log("cachedJSTicket is valid",cachedJSTicket.timestamp,timestamp);
+                console.log("cachedJSTicket is valid", cachedJSTicket.timestamp, timestamp);
                 var signedResult = dealData(cachedJSTicket);
                 //console.log("signedResult", signedResult);
                 resolve(signedResult);
@@ -150,6 +150,7 @@ function gensignature(url) {
     //arr.push(api_ticket);
     //timestamp、card_id、code、openid、balance
 }
+
 //module.exports=getAccessToken;
 //getAccessToken();
 //main();
@@ -163,23 +164,25 @@ function gensignature(url) {
 //main();
 
 //gensignature();
-module.exports = function(referer,cb) {
-    //console.log(req.headers);
-    var startTime=new Date();//记录开始时间
+module.exports = gensignature;
 
-    gensignature(referer).then(function(result) {
-        //console.log("result", result);
-        var wx_conf = {
-            debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-            appId: app_id, // 必填，公众号的唯一标识
-            timestamp: result.timestamp, // 必填，生成签名的时间戳
-            nonceStr: noncestr, // 必填，生成签名的随机串
-            signature: result.sign, // 必填，签名，见附录1
-            jsApiList: ["openCard", "addCard", "chooseCard", "onMenuShareAppMessage", "onMenuShareTimeline", "hideMenuItems", "onMenuShareQQ", "onMenuShareWeibo"] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
-        }
+// function(referer, cb) {
+//     //console.log(req.headers);
+//     var startTime = new Date(); //记录开始时间
 
-        //console.log("wx_conf",wx_conf);
-        cb(wx_conf);
-    });
-    /*对referer进行签名*/
-}
+//     gensignature(referer).then(function(result) {
+//         //console.log("result", result);
+//         var wx_conf = {
+//             debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+//             appId: app_id, // 必填，公众号的唯一标识
+//             timestamp: result.timestamp, // 必填，生成签名的时间戳
+//             nonceStr: noncestr, // 必填，生成签名的随机串
+//             signature: result.sign, // 必填，签名，见附录1
+//             jsApiList: ["openCard", "addCard", "chooseCard", "onMenuShareAppMessage", "onMenuShareTimeline", "hideMenuItems", "onMenuShareQQ", "onMenuShareWeibo"] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+//         }
+
+//         //console.log("wx_conf",wx_conf);
+//         cb(wx_conf);
+//     });
+//     /*对referer进行签名*/
+// }
