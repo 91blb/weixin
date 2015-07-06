@@ -86,7 +86,7 @@ module.exports = function(req, res, opt) {
 	var a=req.query.a||0;
 	//log(req);
 	//console.log("req.url",req.url);
-	console.log("req.originalUrl",req.protocol+"://"+req.domain+req.originalUrl);
+	console.log("req.originalUrl",req.protocol+"://"+req.host+req.originalUrl);
 	console.log("bonus query param:", req.query);
 	//console.log(req.query);
 	//console.log("opt",opt);
