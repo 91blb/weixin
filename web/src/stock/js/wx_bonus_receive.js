@@ -131,7 +131,7 @@ $(function() {
 
                 if (data.myBonusShareUrl) { //我的红包  我也要发
                     //$("#wx_redbag_share").html("我也要发");
-                    $("#wx_redbag_share").removeClass("hide").data("href", data.myBonusShareUrl);
+                    $("#wx_btn_share").removeClass("hide").data("href", data.myBonusShareUrl);
                 }
             },
             error: function(xhr, err) {
