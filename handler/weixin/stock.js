@@ -87,16 +87,17 @@ module.exports = function(req, res, opt) {
 	//console.log("RSVP",RSVP);
 	if (code) {
 		getOuthToken(code)
-			.then(getUserInfo)
+			//.then(getUserInfo)
 			.then(function(result) {
 				var data = JSON.parse(result);
-				data.headimgurl = data.headimgurl.replace(/\\/g, "");
+				//data.headimgurl = data.headimgurl.replace(/\\/g, "");
 				
 				//判断用户是否已经领过红包,如果没有领过,则进入领红包页面
 				//如果已经领过，则进入兑现红包页面
 				res.render("stock.vm", data);
 			})
 			.catch(function(err) {
+				console.log("err",err);
 				res.send(err);
 			})
 	}
