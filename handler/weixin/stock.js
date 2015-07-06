@@ -2,7 +2,7 @@ console.log("getUserInfo");
 console.log("本利保");
 var app_id = "wx4b6e962611f5e662";
 var app_secret = "78f0744a1d73bbbd423859840fd1255d";
-
+var getSign=require("./getSign");
 
 var RSVP = require('rsvp');
 //console.log("RSVP",RSVP);
@@ -86,7 +86,15 @@ module.exports = function(req, res, opt) {
 	var a=req.query.a||0;
 	//log(req);
 	//console.log("req.url",req.url);
-	console.log("req.originalUrl",req.protocol+"://"+req.host+req.originalUrl);
+	var url=req.protocol+"://"+req.host+req.originalUrl;
+	getSign(url)
+	.then(function(result){
+		console.log("getSignResult",result);
+	})
+	.catch(function(err){
+		console.log("getSignError",err);
+	});
+	console.log("req.originalUrl",url);
 	console.log("bonus query param:", req.query);
 	//console.log(req.query);
 	//console.log("opt",opt);
