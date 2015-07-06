@@ -7,7 +7,7 @@ function main(){
 	//var appid="wxdd2f29ae7d42c94d";
 
 	//var myUrl="http://www.51blb.com/handler/weixin/bonus.html";
-	var myUrl="http://www.51blb.com/handler/weixin/stock.html";
+	var myUrl="http://www.51blb.com/handler/weixin/stock.html?a=10&b=20";
 	var baseUrl="https://open.weixin.qq.com/connect/oauth2/authorize?";
 	var url=baseUrl+"appid=";
 	url+=appid;
@@ -18,6 +18,7 @@ function main(){
 	url+="&state=STATE&connect_redirect=1#wechat_redirect";
 
 	console.log(url);
+	return url;
 }
 
 main();

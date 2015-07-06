@@ -219,7 +219,7 @@ body.bg_black {
 	right: 0px;
 	bottom: 0px;
 	z-index: 2000;
-	background-color: rgba(0,0,0,0.95);
+	background-color: rgba(0,0,0,0.85);
 	display: none;
 }
 /*遮罩样式 结束*/
@@ -232,7 +232,7 @@ body.bg_black {
 	margin: 0 auto;
 }
 .wx_btn_iknow {
-	background-image: url(../../../stock/weixin/css-150630/weixin/img/redbag/wx_btn_iknow_520.png);
+	background-image: url(../img/redbag/wx_btn_iknow_520.png);
 	background-position: top center;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -264,7 +264,7 @@ body.bg_black {
 .wx_share_close {
 	width: 30px;
 	height: 30px;
-	background: url(../../../stock/weixin/css-150630/weixin/img/redbag/wx_redbag_close_60.png) left top no-repeat;
+	background: url(../img/redbag/wx_redbag_close_60.png) left top no-repeat;
 	background-size: 30px 30px;
 	display: block;
 	float: right;

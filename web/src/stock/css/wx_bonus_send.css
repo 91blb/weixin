@@ -35,7 +35,7 @@ body.bg_black{
 }
 
 .wx_share_guide{
-	background-image:url(../../../stock/weixin/css-150630/weixin/img/redbag/wx_share_guide_520.png);
+	background-image:url(../img/redbag/wx_share_guide_520.png);
 	background-position:top center;
 	background-repeat:no-repeat;
 	background-size:contain;
@@ -45,7 +45,7 @@ body.bg_black{
 }
 
 .wx_btn_iknow{
-	background-image:url(../../../stock/weixin/css-150630/weixin/img/redbag/wx_btn_iknow_520.png);
+	background-image:url(../img/redbag/wx_btn_iknow_520.png);
 	background-position:top center;
 	background-repeat:no-repeat;
 	background-size:contain;
@@ -246,7 +246,7 @@ body.bg_black{
 .wx_redbag_input_tip { color:#ff0000; font-size:14px; text-align:center; margin-top:-10px; }
 
 .wx_share_title { height:45px; line-height:45px; color:#cda148; padding:0 5% 0 7%; border-top:#cda148 solid 1px; border-bottom:#cda148 solid 1px; font-weight:bold; margin-top:10px; }
-.wx_share_close { width:30px; height:30px; background:url(../../../stock/weixin/css-150630/weixin/img/redbag/wx_redbag_close_60.png) left top no-repeat; background-size:30px 30px; display:block; float:right; margin:8px 0 0 0; }
+.wx_share_close { width:30px; height:30px; background:url(../img/redbag/wx_redbag_close_60.png) left top no-repeat; background-size:30px 30px; display:block; float:right; margin:8px 0 0 0; }
 .wx_share_content { color:#ebebe8; font-size:14px; padding:7%; line-height:25px; margin-bottom:65px; }
 .wx_record_nodata { padding:40px 0; text-align:center; color:#353434; font-size:14px; margin:0 3%; background:#f0f1f1; }
 .wx_line2 { color:#909090; }
@@ -261,7 +261,7 @@ body.bg_black{
 .wx_redbag_tip3 p.wx_redbag_tip3_header { text-align:center; border-bottom:#171505 solid 3px; margin:0; font-size:20px; padding-bottom:20px; line-height:30px; }
 .wx_redbag_tip3_center { text-align:center; color:#353434; padding:20px 0; }
 .wx_redbag_tip3_center p { line-height:25px; }
-.wx_redbag_ewm { width:124px; height:124px; background:url(../../../stock/weixin/css-150630/weixin/img/redbag/wx_ewm.gif) left top no-repeat; background-size:124px 124px; margin:0 auto; margin-top:10px; }
+.wx_redbag_ewm { width:124px; height:124px; background:url(../img/redbag/wx_ewm.gif) left top no-repeat; background-size:124px 124px; margin:0 auto; margin-top:10px; }
 
 .wx_redbag_register { background:#efd731; padding:10px 0; margin-top:30px; }
 .wx_redbag_register h4 { font-size:14px; color:#666; text-align:center; padding-top:10px; }
