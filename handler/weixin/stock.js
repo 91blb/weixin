@@ -86,7 +86,7 @@ module.exports = function(req, res, opt) {
 	var a=req.query.a||0;
 	//log(req);
 	//console.log("req.url",req.url);
-	var url=req.protocol+"://"+req.host+req.originalUrl;
+	var url=req.protocol+"://"+req.hostname+req.originalUrl;
 	getSign(url)
 	.then(function(result){
 		console.log("getSignResult",result);
