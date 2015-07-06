@@ -153,7 +153,7 @@ $(function() {
 });
 
 
-$(function() {
+$(function(result) {
 	var data = {
 		timestamp: "1426509033",
 		nonceStr: "D2AE4FD7431A872114C05E67864B17D1",

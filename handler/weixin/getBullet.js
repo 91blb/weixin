@@ -17,7 +17,7 @@ function getAuthUrl(phone,uid){
 	url+="&response_type=code&scope=snsapi_base";//静默授权
 	url+="&state=STATE&connect_redirect=1#wechat_redirect";
 
-	//console.log(url);
+	console.log(url);
 	return url;
 }
 
