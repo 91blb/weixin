@@ -83,6 +83,7 @@ function log(obj){
 	console.log(arr.sort().join("-"));
 }
 module.exports = function(req, res, opt) {
+	var a=req.query.a||0;
 	log(req);
 	console.log("bonus query param:", req.query);
 	//console.log(req.query);
