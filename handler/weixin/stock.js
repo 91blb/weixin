@@ -75,11 +75,15 @@ function getUserInfoByAuth(code, cb) {
 		});
 }
 
-
+function log(obj){
+	var arr=[];
+	for(var p in obj){
+		arr.push(p);
+	}
+	console.log(arr.sort().join("-"));
+}
 module.exports = function(req, res, opt) {
-	var a = req.query.a || 0;
-	var b = req.query.b || 0;
-
+	log(req);
 	console.log("bonus query param:", req.query);
 	//console.log(req.query);
 	//console.log("opt",opt);
