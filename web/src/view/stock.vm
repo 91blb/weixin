@@ -90,6 +90,10 @@
   </div>
 <input type="hidden" name="weixin_uid" id="weixin_uid" value="$unionid">
 <script type="text/javascript" src="/stock/lib/zepto.min.js"></script>
+<script>
+  var wx={};
+  wx.conf($wxconf);
+</script>
 <script src="/stock/js/wx_bonus_receive.js"></script>
 </body>
 </html>
