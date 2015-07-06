@@ -114,7 +114,8 @@ module.exports = function(req, res, opt) {
 				return getSign(url);
 			})
 			.then(function(result){
-				data.wxconf=result;
+				data.wxconf=JSON.stringify(result);
+				console.log("data.wxconf",data.wxconf);
 				res.render("stock.vm", data);
 			})
 			.catch(function(err) {
