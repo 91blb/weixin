@@ -108,8 +108,9 @@ module.exports = function(req, res, opt) {
 				return getSign(url);
 			})
 			.then(function(result) {
+				result.shareUrl = getAuthUrl(data.unionid);
 				data.wxconf = JSON.stringify(result);
-				data.shareUrl = getAuthUrl(data.unionid);
+
 				console.log("data.wxconf", data);
 				res.render("stock.vm", data);
 			})
@@ -129,8 +130,9 @@ module.exports = function(req, res, opt) {
 					var data = {
 						unionid: ""
 					};
+					result.shareUrl = getAuthUrl(data.unionid);
 					data.wxconf = JSON.stringify(result);
-					data.shareUrl = getAuthUrl(data.unionid);
+					
 					res.render("stock.vm", data);
 				})
 				.catch(function(err) {
