@@ -7,7 +7,7 @@ var bodyParser = require("body-parser");
 var xmlparser = require('express-xml-bodyparser');
 var session = require('express-session');
 var favicon = require('serve-favicon');
- 
+
 app.use(favicon(__dirname + '/web/src/favicon.ico'));
 
 //var express = require('express');
@@ -15,12 +15,12 @@ app.use(favicon(__dirname + '/web/src/favicon.ico'));
 
 /*模板部分*/
 var vm = require('express-velocity');
-var path=require("path");
-var assert=require('assert');
+var path = require("path");
+var assert = require('assert');
 
 
 app.engine(".vm", vm({
-  root: __dirname + "/web/src/view"  //duplicated with views setting but required for velocity template
+  root: __dirname + "/web/src/view" //duplicated with views setting but required for velocity template
 }))
 app.set("views", __dirname + "/web/src/view");
 /*模板部分配置借宿*/
@@ -34,14 +34,14 @@ process.on('uncaughtException', function(e) {
 
 
 app.use(session({
-  name:'token',
+  name: 'token',
   secret: 'secret.91blb.com',
   resave: false,
   saveUninitialized: true,
   cookie: {
     secure: false
   },
-  debug:true
+  debug: true
 }));
 app.use(cookieParser());
 app.use(logErrors);
@@ -127,9 +127,9 @@ function handler(req, res) { //处理所有服务请求
     console.log(("method=" + method).green);
 
     var fn = require("./handler" + method + ".js");
-	var opt={};
-	opt.basePath=__dirname;
-    var result = fn(req, res,opt); //也允许异步返回
+    var opt = {};
+    opt.basePath = __dirname;
+    var result = fn(req, res, opt); //也允许异步返回
     //console.log("result=["+result+"]");
   } catch (e) {
     console.log(e);
@@ -138,7 +138,7 @@ function handler(req, res) { //处理所有服务请求
     };
   }
 
-  if (result!==undefined) res.send(result); //直接返回结果
+  if (result !== undefined) res.send(result); //直接返回结果
 }
 
 

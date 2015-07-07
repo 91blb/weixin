@@ -2,7 +2,8 @@ console.log("getUserInfo");
 console.log("本利保");
 var app_id = "wx4b6e962611f5e662";
 var app_secret = "78f0744a1d73bbbd423859840fd1255d";
-
+var getSign = require("./getSign");
+var getAuthUrl = require("./getAuthUrl");
 
 var RSVP = require('rsvp');
 //console.log("RSVP",RSVP);
@@ -75,38 +76,68 @@ function getUserInfoByAuth(code, cb) {
 		});
 }
 
-
+function log(obj) {
+	var arr = [];
+	for (var p in obj) {
+		arr.push(p);
+	}
+	console.log(arr.sort().join("-"));
+}
 module.exports = function(req, res, opt) {
 	var a = req.query.a || 0;
-	var b = req.query.b || 0;
-
+	//log(req);
+	//console.log("req.url",req.url);
+	var url = req.protocol + "://" + req.hostname + req.originalUrl;
+	console.log("req.originalUrl", url);
 	console.log("bonus query param:", req.query);
 	//console.log(req.query);
 	//console.log("opt",opt);
 	var code = req.query.code;
+	var data = {};
 	//console.log("RSVP",RSVP);
 	if (code) {
 		getOuthToken(code)
 			//.then(getUserInfo)
 			.then(function(result) {
-				var data = JSON.parse(result);
+				data = JSON.parse(result);
 				//data.headimgurl = data.headimgurl.replace(/\\/g, "");
-				
+
 				//判断用户是否已经领过红包,如果没有领过,则进入领红包页面
 				//如果已经领过，则进入兑现红包页面
+
+				return getSign(url);
+			})
+			.then(function(result) {
+				result.shareUrl = getAuthUrl(data.unionid);
+				data.wxconf = JSON.stringify(result);
+
+				console.log("data.wxconf", data);
 				res.render("stock.vm", data);
 			})
 			.catch(function(err) {
-				console.log("err",err);
+				console.log("err", err);
 				res.send(err);
 			})
-	}
-	else{
-		if(a){
-			res.render("stock2.vm", {unionid:""});
-		}
-		else{
-			res.render("stock.vm", {unionid:""});
+	} else {
+		if (a) {
+			//该页面必须要在微信中打开
+			res.render("stock2.vm", {
+				unionid: ""
+			});
+		} else {
+			getSign(url)
+				.then(function(result) {
+					var data = {
+						unionid: ""
+					};
+					result.shareUrl = getAuthUrl(data.unionid);
+					data.wxconf = JSON.stringify(result);
+					
+					res.render("stock.vm", data);
+				})
+				.catch(function(err) {
+					console.log(err, err);
+				})
 		}
 	}
 	//var path=require("path");
