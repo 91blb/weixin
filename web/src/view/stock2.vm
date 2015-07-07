@@ -42,7 +42,7 @@
               <div class="wx_input_tip">请输入正确的手机号！</div>
             </div>
             <div class="wx_redbag_btn wx_redbag_btn_disable" id="wx_btn_submit" style="display: none;">承诺4500不卖出</div>
-            <a class="wx_redbag_btn" href="$registrUrl" target="_self" id="wx_redbag_draw">去提现</a>
+            <a class="wx_redbag_btn" href="$registerUrl" target="_self" id="wx_redbag_draw">去提现</a>
             <a class="wx_redbag_btn" href="#" target="_self" id="wx_btn_share">让子弹再飞一会儿</a>
           </div>
         </div>
