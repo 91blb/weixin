@@ -116,8 +116,11 @@ module.exports = function(req, res, opt) {
 				//res.render("stock.vm", data);
 				
 				var key="table:register:wxuid:"+data.unionid;/*根据用户的微信id查找用户是否注册过*/
+				console.log("redis key:",key);
 				redis.hgetall(key)
 				.then(function(result){
+					console.log("check db result",result);
+
 					if(result){//发现数据库中有记录了
 						data.registerUrl="https://m.nongfadai.com/handler/weixin/stock.html?phone="+result.phone;
 						res.render("stock2.vm", data);
@@ -125,8 +128,6 @@ module.exports = function(req, res, opt) {
 					else{
 						res.render("stock.vm", data);
 					}
-					console.log("check db result",result);
-
 				})
 				.catch(function(err){
 					console.log("check db err",err);
