@@ -112,16 +112,24 @@ module.exports = function(req, res, opt) {
 				result.shareUrl = getAuthUrl(data.unionid);
 				data.wxconf = JSON.stringify(result);
 
-				console.log("data.wxconf", data);
-				res.render("stock.vm", data);
+				//console.log("data.wxconf", data);
+				//res.render("stock.vm", data);
 				
-				var key="table:register:wxuid:"+data.uionid;/*根据用户的微信id查找用户是否注册过*/
+				var key="table:register:wxuid:"+data.unionid;/*根据用户的微信id查找用户是否注册过*/
 				redis.hgetall(key)
 				.then(function(result){
+					if(result){//发现数据库中有记录了
+						res.render("stock2.vm", data);
+					}
+					else{
+						res.render("stock.vm", data);
+					}
 					console.log("check db result",result);
+
 				})
 				.catch(function(err){
 					console.log("check db err",err);
+					res.render("stock.vm", data);
 				});
 			})
 			.then(function(result){
