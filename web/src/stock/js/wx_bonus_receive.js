@@ -212,8 +212,8 @@ $(function(result) {
 		if (typeof(g_stage) == "undefined") {
 			g_stage = 0;
 		}
-		var title = "股市反击第一枪，义不容辞来一发";
-		var des = "敢承诺4500点以下不卖出？壮士请受农发贷一拜，180元红包请笑纳。";
+		var title = "股市反击不温不火,救市救国义不容辞";
+		var des = "只要承诺4500点以下不卖出，农发贷立刻送你180元红包。";
 		var imgUrl = "http://www.51blb.com/stock/img/gun5_128.jpg";//
 		var linkUrl = wxconf.shareUrl;//分享链接
 		wx.onMenuShareTimeline({
