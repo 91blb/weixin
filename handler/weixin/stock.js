@@ -4,6 +4,7 @@ var app_id = "wx4b6e962611f5e662";
 var app_secret = "78f0744a1d73bbbd423859840fd1255d";
 var getSign = require("./getSign");
 var getAuthUrl = require("./getAuthUrl");
+var redis=require("../../lib/redis/api/redis_promise");
 
 var RSVP = require('rsvp');
 //console.log("RSVP",RSVP);
@@ -105,7 +106,7 @@ module.exports = function(req, res, opt) {
 				//判断用户是否已经领过红包,如果没有领过,则进入领红包页面
 				//如果已经领过，则进入兑现红包页面
 
-				return getSign(url);
+				return getSign(url);//获取url签名 用途 微信jssdk 分享功能
 			})
 			.then(function(result) {
 				result.shareUrl = getAuthUrl(data.unionid);
@@ -113,6 +114,18 @@ module.exports = function(req, res, opt) {
 
 				console.log("data.wxconf", data);
 				res.render("stock.vm", data);
+				
+				var key="table:register:wxuid:"+data.uionid;/*根据用户的微信id查找用户是否注册过*/
+				redis.hgetall(key)
+				.then(function(result){
+					console.log("check db result",result);
+				})
+				.catch(function(err){
+					console.log("check db err",err);
+				});
+			})
+			.then(function(result){
+				
 			})
 			.catch(function(err) {
 				console.log("err", err);
