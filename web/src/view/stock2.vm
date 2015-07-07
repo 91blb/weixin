@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>股市反击第一枪,农发贷邀您来一发</title>
+<title>股市反击第一枪,义不容辞来一发</title>
 <!-- 微信红包页面  抢红包 -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -94,6 +94,6 @@
 <script>
   var wxconf=$wxconf;
 </script>
-<script src="/stock/js/wx_bonus_receive.js"></script>
+<script src="/stock/js/wx_bonus_receive.js?v=2"></script>
 </body>
 </html>
