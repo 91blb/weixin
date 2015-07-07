@@ -30,7 +30,7 @@
           <div class="wx_box_content " id="wxRedbagForm">
             <div class="wx_box_1 hide" id="result_1">亲,您领取的红包总额已达上限!</div>
             <div class="wx_box_1 hide" id="result_8">亲,你已经领过了哦~</div>
-            <div class="wx_box_1  wx_bonus_amt" id="result_2"  style="display:block;padding-top:12px;margin-bottom:0px;">￥180元</div>
+            <div class="wx_box_1  wx_bonus_amt" id="result_2"  style="display:block;padding-top:20px;">￥180元</div>
             <div class="wx_box_1 hide" id="promot_1" style="padding-top:20px;">输入手机号，立刻领180元现金</div>
             <div class="wx_box_1 hide" id="result_4">手慢了，已经被领光了!</div>
             <div class="wx_box_1 hide" id="result_5">活动已经结束了!</div>
