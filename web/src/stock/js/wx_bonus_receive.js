@@ -77,6 +77,7 @@ $(function() {
         wxInputTip.hide();
         var param = {};
         param["mobile"] = mobile.val();
+		param["wxuid"] = $("#weixin_uid").val();
         /*param["amount"] = "";*/
         $.ajax({
             url: "/handler/weixin/getBullet.json",
