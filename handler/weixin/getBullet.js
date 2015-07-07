@@ -37,7 +37,7 @@ module.exports=function(req,res,opt){
 		source:source
 	}
 
-	redis.saveJson(key,data)
+	redis.savejson(key,data)
 	.then(function(result){
 		console.log("save recommed relation result",result);
 	})
