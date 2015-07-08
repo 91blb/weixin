@@ -85,15 +85,21 @@ function log(obj) {
 	console.log(arr.sort().join("-"));
 }
 module.exports = function(req, res, opt) {
+	var url = req.protocol + "://" + req.hostname + req.originalUrl;
+	//console.log("req.originalUrl", url);
+	console.log("!!! stock query param:", req.query);
+	
+	for(var p in req.query){
+		if(p.indexOf("&")>=0){
+			var arr=p.split(/[\&|=]/);
+			for(var i=0;i<arr.length;i+=2){
+				req.query[arr[i]]=arr[i+1];//重新运算查询参数
+			}
+		}
+	}
+	
 	var a = req.query.a || 0;
 	var source=req.query.uid||"";
-	//log(req);
-	//console.log("req.url",req.url);
-	var url = req.protocol + "://" + req.hostname + req.originalUrl;
-	console.log("req.originalUrl", url);
-	console.log("bonus query param:", req.query);
-	//console.log(req.query);
-	//console.log("opt",opt);
 	var code = req.query.code;
 	var data = {source:source};
 
@@ -103,7 +109,7 @@ module.exports = function(req, res, opt) {
 			//.then(getUserInfo)
 			.then(function(result) {
 				data = JSON.parse(result);
-				data.souce=source;
+				data.source=source;
 				//data.headimgurl = data.headimgurl.replace(/\\/g, "");
 
 				//判断用户是否已经领过红包,如果没有领过,则进入领红包页面
