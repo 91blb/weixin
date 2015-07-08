@@ -86,6 +86,7 @@ function log(obj) {
 }
 module.exports = function(req, res, opt) {
 	var a = req.query.a || 0;
+	var source=req.query.uid||"";
 	//log(req);
 	//console.log("req.url",req.url);
 	var url = req.protocol + "://" + req.hostname + req.originalUrl;
@@ -94,13 +95,15 @@ module.exports = function(req, res, opt) {
 	//console.log(req.query);
 	//console.log("opt",opt);
 	var code = req.query.code;
-	var data = {};
+	var data = {source:source};
+
 	//console.log("RSVP",RSVP);
-	if (code) {
+	if (code) {//微信传来的授权码 可用于查询用户信息
 		getOuthToken(code)
 			//.then(getUserInfo)
 			.then(function(result) {
 				data = JSON.parse(result);
+				data.souce=source;
 				//data.headimgurl = data.headimgurl.replace(/\\/g, "");
 
 				//判断用户是否已经领过红包,如果没有领过,则进入领红包页面
@@ -109,14 +112,22 @@ module.exports = function(req, res, opt) {
 				return getSign(url);//获取url签名 用途 微信jssdk 分享功能
 			})
 			.then(function(result) {
-				result.shareUrl = getAuthUrl(data.unionid);
+				result.shareUrl = getAuthUrl(data.unionid);//重新生成用户的分享链接
 				data.wxconf = JSON.stringify(result);
 
 				//console.log("data.wxconf", data);
 				//res.render("stock.vm", data);
-				
+				var key_read="table:read:uuid:"+redis.nextSeq("read");/*read 点击过某人分享链接的人*/
+				redis.savejson(key_read,{wxuid:data.unionid,readtime:new Date(),source:data.source})
+				.then(function(result){
+					console.log("save to set result",result);
+				})
+				.catch(function(err){
+					console.log("save to set err",err);
+				})
+
 				var key="table:register:wxuid:"+data.unionid;/*根据用户的微信id查找用户是否注册过*/
-				console.log("redis key:",key);
+				//console.log("redis key:",key);
 				redis.hgetall(key)
 				.then(function(result){
 					console.log("check db result",result);

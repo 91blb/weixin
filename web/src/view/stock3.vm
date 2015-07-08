@@ -88,7 +88,8 @@
       <div class="wx_btn_iknow" id="wx_btn_iknow3"></div>
     </div>
   </div>
-<input type="hidden" name="weixin_uid" id="weixin_uid" value="$unionid">
+<input type="hidden" name="weixin_uid" id="weixin_uid" value="$unionid"><!--本人的微信id-->
+<input type="hidden" name="source" id="source" value="$source"><!--从XX的微信分享来的-->
 <script type="text/javascript" src="/stock/lib/zepto.min.js"></script>
 <script src="/stock/js/wx_bonus_receive.js"></script>
 </body>
