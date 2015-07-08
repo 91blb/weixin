@@ -22,7 +22,7 @@
   <div class="wx_stage stage1">
     <div class="wx_redbag_bg"></div>
     <img class="wx_redbag_title" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAMAAADDpiTIAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Mzg0QjQ4QjEyNTgyMTFFNUE2M0VFNDVCM0MwREY0OTAiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Mzg0QjQ4QjAyNTgyMTFFNUE2M0VFNDVCM0MwREY0OTAiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiBXaW5kb3dzIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RjhCREUzRTcyNTgxMTFFNUE5RTFFOTQwNTQ3QjZBQ0YiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RjhCREUzRTgyNTgxMTFFNUE5RTFFOTQwNTQ3QjZBQ0YiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5xXxhjAAAABlBMVEX///8AAABVwtN+AAAAAXRSTlMAQObYZgAAARlJREFUeNrswTEBAAAAwqD1T+1pCaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOAmgAADAAI8AAE5Cdk2AAAAAElFTkSuQmCC" width="100%">
-    <div class="wx_redbag_info">股民不哭，如果你身边有被套牢的朋友，最好的安慰方式莫过于发个红包，或者把农发贷推荐给他，现在注册农发贷，就有机会获得180元现金红包。（仅限股民参与）</div>
+    <div class="wx_redbag_info">股民不哭，如果你身边有被套牢的朋友，最好的安慰方式莫过于发个红包，或者把农发贷推荐给他，现在注册农发贷，就有机会获得180元现金安慰。（仅限股民参与）</div>
     <div class="wx_redbag_money_con">
       <div  class="wx_stage_con" id="wx_stage_con">
         <div class="wx_stage_box" id="wx_stage_box">
@@ -43,7 +43,7 @@
             </div>
             <div class="wx_redbag_btn wx_redbag_btn_disable" id="wx_btn_submit">承诺3500不卖出</div>
             <a class="wx_redbag_btn hide" href="#" target="_self" id="wx_redbag_draw">去提现</a>
-            <a class="wx_redbag_btn hide" href="#" target="_self" id="wx_btn_share">转发给需要的人</a>
+            <a class="wx_redbag_btn hide" href="#" target="_self" id="wx_btn_share">分享给股民朋友</a>
           </div>
         </div>
       </div>
