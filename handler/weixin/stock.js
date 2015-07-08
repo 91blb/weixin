@@ -142,7 +142,7 @@ module.exports = function(req, res, opt) {
 					console.log("check db result",result);
 
 					if(result){//发现数据库中有记录了
-						data.registerUrl="https://m.nongfadai.com/register.html?phone="+(result.mobile||result.phone);
+						data.registerUrl="https://m.nongfadai.com/channelRegister.html?channel=weixin&phone="+(result.mobile||result.phone);
 						res.render("stock2.vm", data);
 					}
 					else{

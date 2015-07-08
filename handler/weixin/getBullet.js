@@ -26,7 +26,7 @@ module.exports=function(req,res,opt){
 	var result={
 		code:0,//领取红包成功
 		amount:180,
-		url:"https://m.nongfadai.com/register.html?code="+mobile,
+		url:"https://m.nongfadai.com/channelRegister.html?channel=weixin&phone="+mobile,
 		myBonusShareUrl:shareUrl//分享的地址 要带上一些额外的参数 后台辅助生成//分享的地址要重新带上用户的参数信息，比如
 	}
 	return result;
