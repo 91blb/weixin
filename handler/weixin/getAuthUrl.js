@@ -1,6 +1,6 @@
 function getUrl(uid){
 	//生成一个要求weixin做oauth认证的url 
-	console.log("本利保");
+	//console.log("本利保");
 	var appid="wx4b6e962611f5e662";
 
 	//console.log("农发贷");
@@ -17,7 +17,7 @@ function getUrl(uid){
 	url+="&response_type=code&scope=snsapi_base";//静默授权
 	url+="&state=STATE&connect_redirect=1#wechat_redirect";
 
-	console.log(url);
+	//console.log(url);
 	return url;
 }
 
