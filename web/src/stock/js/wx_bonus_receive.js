@@ -217,10 +217,11 @@ $(function(result) {
 		var imgUrl = "http://www.51blb.com/stock/img/gun5_128.jpg";//
 		var linkUrl = wxconf.shareUrl;//分享链接
 		
-		var param={
-				wxuid:$("#weixin_uid").val(),
-				source:$("#source").val()	
-			};
+		
+		var wxuid=$("#weixin_uid").val();
+		var source=$("#source").val();
+		
+		
 		wx.onMenuShareTimeline({
 			title: title + des, // 分享标题
 			link: linkUrl, // 分享链接
@@ -230,7 +231,11 @@ $(function(result) {
 				//alert("分享成功");
 				$.ajax({
 					url: "/handler/weixin/shareSucc.json",
-					data: param,
+					data: {
+						wxuid:wxuid,
+						source:source,
+						sharetype:"timeline"
+					},
 					type: "post",
 					success: function(data) {
 
@@ -251,7 +256,21 @@ $(function(result) {
 			dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
 			success: function() {
 				// 用户确认分享后执行的回调函数
-				//alert("分享成功");
+				$.ajax({
+					url: "/handler/weixin/shareSucc.json",
+					data: {
+						wxuid:wxuid,
+						source:source,
+						sharetype:"message"
+					},
+					type: "post",
+					success: function(data) {
+
+					},
+					cancel: function() {
+						// 用户取消分享后执行的回调函数
+					}
+				});
 			},
 			cancel: function() {
 				// 用户取消分享后执行的回调函数
