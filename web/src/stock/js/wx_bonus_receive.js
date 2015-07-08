@@ -213,7 +213,7 @@ $(function(result) {
 			g_stage = 0;
 		}
 		var title = "股民不哭,农发贷陪着你";
-		var des = "股灾之下，如果你有炒股的朋友，最好多请他吃个饭，没事常发个红包安慰一下，或者把农发贷推荐给他。无论新老股民，注册就送180元安慰红包。";
+		var des = "股灾之下，如果你有炒股的朋友，最好多请他吃个饭，或者把农发贷推荐给他。新老股民注册就送180元红包。";
 		var imgUrl = "http://www.51blb.com/stock/img/baymax_184.jpg";//
 		var linkUrl = wxconf.shareUrl;//分享链接
 		
