@@ -143,15 +143,15 @@ module.exports = function(req, res, opt) {
 
 					if(result){//发现数据库中有记录了
 						data.registerUrl="https://m.nongfadai.com/channelRegister.html?channel=weixin&phone="+(result.mobile||result.phone);
-						res.render("stock2.vm", data);
+						res.render("stock22.vm", data);
 					}
 					else{
-						res.render("stock.vm", data);
+						res.render("stock21.vm", data);
 					}
 				})
 				.catch(function(err){
 					console.log("check db err",err);
-					res.render("stock.vm", data);
+					res.render("stock21.vm", data);
 				});
 			})
 			.then(function(result){
@@ -164,7 +164,7 @@ module.exports = function(req, res, opt) {
 	} else {
 		if (a) {
 			//该页面必须要在微信中打开
-			res.render("stock2.vm", {
+			res.render("stock22.vm", {
 				unionid: ""
 			});
 		} else {
@@ -176,7 +176,7 @@ module.exports = function(req, res, opt) {
 					result.shareUrl = getAuthUrl(data.unionid);
 					data.wxconf = JSON.stringify(result);
 					
-					res.render("stock.vm", data);
+					res.render("stock21.vm", data);
 				})
 				.catch(function(err) {
 					console.log(err, err);
