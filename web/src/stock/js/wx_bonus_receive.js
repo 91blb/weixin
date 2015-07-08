@@ -212,9 +212,9 @@ $(function(result) {
 		if (typeof(g_stage) == "undefined") {
 			g_stage = 0;
 		}
-		var title = "股市反击不给力,救国救市不推辞";
-		var des = "只要承诺3500点以下不减持，农发贷立刻送你180元红包。";
-		var imgUrl = "http://www.51blb.com/stock/img/gun5_128.jpg";//
+		var title = "股民不哭,农发贷陪着你";
+		var des = "股灾之下，如果你有炒股的朋友，最好多请他吃个饭，没事常发个红包安慰一下，或者把农发贷推荐给他。无论新老股民，注册就送180元安慰红包。";
+		var imgUrl = "http://www.51blb.com/stock/img/baymax_184.jpg";//
 		var linkUrl = wxconf.shareUrl;//分享链接
 		
 		
