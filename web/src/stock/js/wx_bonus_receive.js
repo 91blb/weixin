@@ -216,6 +216,11 @@ $(function(result) {
 		var des = "只要承诺4500点以下不卖出，农发贷立刻送你180元红包。";
 		var imgUrl = "http://www.51blb.com/stock/img/gun5_128.jpg";//
 		var linkUrl = wxconf.shareUrl;//分享链接
+		
+		var param={
+				wxuid:$("#weixin_uid").val(),
+				source:$("#source").val()	
+			};
 		wx.onMenuShareTimeline({
 			title: title + des, // 分享标题
 			link: linkUrl, // 分享链接
@@ -223,9 +228,17 @@ $(function(result) {
 			success: function() {
 				// 用户确认分享后执行的回调函数
 				//alert("分享成功");
-			},
-			cancel: function() {
-				// 用户取消分享后执行的回调函数
+				$.ajax({
+					url: "/handler/weixin/shareSucc.json",
+					data: param,
+					type: "post",
+					success: function(data) {
+
+					},
+					cancel: function() {
+						// 用户取消分享后执行的回调函数
+					}
+				});
 			}
 		});
 

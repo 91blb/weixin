@@ -95,6 +95,6 @@
 <script>
   var wxconf=$wxconf;
 </script>
-<script src="/stock/js/wx_bonus_receive.js?v=5"></script>
+<script src="/stock/js/wx_bonus_receive.js?v=6"></script>
 </body>
 </html>
