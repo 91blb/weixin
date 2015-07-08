@@ -9,7 +9,7 @@ module.exports=function(req,res,opt){
 	var sharetype=req.body.sharetype;//分享方式 朋友圈 朋友
 
 	var key_share="table:shareweixin:uuid:"+redis.nextSeq("shareweixin");/*read 点击过某人分享链接的人*/
-	redis.savejson(shareweixin,{wxuid:wxuid,readtime:new Date(),source:source,sharetype:sharetype})
+	redis.savejson(key_share,{wxuid:wxuid,readtime:new Date(),source:source,sharetype:sharetype})
 	.then(function(result){
 		console.log("save share record result",result);
 	})
