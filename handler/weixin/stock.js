@@ -123,8 +123,11 @@ module.exports = function(req, res, opt) {
 
 				//console.log("data.wxconf", data);
 				//res.render("stock.vm", data);
-				var key_read="table:read:uuid:"+redis.nextSeq("read");/*read 点击过某人分享链接的人*/
-				redis.savejson(key_read,{wxuid:data.unionid,readtime:new Date(),source:data.source})
+				redis.nextSeq("read")
+				.then(function(result){
+					var key_read="table:read:uuid:"+result;/*read 点击过某人分享链接的人*/
+					return redis.savejson(key_read,{wxuid:data.unionid,readtime:new Date(),source:data.source})
+				})
 				.then(function(result){
 					console.log("save to set result",result);
 				})
