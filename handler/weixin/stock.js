@@ -1,5 +1,5 @@
-console.log("getUserInfo");
-console.log("本利保");
+//console.log("getUserInfo");
+//console.log("本利保");
 var app_id = "wx4b6e962611f5e662";
 var app_secret = "78f0744a1d73bbbd423859840fd1255d";
 var getSign = require("./getSign");
