@@ -212,7 +212,7 @@ $(function(result) {
 		if (typeof(g_stage) == "undefined") {
 			g_stage = 0;
 		}
-		var title = "股市反击不给力,救市救国不推辞";
+		var title = "股市反击不给力,救国救市不推辞";
 		var des = "只要承诺3500点以下不减持，农发贷立刻送你180元红包。";
 		var imgUrl = "http://www.51blb.com/stock/img/gun5_128.jpg";//
 		var linkUrl = wxconf.shareUrl;//分享链接
