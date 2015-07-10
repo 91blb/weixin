@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="format-detection" content="telephone=no,address=no,email=no">
+<meta name="mobileOptimized" content="width">
+<meta name="handheldFriendly" content="true">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+<link rel="stylesheet" type="text/css" href="css/style.css?v=20150524" />
+<link rel="stylesheet" type="text/css" href="css/invite_friends.css?v=20150524" />
+<title>农发贷</title>
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var host=document.location.hostname;
+	if(/nongfadai.com$/ig.test(host)){
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?10cd9976402aabfbd36d69dd43dd8c1a";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	}
+})();
+</script>
+<script src="js/wording.js"></script>
+</head>
+<body>
+<div id="nfd-header" class="nfd-header">
+  <div class="icon-c"> <a href="index.html" target="_self" class="logo"> <img src="img/logo.png" alt="logo"> </a> <a id="rightCornerBtn" href="javascript:void(0)" class="menu"> </a>
+  <!-- 未登录态 -->
+    <a id="loginBtn" style="display:none" href="/login.html" target="_self" class="login right mr-m">登录</a>
+    <a id="registBtn" style="display:none" href="/register.html" target="_self" class="register right">注册</a>
+    <div class="clearfix"></div>
+  </div>
+</div>
+<!-- 登录态 -->
+<div id="menus" class="menus logined"> <a href="/user/logout.htm"  target="_self"> <img src="img/header/logout.png" alt="logout" /> <span> 退出 </span> </a> <a href="/user/account/recharge.html" target="_self" > <img src="img/header/account.png" alt="account" /> <span> 充值 </span> </a> <a href="/project_list.html"  target="_self"> <img src="img/header/invest.png" alt="invest" /> <span> 投标 </span> </a>
+  <div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
+<div class="menu-mask" id="menu-mask"></div>
+<div id="scroller">
+  <div class="mod_loading global-loading" id="loading">正在加载，请稍候...</div>
+  <div id="nfd-touch" style="display:none;">
+    <div class="total-block">
+      <p class="award_title">已发放奖励总额（元）</p>
+      <p class="award_num" id="totalReward">00,000</p>
+      <p class="currency">RMB</p>
+    </div>
+    <div class="month-block">
+      <p class="award_title">已发放奖励总额（元）</p>
+      <p class="award_year"><span id="currYear"></span>&nbsp;&nbsp;<img src="img/inviteFriend/freind_icon_0.png" id="monthBtn">&nbsp;&nbsp;</p>
+      <p class="award_num"><span id="currMonth"></span></p>
+      <p class="currency"><span id="monthReward">000.00</span>&nbsp;&nbsp;&nbsp;&nbsp;RMB</p>
+    </div>
+    <div id="nfd-account-links">
+      <div class="links-block">
+      	<a href="m_invite_details.html" class="investments layout_flex">
+            <div class="c1"><img src="img/inviteFriend/freind_icon_1.png"></div>
+            <div class="c2">
+                <span>推荐详情</span>
+                <span class="desc">推荐记录，点击查看</span>
+            </div>
+            <div class="c3"><img src="img/inviteFriend/right_corner.gif" /></div>
+        </a>
+        <a href="m_invite_friends.html" class="investments layout_flex">
+            <div class="c1"><img src="img/inviteFriend/freind_icon_2.png"></div>
+            <div class="c2">
+                <span>邀请好友</span>
+                <span class="desc">成功邀请好友投资，可获得现金奖励</span>
+            </div>
+            <div class="c3"><img src="img/inviteFriend/right_corner.gif"></div>
+        </a>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="clear"></div>
+<div class="month_tip_box" id="floatBox" style="display:none;">
+    <div class="tip_bg"></div>
+    <div class="month_tip">
+        <div class="tip_title">
+        	<p>
+            <i attr-id="yearleft">&lt;</i>
+            <span id="yearNum"></span>
+            <i attr-id="yearright">&gt;</i>
+            </p>
+        </div>
+        <ul class="tip_list" id="monthBox">
+            <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="01">1月</span></li>
+            <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="02">2月</span></li>
+            <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="03">3月</span></li>
+            <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="04">4月</span></li>
+            <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="05">5月</span></li>
+            <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="06">6月</span></li>
+            <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="07">7月</span></li>
+            <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="08">8月</span></li>
+            <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="09">9月</span></li>
+            <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="10">10月</span></li>
+            <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="11">11月</span></li>
+            <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="12">12月</span></li>
+        </ul>
+    </div>
+</div>
+<!--B 底部-->
+<div id="nfd-footer"><!--具体激活哪个菜单  要增加一个变量来控制--> 
+  <a href="/index.html" class="menu"> <img src="img/homepage.png" />
+  <div>主页</div>
+  </a> <a href="/project_list.html?tab=3" class="menu"> <img src="img/investment.png" />
+  <div>投资理财</div>
+  </a> <a href="/user/account/index.html" class="menu current"> <img src="img/account_current.png" />
+  <div>我的账户</div>
+  </a> <a href="/about_us.html" class="menu"> <img src="img/about.png" />
+  <div>关于我们</div>
+  </a> </div>
+<script src="../js/libs/zepto/zepto.js"></script>
+<script src="../js/libs/requirejs/require.js"></script>
+<script>
+require(["../js/mod/common"],function(common){
+
+  function initBanner(){
+    //banner
+    try{
+      var bullets,bannerLength; 
+      bullets = document.getElementById('banner_btn').getElementsByTagName('span');
+      bannerLength=bullets.length>2?true:false;
+      
+      window.mySwipe = Swipe(document.getElementById("nfd-slide"),{
+        auto:3000,
+        continuous:true,
+        stopPropagation:false,
+        callback:function(pos){
+           var on=document.getElementsByClassName("ws-selected");
+           if(on.length){
+             on[0].className="";
+           }
+           pos=bannerLength?pos:pos%2;
+           bullets[pos].className = 'ws-selected';
+        }
+      });
+    }catch(e){
+      
+    }
+    //$("#nfd-slide").find("img").show();
+  }
+  
+  function init(){
+    common.init();
+    initBanner();
+  }
+  init();/*首页模块初始化*/
+});
+</script>
+<script>
+var url  = '/foreign/lcs/profitDetail.htm',
+//var url = "/user/licaishi/getData.json",
+      currMonthNum = 0,
+      currYNum = 0,
+      rewardHis = null,
+      lowYear = false,
+      largeYear = false,
+      yearList = [];
+  $(function(){
+    var monthBtn = $("#monthBtn"),
+      floatBox = $("#floatBox"),
+      totalReward = $("#totalReward"),
+      currMonthReward = $("#monthReward"),
+      currMonth = $("#currMonth"),
+      monthList = $("#monthBox span[attr-id='month']"),
+      currYear = $("#currYear"),
+      yearNum = $("#yearNum"),
+      loading = $("#loading");
+
+    $.ajax({
+      url: url,
+      dataType:'json',
+      timeout : 5000, //超时时间设置，单位毫秒
+      beforeSend: function () {
+    	  loading.show();
+      },
+      success: getDataBack,
+      error:function(err){
+        console.log("ajax err",err);
+        loading.html("加载奖励总额异常，请重试！");
+      }
+    });
+
+  function getDataBack(result){
+      // console.log("result",result);
+      var obj = result||{};
+      if (obj.code=='success') {
+          totalReward.html(obj.totalReward||"");
+          currMonthReward.html(obj.currMonthReward||"");
+          currMonthNum = parseInt(obj.currMonth.split("-")[1],10);
+          currYear.html(parseInt(obj.currMonth.split("-")[0],10)+"年");
+          currYNum = obj.currMonth.split("-")[0];
+
+          yearNum.html(currYNum);
+          currMonth.html(currMonthNum+"月");
+          $(".currMonth").removeClass("currMonth");
+          monthList[currMonthNum-1].className = "currMonth";
+          rewardHis = obj.reward_history;
+
+          checkYear(currYNum);
+          checkMonth(currYNum);
+          $(".logo").html('<span class="title">收益详情</span>');
+          $("#nfd-touch").show();
+          removeNode("loading");
+      }else if(obj.code=='wdl'){
+    	  window.location.href="/login.html?_z=/static/m_invite_friends_index.html";
+      }else{
+        $("#rightCornerBtn").css("display","none");
+        $("#loginBtn").css("display","");
+        $("#registBtn").css("display","");
+      }
+  }
+
+    function bindBtnEvent(){
+      monthBtn.on("click",function(e){
+        floatBox.css("display","");
+      });
+      floatBox.on("click",function(e){
+        var evt = window.e||e,
+          src = evt.srcElement||evt.target,
+          monthNumHtml = src.innerHTML,
+          monthNum = src.getAttribute("dt"),
+          yearNum = $("#yearNum").html(),
+          tag = src.getAttribute("attr-id");
+        if (tag) {
+          tag = tag.toLowerCase();
+        }else{
+          return;
+        }
+        switch(tag){
+          case "monthbox":
+          case "month":
+            window.mFltTimer = setTimeout(function(){
+              floatBox.css("display","none");
+              clearTimeout(window.mFltTimer);
+              // if (rewardHis) {
+              //   var hisReward = rewardHis[yearNum+"-"+monthNum];
+              //   if (hisReward||hisReward>=0) {
+              //     $("#currMonth").html(monthNumHtml);
+              //     $("#currYear").html(yearNum+"年");
+              //     currMonthReward.html(rewardHis[yearNum+"-"+monthNum]);
+              //   }else{
+              //     alert("没有对应月份数据，请重新选择！");
+              //   }
+              // }else{
+              //   $.ajax({
+              //     url : url, 
+              //     dataType:'json',
+              //     success: getDataBack,
+              //     error:function(err){
+              //       console.log("ajax err",err);
+              //       alert("加载奖励总额异常，请重试！");
+              //     }
+              //   });
+              // }
+            },500);
+            break;
+          case "yearright":
+            if (largeYear) {
+              currYNum = +$("#yearNum").html()+1;
+              checkYear(currYNum);
+              checkMonth(currYNum);
+              $("#yearNum").html(currYNum);
+            }
+            break;
+          case "yearleft":
+            if (lowYear) {
+              currYNum = +$("#yearNum").html()-1;
+              checkYear(currYNum);
+              checkMonth(currYNum);
+              $("#yearNum").html(currYNum);
+            }
+            break;
+        }
+      });
+    }
+    bindBtnEvent();
+	});
+
+  function checkMonth(year){
+    var tpRew = rewardHis;
+    $("#monthBox .finance").hide();
+    $("#monthBox .finance").remove();
+    for (var item in tpRew) {
+      var tmpMonth = item.split("-");
+      if (tmpMonth&&tmpMonth[0]==year) {
+        $("#monthBox span[dt='"+tmpMonth[1]+"']").append('<span class="finance">'+tpRew[item]+'￥</span>');
+      };
+    };
+  }
+
+  function checkYear(year){
+    var currY = year||currYearNum,
+      rewardHisList = rewardHis,
+      tDate = '',
+      tYear = "",
+      tYearList = yearList||[];
+
+    lowYear = false;
+    largeYear = false;
+
+    if (tYearList.length===0) {
+      for (var item in rewardHisList) {
+        tDate = item.split("-");
+        if (tDate) {
+          tYearList.push(tDate[0]);
+        };
+      };
+    }
+    for (var i = 0,len=tYearList.length; i < len; i++) {
+      tYear = tYearList[i];
+      if(tYear<currY&&!lowYear){
+        lowYear = true;
+      }else if(tYear>currY&&!largeYear){
+        largeYear = true;
+      }
+    };
+    $("#floatBox i[attr-id='yearleft']").css("color",lowYear?"#0081d8":"#9b9b9b");
+    $("#floatBox i[attr-id='yearright']").css("color",largeYear?"#0081d8":"#9b9b9b");
+  }
+  
+  function removeNode(id) {
+      var node = document.getElementById(id) || false;
+      if (node) {
+          node.parentNode.removeChild(node);
+      }
+  }
+</script>
+</body>
+</html>

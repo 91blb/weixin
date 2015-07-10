@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="format-detection" content="telephone=no,address=no,email=no">
+<meta name="mobileOptimized" content="width">
+<meta name="handheldFriendly" content="true">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+<link rel="stylesheet" type="text/css" href="css/style.css?v=20150524" />
+<link rel="stylesheet" type="text/css" href="css/invite_page.css?v=20150524" />
+<title>农发贷</title>
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var host=document.location.hostname;
+	if(/nongfadai.com$/ig.test(host)){
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?10cd9976402aabfbd36d69dd43dd8c1a";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	}
+})();
+</script>
+<script src="js/wording.js"></script>
+</head>
+<body>
+<div id="nfd-header" class="nfd-header">
+  <div class="icon-c"> <a id="rightCornerBtn" href="index.html" target="_self" class="logo"> <img src="img/logo.png" alt="logo"> </a> <a href="javascript:void(0)" class="menu"> </a>
+  <!-- 未登录态 -->
+    <a id="loginBtn" style="display:none" href="/login.html" target="_self" class="login right mr-m">登录</a>
+    <a id="registBtn" style="display:none" href="/register.html" target="_self" class="register right">注册</a>
+    <div class="clearfix"></div>
+  </div>
+</div>
+<!-- 登录态 -->
+<div id="menus" class="menus logined"> <a href="/user/logout.htm"  target="_self"> <img src="img/header/logout.png" alt="logout" /> <span> 退出 </span> </a> <a href="/user/account/recharge.html" target="_self" > <img src="img/header/account.png" alt="account" /> <span> 充值 </span> </a> <a href="/project_list.html"  target="_self"> <img src="img/header/invest.png" alt="invest" /> <span> 投标 </span> </a>
+  <div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
+<div class="menu-mask" id="menu-mask"></div>
+<div id="scroller">
+  <div id="nfd-touch">
+    <div id="nfd-account-links">
+      <img src="img/inviteFriend/invite_head.gif">
+      <p>
+          <span class="title">成功邀请到好友投资，可获现金奖励</span>
+          <span class="desc">请您邀请的好友在注册时输入您已认证的手机号码</span>
+          <span class="phone" id="phone"></span>
+          <input value="" type="text" id="linkInput">
+      </p>
+      <p class="content">
+      	<span>长按复制您的专属链接，发布在其他社交平台赢取更多奖励</span>
+        <span>您的专属推广邀请码</span>
+        <span class="invite_code" id="inviteCode"></span>
+        <a href="javascript:" id="actRuleBtn">活动规则&gt;</a>
+      </p>
+    </div>
+  </div>
+</div>
+<div class="clear"></div>
+<div class="month_tip_box" id="floatBox" style="display:none;">
+    <div class="tip_bg"></div>
+    <div class="month_tip">
+        <div class="tip_title">
+          <p>
+            <img src="img/inviteFriend/medal.gif">
+            <span id="yearNum">推广奖励规则</span>
+          </p>
+        </div>
+        <ul class="tip_list">
+            <li class="tip_item"><i>●</i><div>您推荐好友，在其注册后的一年内购买项目交易成功后，您将获得其购买金额的年化收益率为0.30%的现金奖励</div></li>
+            <li class="tip_item"><i>●</i><div>您好友推荐的好友，在其注册后的一年内购买项目交易成功后，您将获得其购买金额的年化收益率为0.10%的现金奖励</div></li>
+            <li class="tip_item"><i>●</i><div>您推荐好友，在其注册后的一年内购买项目交易成功后，您的好友将获得其购买金额的年化收益率为0.10%的现金奖励</div></li>
+            <li class="tip_item"><i>●</i><div>推广奖励规则，请参见农发贷平台的活动公告，或者致电<i>4008-2255-38</i>咨询</div></li>
+        </ul>
+        <div class="btnBox">
+          <a href="/project_list.html?tab=3" class="button">
+            <img src="img/inviteFriend/happy.gif">&nbsp;&nbsp;<span>好开心，马上理财</span>
+          </a>
+          <a id="lookBtn" class="button">
+            <span>不错哟，随便看看</span>
+          </a>
+        </div>
+    </div>
+</div>
+<!--B 底部-->
+<div id="nfd-footer"><!--具体激活哪个菜单  要增加一个变量来控制--> 
+  <a href="/index.html" class="menu"> <img src="img/homepage.png" />
+  <div>主页</div>
+  </a> <a href="/project_list.html?tab=3" class="menu"> <img src="img/investment.png" />
+  <div>投资理财</div>
+  </a> <a href="/user/account/index.html" class="menu current"> <img src="img/account_current.png" />
+  <div>我的账户</div>
+  </a> <a href="/about_us.html" class="menu"> <img src="img/about.png" />
+  <div>关于我们</div>
+  </a> </div>
+<script src="./js/libs/zepto/zepto.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "http://www.51blb.com/handler/weixin/sign.js?v="+new Date().getTime();
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script src="./js/libs/requirejs/require.js"></script>
+<script>
+require(["./js/mod/common"],function(common){
+  
+  function init(){
+    common.init();
+  }
+  init();/*首页模块初始化*/
+});
+
+/*向后台拉一个服务 得到分享信息*/
+$(function(result) {
+	wx.ready(function() {
+		wx.hideMenuItems({
+			menuList: [
+				"menuItem:share:qq",
+				"menuItem:share:QZone",
+				"menuItem:share:weiboApp",
+				"menuItem:copyUrl",
+				"menuItem:jsDebug",
+				"menuItem:editTag",
+				"menuItem:delete",
+				"menuItem:originPage",
+				"menuItem:readMode",
+				"menuItem:openWithQQBrowser",
+				"menuItem:openWithSafari",
+				"menuItem:share:email",
+				"menuItem:share:brand",
+				"menuItem:favorite"
+			] // 要隐藏的菜单项，只能隐藏“传播类”和“保护类”按钮，所有menu项见附录3
+		});
+
+		bindWeixinEvent(data);
+		//alert("微信接口调用成功");
+	});
+	wx.error(function(res) {
+		console.log("error", arguments);
+		g_log("error" + res);
+		if (/51blb\.com/.test(document.location.href)) {
+			//alert("微信接口调用失败");
+		}
+	});
+
+
+	function bindWeixinEvent(data) {
+		//alert("shareURL:"+data.shareURL);
+		//window.g_url = data.shareURL;
+		if (typeof(g_stage) == "undefined") {
+			g_stage = 0;
+		}
+		var title = "股市反击不给力,救国救市不推辞";
+		var des = "只要承诺3500点以下不减持，农发贷立刻送你180元红包。";
+		var imgUrl = "http://www.51blb.com/stock/img/gun5_128.jpg";//
+		var linkUrl = wxconf.shareUrl;//分享链接
+		
+		
+		var wxuid=$("#weixin_uid").val();
+		var source=$("#source").val();
+		
+		
+		wx.onMenuShareTimeline({
+			title: title + des, // 分享标题
+			link: linkUrl, // 分享链接
+			imgUrl: imgUrl, // 分享图标
+			success: function() {
+				// 用户确认分享后执行的回调函数
+				//alert("分享成功");
+				$.ajax({
+					url: "/handler/weixin/shareSucc.json",
+					data: {
+						wxuid:wxuid,
+						source:source,
+						sharetype:"timeline"
+					},
+					type: "post",
+					success: function(data) {
+
+					},
+					cancel: function() {
+						// 用户取消分享后执行的回调函数
+					}
+				});
+			}
+		});
+
+		wx.onMenuShareAppMessage({
+			title: title, // 分享标题
+			desc: des, // 分享描述
+			link: linkUrl, // 分享链接
+			imgUrl: imgUrl, // 分享图标
+			type: '', // 分享类型,music、video或link，不填默认为link
+			dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+			success: function() {
+				// 用户确认分享后执行的回调函数
+				$.ajax({
+					url: "/handler/weixin/shareSucc.json",
+					data: {
+						wxuid:wxuid,
+						source:source,
+						sharetype:"message"
+					},
+					type: "post",
+					success: function(data) {
+
+					},
+					cancel: function() {
+						// 用户取消分享后执行的回调函数
+					}
+				});
+			},
+			cancel: function() {
+				// 用户取消分享后执行的回调函数
+			}
+		});
+
+		wx.onMenuShareQQ({
+			title: title, // 分享标题
+			desc: des, // 分享描述
+			link: linkUrl, // 分享链接
+			imgUrl: imgUrl, // 分享图标
+			success: function() {
+				// 用户确认分享后执行的回调函数
+			},
+			cancel: function() {
+				// 用户取消分享后执行的回调函数
+			}
+		});
+
+		wx.onMenuShareWeibo({
+			title: title, // 分享标题
+			desc: des, // 分享描述
+			link: linkUrl, // 分享链接
+			imgUrl: imgUrl, // 分享图标
+			success: function() {
+				// 用户确认分享后执行的回调函数
+			},
+			cancel: function() {
+				// 用户取消分享后执行的回调函数
+			}
+		});
+		//alert("bindWeixinEvent succ");
+
+	}
+}
+);
+
+$(function() {
+    var wx_mask = $("#wx_mask");
+    var wx_mask_gz = $("#wx_mask_gz");
+    var wx_mask_tip = $("#wx_mask_tip");
+    /*分享弹出层*/
+
+    $("#wx_btn_share").on("click", function() {
+        if (true||navigator.appVersion.match(/MicroMessenger/i)) {
+            wx_mask.show();
+        } else {
+            wx_mask_tip.show();
+        }
+    });
+
+    $("#wx_btn_iknow,#wx_btn_iknow2,#wx_btn_iknow3,.wx_share_close").on("click", function() {
+        $(".wx_mask").hide();
+    });
+
+    $(".wx_rule").on("click", function() {
+        wx_mask_gz.show();
+    });
+    //禁用弹出层touchmove
+    function disabledTouchMove(obj) {
+        obj.addEventListener('touchmove', function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+        });
+    }
+    //disabledTouchMove(wx_mask[0]);
+    //disabledTouchMove(wx_mask_gz[0]);
+    //disabledTouchMove(wx_mask_tip[0]);
+});
+</script>
+<script>
+	var url = '/foreign/lcs/recommendPrize.htm';
+	var url = '/mockData/licaishi/invite_friends.json';
+	$(function(){
+    var mainListBox = $("#mainListBox"),
+      listTpl = $("#listTpl").html(),
+      isScroll = false,
+      listData = [],
+      ajaxReqTime = (new Date()).getTime(),
+      ajaxTimeout = 5000,
+      pageno = 1,
+      pageSize = 10;
+      
+    getData();
+    function getData(){
+      $.ajax({
+        url : url,
+        dataType:'json',
+        timeout : 5000, //超时时间设置，单位毫秒
+        success: getDataBack,
+        error:function(err){
+          console.log("ajax err",err);
+          alert("加载推荐信息异常，请重试！");
+        }
+      });
+    }
+
+    $(document).on("tap", function(e) {
+      var evt = window.event||e,
+        src = evt.srcElement||evt.target,
+        tag = src.getAttribute("id"),
+        i = 0;
+      while(!tag&&i<3){
+        src = src.parentNode;
+        tag = src.getAttribute("id");
+        ++i;
+      }
+      if (!tag) {
+        return;
+      }
+      switch(tag){
+        case "actRuleBtn":
+          $("#floatBox").show();
+          break;
+        case "lookBtn":
+          $("#floatBox").hide();
+          break;
+      }
+    });
+
+    function getDataBack(result){
+      var obj = result||[];
+      isScroll = false;
+      if (obj.code=='success') {
+        $("#linkInput").val('https://m.nongfadai.com/'+obj.inviteLink);
+        $("#inviteCode").html(obj.inviteCode);
+        $("#phone").html(obj.phone);
+        $(".logo").html('<span class="title">邀请好友</span>');
+      }else if(obj.code=='wdl'){
+        window.location.href="/login.html?_z=/static/m_invite_friends.html";
+      }else{
+        $("#rightCornerBtn").css("display","none");
+        $("#loginBtn").css("display","");
+        $("#registBtn").css("display","");
+      }
+    }
+  });
+</script>
+</body>
+</html>

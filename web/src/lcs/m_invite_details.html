@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="format-detection" content="telephone=no,address=no,email=no">
+<meta name="mobileOptimized" content="width">
+<meta name="handheldFriendly" content="true">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+<link rel="stylesheet" type="text/css" href="css/style.css?v=20150524" />
+<link rel="stylesheet" type="text/css" href="css/invite_details.css?v=20150524" />
+<title>农发贷</title>
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var host=document.location.hostname;
+	if(/nongfadai.com$/ig.test(host)){
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?10cd9976402aabfbd36d69dd43dd8c1a";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	}
+})();
+</script>
+<script src="js/wording.js"></script>
+</head>
+<body>
+<div id="nfd-header" class="nfd-header">
+  <div class="icon-c"> <a id="rightCornerBtn" href="index.html" target="_self" class="logo"> <img src="img/logo.png" alt="logo"> </a> <a href="javascript:void(0)" class="menu"> </a>
+  <!-- 未登录态 -->
+    <a id="loginBtn" style="display:none" href="/login.html" target="_self" class="login right mr-m">登录</a>
+    <a id="registBtn" style="display:none" href="/register.html" target="_self" class="register right">注册</a>
+    <div class="clearfix"></div>
+  </div>
+</div>
+<!-- 登录态 -->
+<div id="menus" class="menus logined"> <a href="/user/logout.htm"  target="_self"> <img src="img/header/logout.png" alt="logout" /> <span> 退出 </span> </a> <a href="/user/account/recharge.html" target="_self" > <img src="img/header/account.png" alt="account" /> <span> 充值 </span> </a> <a href="/project_list.html"  target="_self"> <img src="img/header/invest.png" alt="invest" /> <span> 投标 </span> </a>
+  <div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
+<div class="menu-mask" id="menu-mask"></div>
+<div id="scroller">
+  <div id="nfd-touch">
+    <div id="nfd-account-links">
+      <div class="links-block">
+      	<a href="javascript:void(0)" class="investments layout_flex">
+            <div class="c1"><img src="img/inviteFriend/person_blue.gif"></div>
+            <div class="c2" style="color:#12a9c6;">
+                <span>您推荐的好友</span>
+                <span class="desc desc_l">推荐注册人数<br /><i style="color:#12a9c6;" id="myRegister"></i>&nbsp;人</span>
+                <span class="desc desc_r">已投资人数<br /><i style="color:#12a9c6;" id="myInvested"></i>&nbsp;人</span>
+            </div>
+            <div class="c3"></div>
+        </a>
+        <a href="javascript:void(0)" class="investments layout_flex">
+            <div class="c1"><img src="img/inviteFriend/person_yellow.gif"></div>
+            <div class="c2" style="color:#f88218;">
+                <span>您好友推荐的好友</span>
+                <span class="desc desc_l">推荐注册人数<br /><i style="color:#f88218;" id="friendsReg"></i>&nbsp;人</span>
+                <span class="desc desc_r">已投资人数<br /><i style="color:#f88218;" id="friendsInv"></i>&nbsp;人</span>
+            </div>
+            <div class="c3"></div>
+        </a>
+        </div>
+      <div class="links-block">
+      	<a href="m_invite_details_his.html" class="layout_flex">
+            <div class="c1"><img src="img/inviteFriend/clock.gif"></div>
+            <div class="c2">
+                <span class="link_middle">详情记录</span>
+            </div>
+            <div class="c3"><img src="img/inviteFriend/right_corner.gif" /></div>
+        </a>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="clear"></div>
+<!--B 底部-->
+<div id="nfd-footer"><!--具体激活哪个菜单  要增加一个变量来控制--> 
+  <a href="/index.html" class="menu"> <img src="img/homepage.png" />
+  <div>主页</div>
+  </a> <a href="/project_list.html?tab=3" class="menu"> <img src="img/investment.png" />
+  <div>投资理财</div>
+  </a> <a href="/user/account/index.html" class="menu current"> <img src="img/account_current.png" />
+  <div>我的账户</div>
+  </a> <a href="/about_us.html" class="menu"> <img src="img/about.png" />
+  <div>关于我们</div>
+  </a> </div>
+<script src="../js/libs/zepto/zepto.js"></script>
+<script src="../js/libs/requirejs/require.js"></script>
+<script>
+require(["../js/mod/common"],function(common){
+
+  function initBanner(){
+    //banner
+    try{
+      var bullets,bannerLength; 
+      bullets = document.getElementById('banner_btn').getElementsByTagName('span');
+      bannerLength=bullets.length>2?true:false;
+      
+      window.mySwipe = Swipe(document.getElementById("nfd-slide"),{
+        auto:3000,
+        continuous:true,
+        stopPropagation:false,
+        callback:function(pos){
+           var on=document.getElementsByClassName("ws-selected");
+           if(on.length){
+             on[0].className="";
+           }
+           pos=bannerLength?pos:pos%2;
+           bullets[pos].className = 'ws-selected';
+        }
+      });
+    }catch(e){
+      
+    }
+    //$("#nfd-slide").find("img").show();
+  }
+  
+  function init(){
+    common.init();
+    initBanner();
+  }
+  init();/*首页模块初始化*/
+});
+</script>
+<script>
+	var url = '/foreign/lcs/recommendDetail.htm';
+	$(function(){
+    var myRegister = $("#myRegister"),
+      myInvested = $("#myInvested"),
+      friendsReg = $("#friendsReg"),
+      friendsInv = $("#friendsInv");
+    $.ajax({
+      url: url,
+      dataType:'json',
+      timeout : 5000, //超时时间设置，单位毫秒
+      success: getDataBack,
+      error:function(err){
+        console.log("ajax err",err);
+        alert("加载推荐信息异常，请重试！");
+      }
+    });
+
+    function getDataBack(result){
+      // console.log("result",result);
+      var obj = result||{};
+      if (obj.code=='success') {
+        myRegister.html(obj.myRegister);
+        myInvested.html(obj.myInvested);
+        friendsReg.html(obj.friendsReg);
+        friendsInv.html(obj.friendsInv);
+        $(".logo").html('<span class="title">推荐详情</span>');
+      }else if(obj.code=='wdl'){
+    	  window.location.href="/login.html?_z=/static/m_invite_details.html";
+      }else{
+        $("#rightCornerBtn").css("display","none");
+        $("#loginBtn").css("display","");
+        $("#registBtn").css("display","");
+      }
+    }
+  });
+</script>
+</body>
+</html>

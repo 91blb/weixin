@@ -1,0 +1,189 @@
+/* CSS Document */
+* {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);/*移动端dom元素按下外框隐藏*/
+}
+*, *:after, *:before {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-text-size-adjust: none;
+}
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: "Microsoft YaHei", "Lucida Sans Unicode", "Myriad Pro", "Hiragino Sans GB", "Heiti SC", Verdana, simsun;
+	font-size: 12px;
+	color: #444;
+	background-color: #edecf1;
+	-webkit-user-select: none; /* 禁止选中文本 */
+	-webkit-text-size-adjust: none;
+	-webkit-font-smoothing: antialiased;
+}
+html {
+	max-width: 640px;
+}
+body {
+	height: 100%;
+	min-width: 320px;
+}
+input:-webkit-autofill {
+ -webkit-box-shadow: 0 0 0px 1000px white inset;
+ -webkit-text-fill-color: #333;
+}
+.p11 {
+	font-size: 0px;
+}
+.p11 img {
+	width: 100%;
+	height: auto;
+}
+.p11_a2 {
+	position: relative;
+	z-index: 1;
+	background-color: #272e43;
+	background-image: url(../img/channnelRegister2/content.png);
+	background-position: top center;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+.p11_a2_wrap {
+	background-image: url(../img/channnelRegister2/content_bg.png);
+	background-position: bottom left;
+	background-repeat: repeat-x;
+}
+.p11_a2 .form {
+	z-index: 2;
+	width: 90%;
+	margin: 0 auto;
+	background-color: #fff;
+	margin-left: 5%;
+	padding-top: 32px;
+	padding-bottom: 16px;
+}
+.input_con {
+	margin: 10px 10px;
+	margin-top: 0px;
+	position: relative;
+	padding-left: 6px;
+	padding-right: 6px;
+	font-size: 12px;
+	min-height: 32px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+.input_div {
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+.input_div input {
+	line-height: 12px;
+	height: 32px;
+	border: none;
+	font-size: 12px;
+	padding-left: 12px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 100%;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+.input_con.pw_div {
+	padding-right: 96px;
+}
+.input_div {
+}
+.send_code {
+	position: absolute;
+	top: 0px;
+	right: 6px;
+	float: right;
+	width: 82px;
+	height: 34px;
+	line-height: 34px;
+	text-align: center;
+	background-color: #f88111;
+	color: #fff;
+}
+.btn_reg {
+	background-color: #f88111;
+	width: 80px;
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	font-size: 12px;
+	padding: 0px;
+	color: #fff;
+}
+.msg_info {
+	position: absolute;
+	right: 12px;
+	top: 1px;
+	height: 32px;
+	line-height: 32px;
+	display: none;
+	color:#db1405;
+}
+.msg_info2.msg_info2 {
+	right: 106px;
+}
+.msg_info .icon {
+	display: inline-block;
+	float: left;
+	width: 32px;
+	height: 100%;
+	line-height: 32px;
+	background-color: #0F0;
+}
+.input_agree label {
+	background-image: url(../img/channnelRegister2/checked.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: left center;
+}
+.input_agree span {
+	padding-left: 6px;
+}
+.input_agree i {
+	font-style: normal;
+}
+.p11_a3 {
+	background-color: transparent;
+	text-align: center;
+	background-image: url(../img/channnelRegister2/content_bg.png);
+	background-position: left top;
+	background-repeat: repeat;
+	font-size: 12px;
+}
+.p11_b31 {
+	background-color: transparent;
+	font-size: 14px;
+	line-height: 32px;
+	height: 32px;
+	padding-top: 32px;
+	padding-bottom: 24px;
+	color: #fff;
+}
+.p11_b32 {
+	width: 80%;
+	margin: 0 auto;
+	line-height: 20px;
+	padding-bottom: 32px;
+	color: #fff;
+}
+
+
+p{
+	margin:0px;
+	padding:0px;
+	font-size:12px;
+}
+
+.btn_reg{
+	float:left;
+	cursor:pointer;
+}
+
+.send_code.wait{
+	background-color:#666;
+	color:#eee;
+}

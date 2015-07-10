@@ -1,0 +1,258 @@
+#nfd-account-links .links-block{
+	margin-bottom:5px;
+}
+#nfd-account-links .my_rec_hot{
+	display:inline-block;
+	width:2.3em;
+	margin-top: -0.8em;
+	margin-left: 0.3em;
+}
+.total-block{
+	background: #2393de;
+	padding: 5% 5% 8% 5%;
+	color: #fff;
+}
+.total-block:after{
+	content: ".";
+	display: block;
+	width: 0px;
+	height: 0px;
+	overflow: hidden;
+}
+.total-block .award_title{
+	font-size: 12px;
+	color: #fff;
+}
+.total-block .award_num{
+	margin: 20px 0 0 0;
+	font-size: 18px;
+	color: #fff;
+	position: relative;
+	text-align: left;
+	font-size: 5em;
+	color: #fff;
+	line-height: 1em;
+}
+.total-block .currency{
+	position: absolute;
+	text-align: right;
+	right: 0px;
+	margin:-1.5em 2em auto auto;
+	line-height: 1.5em;
+	font-size: 1.5em;
+}
+.month-block{
+	background: #1a88d2;
+	padding: 5%;
+	color: #fff;
+}
+.month-block:after{
+	content: ".";
+	display: block;
+	width: 0px;
+	height: 0px;
+	overflow: hidden;
+}
+.month-block .award_title{
+	font-size: 1em;
+	color: #fff;
+	width: 50%;
+}
+.month-block .award_year{
+	width: 100%;
+	text-align: right;
+	right:0px;
+	margin-right: 0px;
+	margin-top: -1.5em;
+	overflow: auto;
+	font-size: 1em;
+	color: #fff;
+}
+.month-block .award_year img{
+	width: 1.5em;
+}
+.month-block .award_num{
+	margin: 5% 0 0 0;
+	position: relative;
+	text-align: center;
+	font-size: 1em;
+	color: #fff;
+	line-height: 1em;
+	width: 2em;
+	padding: 2.5% 5%;
+}
+.month-block .currency{
+	position: absolute;
+	text-align: right;
+	right: 0px;
+	margin:-1.5em 1.5em auto auto;
+	line-height: 1.5em;
+	font-size: 1.5em;
+}
+.month-block .currency span{
+	font-size: 1em;
+}
+#nfd-touch{
+	background-color:#fff;
+}
+#nfd-account-links{
+	text-align:center;
+	font-size:1.5em;
+	color:#000;
+}
+#nfd-account-links img{
+	display:block;
+	width:25%;
+	margin:5% auto;
+}
+#nfd-account-links span{
+	display:block;
+}
+#nfd-account-links .title{
+	line-height:2em;
+}
+#nfd-account-links .desc{
+	color:#757575;
+	font-size:0.8em;
+	line-height:2em;
+}
+#nfd-account-links .phone{
+	color:#f88218;
+	font-size:1.5em;
+	line-height:2em;
+	height:2em;
+	border:1px solid #f88218;
+	width:60%;
+	margin:5% auto;
+}
+#nfd-account-links input{
+	color:#545454;
+	font-size:0.5em;
+	line-height:0.5em;
+	width:70%;
+	height:2em;
+	background-color:#f4f4f4;
+	margin:1% auto;
+	padding:0 1em;
+	text-align:left;
+}
+#nfd-account-links .content{
+	font-size:0.5em;
+	line-height:2em;
+	color:#929292;
+}
+#nfd-account-links .content .invite_code{
+	font-size:2em;
+	line-height:2em;
+	color:#000;
+}
+/*
+*规则提示框
+*/
+.month_tip_box{
+	position:fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	z-index:999;
+}
+.month_tip_box .tip_bg{
+	position:absolute;
+	width:100%;
+	height:100%;
+	background-color:#000;
+	opacity:0.5;
+}
+.month_tip_box .month_tip{
+	position:absolute;
+	width:80%;
+	height:70%;
+	margin:25% 10% auto 10%;
+	border-radius:3px;
+	overflow:hidden;
+	background-color:#fff;
+}
+.month_tip_box .month_tip .tip_title{
+	width:100%;
+	height:85px;
+	background-color:#dfdfdf;
+	text-align:center;
+}
+.month_tip_box .month_tip .tip_title p{
+	font-size:1.1em;
+	padding:1px 0 10px 0;
+	text-align:center;
+	width:100%;
+	box-sizing:border-box;
+}
+.month_tip_box .month_tip .tip_title p span{
+	display:inline-block;
+	margin:0 20px 0 20px;
+	font-size:1.2em;
+	font-weight:bold;
+	color:#000;
+	vertical-align:middle;
+}
+.month_tip_box .month_tip .tip_title p img{
+	display:block;
+	width:24px;
+	margin:10px auto;
+}
+.month_tip_box .month_tip .tip_list{
+	width:100%;
+	padding:5% 2% 2px 2%;
+	box-sizing:border-box;
+	overflow:auto;
+	position:absolute;
+	top:85px;
+	bottom:82px;
+}
+.month_tip_box .month_tip .tip_list li{
+	color:#757575;
+	text-align:left;
+	vertical-align:middle;
+	font-size:1.2em;
+	line-height:1.5em;
+	margin-bottom:1em;
+}
+.month_tip_box .month_tip .tip_list div{
+	margin-left: 1.8em;
+	margin-top: -1.4em;
+}
+.month_tip_box .month_tip .tip_list li i{
+	font-style:normal;
+	color: #f88218;
+	display: inline-block;
+	margin: 0 0.3em;
+}
+.month_tip_box .month_tip .btnBox{
+	height:82px;
+	position:absolute;
+	width:90%;
+	bottom:0;
+	margin:0 5%;
+}
+.month_tip_box .month_tip .btnBox .button{
+	display:block;
+	height:40px;
+	line-height:36px;
+	border-top:1px solid #cfcfcf;
+	font-size:1.2em;
+	text-align:center;
+	vertical-align:middle;
+}
+.month_tip_box .month_tip .btnBox .button img{
+	display:inline-block;
+	margin-top:-2px;
+	margin-left:-1.5em;
+	height:1em;
+	vertical-align:middle;
+}
+.month_tip_box .month_tip .btnBox .button span{
+	vertical-align:middle;
+	color:#0098fe;
+}
+/*
+*规则提示框 end
+*/

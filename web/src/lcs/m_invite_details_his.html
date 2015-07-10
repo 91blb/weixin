@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="format-detection" content="telephone=no,address=no,email=no">
+<meta name="mobileOptimized" content="width">
+<meta name="handheldFriendly" content="true">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+<link rel="stylesheet" type="text/css" href="css/style.css?v=20150524" />
+<link rel="stylesheet" type="text/css" href="css/invite_details_his.css?v=20150524" />
+<title>农发贷</title>
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var host=document.location.hostname;
+	if(/nongfadai.com$/ig.test(host)){
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?10cd9976402aabfbd36d69dd43dd8c1a";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	}
+})();
+</script>
+<script src="js/wording.js"></script>
+</head>
+<body>
+<div id="nfd-header" class="nfd-header">
+  <div class="icon-c"> <a id="rightCornerBtn" href="index.html" target="_self" class="logo"> <img src="img/logo.png" alt="logo"> </a> <a href="javascript:void(0)" class="menu"> </a>
+  <!-- 未登录态 -->
+    <a id="loginBtn" style="display:none" href="/login.html" target="_self" class="login right mr-m">登录</a>
+    <a id="registBtn" style="display:none" href="/register.html" target="_self" class="register right">注册</a>
+    <div class="clearfix"></div>
+  </div>
+</div>
+<!-- 登录态 -->
+<div id="menus" class="menus logined"> <a href="/user/logout.htm"  target="_self"> <img src="img/header/logout.png" alt="logout" /> <span> 退出 </span> </a> <a href="/user/account/recharge.html" target="_self" > <img src="img/header/account.png" alt="account" /> <span> 充值 </span> </a> <a href="/project_list.html"  target="_self"> <img src="img/header/invest.png" alt="invest" /> <span> 投标 </span> </a>
+  <div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
+<div class="menu-mask" id="menu-mask"></div>
+<div id="scroller">
+  <div id="nfd-touch">
+    <div id="nfd-account-links">
+      <ul id="mainListBox">
+      </ul>
+      	<a id="more" class="nfd-goto-links load-more align_center" href="javascript:void(0)" style="display:none;">
+				加载更多项目
+			</a>
+    </div>
+  </div>
+</div>
+<div class="clear"></div>
+<!--B 底部-->
+<div id="nfd-footer"><!--具体激活哪个菜单  要增加一个变量来控制--> 
+  <a href="/index.html" class="menu"> <img src="img/homepage.png" />
+  <div>主页</div>
+  </a> <a href="/project_list.html?tab=3" class="menu"> <img src="img/investment.png" />
+  <div>投资理财</div>
+  </a> <a href="/user/account/index.html" class="menu current"> <img src="img/account_current.png" />
+  <div>我的账户</div>
+  </a> <a href="/about_us.html" class="menu"> <img src="img/about.png" />
+  <div>关于我们</div>
+  </a> </div>
+<script type="text/html" id="listTpl">
+  <li class="links-block layout_flex">
+      <div class="c1">
+        <span class="cont_main" id="name{#personid#}">{#name#}</span>
+        <span class="cont_title">来源</span>
+        <span class="cont_value" id="from{#personid#}">{#from#}</span>
+      </div>
+      <div class="c2">
+        <span class="cont_main" id="phone{#personid#}">{#phone#}</span>
+        <span class="cont_title">投资情况</span>
+        <span class="cont_value" id="invest{#personid#}"><i>{#invest#}</i></span>
+      </div>
+      <div class="c3">
+        <span class="invite_time" id="inviteTime{#personid#}">{#time#}</span>
+        <span class="cont_title">推荐已投资人数（人）</span>
+        <span class="cont_value"><b id="investPer{#personid#}">{#investPer#}</b></span>
+      </div>
+  </li>
+</script>
+<script src="../js/libs/zepto/zepto.js"></script>
+<script src="../js/libs/requirejs/require.js"></script>
+<script>
+require(["../js/mod/common"],function(common){
+
+  function initBanner(){
+    //banner
+    try{
+      var bullets,bannerLength; 
+      bullets = document.getElementById('banner_btn').getElementsByTagName('span');
+      bannerLength=bullets.length>2?true:false;
+      
+      window.mySwipe = Swipe(document.getElementById("nfd-slide"),{
+        auto:3000,
+        continuous:true,
+        stopPropagation:false,
+        callback:function(pos){
+           var on=document.getElementsByClassName("ws-selected");
+           if(on.length){
+             on[0].className="";
+           }
+           pos=bannerLength?pos:pos%2;
+           bullets[pos].className = 'ws-selected';
+        }
+      });
+    }catch(e){
+      
+    }
+    //$("#nfd-slide").find("img").show();
+  }
+  
+  function init(){
+    common.init();
+    initBanner();
+  }
+  init();/*首页模块初始化*/
+});
+</script>
+<script>
+	var url = '/foreign/lcs/recommendDetailCount.htm';
+	var currentPage = 0;
+	var size = 6;
+	$(function(){
+    var mainListBox = $("#mainListBox"),
+      listTpl = $("#listTpl").html(),
+      isScroll = false,
+      listData = [],
+      ajaxReqTime = (new Date()).getTime(),
+      ajaxTimeout = 5000,
+      pageno = 1,
+      pageSize = 10;
+      
+    $("#more").click(
+    		getData
+    );
+    getData();
+    function getData(){
+      if ($("#loading").length === 0) {
+        $("#mainListBox").append('<div class="mod_loading global-loading" id="loading">正在加载，请稍候...</div>');
+      }
+      $.ajax({
+		url : url,
+	  	data:{currentPage:currentPage+1,size:size},
+	  	dataType:'json',
+	  	timeout : 5000, //超时时间设置，单位毫秒
+        success: getDataBack,
+        error:function(err){
+          console.log("ajax err",err);
+          removeNode("loading");
+          $("#mainListBox").append("<div style='text-align:center;color: #666;line-height: 35px;' id='err'>加载推荐信息异常，请重试！</div>");
+        }
+      });
+    }
+
+    function getDataBack(result){
+      // console.log("result",result);
+      var obj = result||[];
+      isScroll = false;
+      if (obj.code=='success') {
+        listData = obj.list||[];
+
+        if (listData.length > 0) {
+          showListData(listData);
+          currentPage = currentPage+1;
+          if(listData.length<6){
+        	  removeNode("more");
+         	 $("#mainListBox").append("<div style='text-align:center;color: #666;line-height: 35px;' id='completed'>没有更多数据</div>");
+          }else{
+        	  $("#more").show();
+          }
+        } else{
+        	 removeNode("more");
+        	 $("#mainListBox").append("<div style='text-align:center;color: #666;line-height: 35px;' id='completed'>没有更多数据</div>");
+        }
+        removeNode("loading");
+        $(".logo").html('<span class="title">详情记录</span>');
+      }else if(obj.code=='wdl'){
+    	  window.location.href="/login.html?_z=/static/m_invite_details_his.html";
+      }else{
+        $("#rightCornerBtn").css("display","none");
+        $("#loginBtn").css("display","");
+        $("#registBtn").css("display","");
+      }
+    }
+
+    function showListData(dataList){
+      var str = [];
+      for (var i = dataList.length - 1; i >= 0; i--) {
+        var item = dataList[i];
+        str.push(strReplace(listTpl,{
+          "{#name#}": item.name,
+          "{#from#}": item.from,
+          "{#phone#}": item.phone,
+          "{#invest#}": item.invest,
+          "{#time#}": item.time,
+          "{#investPer#}": item.investPer
+        }));
+      };
+      $('#mainListBox').append(str.join(""));
+    }
+
+    function strReplace(str, re, rt) {
+        if (rt != undefined) {
+            replace(re, rt);
+        } else {
+            for (var key in re) {
+                replace(key, re[key]);
+            }
+        }
+        function replace(a, b) {
+            str = str.split(a).join(b ? b : "");
+        }
+        return str;
+    }
+
+    function removeNode(id) {
+        var node = document.getElementById(id) || false;
+        if (node) {
+            node.parentNode.removeChild(node);
+        }
+    }
+  });
+</script>
+</body>
+</html>

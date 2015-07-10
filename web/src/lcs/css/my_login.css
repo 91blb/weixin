@@ -1,0 +1,92 @@
+.login_info{
+	padding: 30px 0 0 0;
+}
+.contain_main{
+	height: auto;
+	overflow: auto;
+	padding: 70px 40px 70px 40px;
+}
+.contain_main form{
+	overflow: hidden;
+	margin-left: 0px;
+	width: 54%;
+	float:left;
+}
+.contain_main .contain_left{
+	width: 45%;
+	height: 450px;
+	float:left;
+	border-right: 1px solid #ddd;
+}
+.contain_main .contain_left img{
+	margin: 30px 20px 10px 30px;
+	width:320px;
+	height: 260px;
+	display: block;
+}
+.contain_main .contain_left ul{
+	font-size: 14px;
+	margin: 50px 0 0 50px;
+	color: #626262;
+}
+.contain_main .contain_left li{
+	list-style-type: disc;
+	margin: 10px 0;
+}
+.contain_main .cell .info{
+	/*width: 350px;*/
+}
+.contain_main .cell .info>p.layout_abs{
+	left: 0px;
+	top: 32px;
+}
+.contain_main .cell .info>p.br-height{
+	top: 0px;
+	position: relative;
+	float: left;
+	height: auto;
+	/*transition:2s;
+	-moz-transition:2s;
+	-webkit-transition:2s;
+	-o-transition:2s;*/
+}
+.contain_main .cell .info > span.layout_abs{
+	width: 100px;
+}
+
+/*
+迁移页面上的样式
+*/
+.br-height {
+    width: 255px;
+    height: 42px;
+    line-height: 18px;
+    vertical-align: middle;
+    color: #909090;
+    font-size: 12px;
+    display: inline-block;
+    padding-left: 3px;
+}
+
+.phd {
+    color: #FFF;
+    cursor: pointer;
+    margin-left: 8px;
+    background: none repeat scroll 0% 0% #F7AE48;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 0px 5px;
+}
+
+.otp-show{
+    height: 24px;
+    width: 110px;
+    vertical-align: middle;
+    line-height: 24px;
+    color: #FFF;
+    font-size: 12px;
+    display: inline-block;
+    background: none repeat scroll 0% 0% #C2C2C2;
+    border-radius: 5px;
+    text-align: center;
+}
