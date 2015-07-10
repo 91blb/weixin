@@ -267,14 +267,14 @@ $(function(result) {
 				"menuItem:share:qq",
 				"menuItem:share:QZone",
 				"menuItem:share:weiboApp",
-				"menuItem:copyUrl",
+				//"menuItem:copyUrl",
 				"menuItem:jsDebug",
 				"menuItem:editTag",
 				"menuItem:delete",
 				"menuItem:originPage",
 				"menuItem:readMode",
-				"menuItem:openWithQQBrowser",
-				"menuItem:openWithSafari",
+				//"menuItem:openWithQQBrowser",
+				//"menuItem:openWithSafari",
 				"menuItem:share:email",
 				"menuItem:share:brand",
 				"menuItem:favorite"
@@ -296,13 +296,10 @@ $(function(result) {
 	function bindWeixinEvent(data) {
 		//alert("shareURL:"+data.shareURL);
 		//window.g_url = data.shareURL;
-		if (typeof(g_stage) == "undefined") {
-			g_stage = 0;
-		}
 		var title = "股市反击不给力,救国救市不推辞";
 		var des = "只要承诺3500点以下不减持，农发贷立刻送你180元红包。";
 		var imgUrl = "http://www.51blb.com/stock/img/gun5_128.jpg";//
-		var linkUrl = wxconf.shareUrl;//分享链接
+		var linkUrl = "http://www.51blb.com";//分享链接
 		
 		
 		var wxuid=$("#weixin_uid").val();
