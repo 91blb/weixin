@@ -12,6 +12,108 @@
 <link rel="stylesheet" type="text/css" href="css/style.css?v=20150524" />
 <link rel="stylesheet" type="text/css" href="css/invite_friends.css?v=20150524" />
 <title>农发贷</title>
+<style>
+/*遮罩样式 开始*/
+.wx_mask {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	z-index: 2000;
+	background-color: rgba(0,0,0,0.85);
+	display: none;
+}
+/*遮罩样式 结束*/
+
+
+/*活动规则样式  开始*/
+
+.wx_rule_con {
+	max-width: 640px;
+	margin: 0 auto;
+}
+.wx_btn_iknow {
+	background-image: url(./img/redbag/wx_btn_iknow_520.png);
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 260px;
+	height: 70px;
+	margin: 0 auto;
+}
+.wx_rule {
+	float: right;
+	display: inline-block;
+	padding: 4px 8px;
+	margin-top: 10px;
+	background-color: #efd731;
+	color: #2d3131;
+	font-size: 12px;
+	line-height: 14px;
+	border-radius: 14px;
+}
+.wx_share_title {
+	height: 45px;
+	line-height: 45px;
+	color: #cda148;
+	padding: 0 5% 0 7%;
+	border-top: #cda148 solid 1px;
+	border-bottom: #cda148 solid 1px;
+	font-weight: bold;
+	margin-top: 10px;
+}
+.wx_share_close {
+	width: 30px;
+	height: 30px;
+	background: url(./img/redbag/wx_redbag_close_60.png) left top no-repeat;
+	background-size: 30px 30px;
+	display: block;
+	float: right;
+	margin: 8px 0 0 0;
+}
+
+.wx_share_content {
+	color: #ebebe8;
+	font-size: 14px;
+	padding: 7%;
+	line-height: 25px;
+	margin-bottom: 65px;
+}
+.wx_share_guide{
+	background-image:url(./img/redbag/wx_share_guide_520.png);
+	background-position:top center;
+	background-repeat:no-repeat;
+	background-size:contain;
+	width:260px;
+	margin:0 auto;
+	padding-top:170px;
+}
+
+.wx_btn_iknow{
+	background-image:url(./img/redbag/wx_btn_iknow_520.png);
+	background-position:top center;
+	background-repeat:no-repeat;
+	background-size:contain;
+	width:260px;
+	height:70px;
+	margin:0 auto;
+
+}
+
+.wx_redbag{
+	background-color:#000000;
+	margin:0 auto;
+}
+
+.wx_redbag_margin{
+	margin:0 3%;
+	position:relative;
+	z-index:3;
+
+	
+}
+</style>
 <script>
 var _hmt = _hmt || [];
 (function() {
@@ -28,15 +130,32 @@ var _hmt = _hmt || [];
 </head>
 <body>
 <div id="nfd-header" class="nfd-header">
-  <div class="icon-c"> <a href="index.html" target="_self" class="logo"> <img src="img/logo.png" alt="logo"> </a> <a id="rightCornerBtn" href="javascript:void(0)" class="menu"> </a>
-  <!-- 未登录态 -->
+  <div class="icon-c">
+    <a href="index.html" target="_self" class="logo">
+    <img src="img/logo.png" alt="logo">
+    </a>
+    <a id="rightCornerBtn" href="javascript:void(0)" class="menu">
+    </a>
+    <!-- 未登录态 -->
     <a id="loginBtn" style="display:none" href="/login.html" target="_self" class="login right mr-m">登录</a>
     <a id="registBtn" style="display:none" href="/register.html" target="_self" class="register right">注册</a>
     <div class="clearfix"></div>
   </div>
 </div>
 <!-- 登录态 -->
-<div id="menus" class="menus logined"> <a href="/user/logout.htm"  target="_self"> <img src="img/header/logout.png" alt="logout" /> <span> 退出 </span> </a> <a href="/user/account/recharge.html" target="_self" > <img src="img/header/account.png" alt="account" /> <span> 充值 </span> </a> <a href="/project_list.html"  target="_self"> <img src="img/header/invest.png" alt="invest" /> <span> 投标 </span> </a>
+<div id="menus" class="menus logined">
+  <a href="/user/logout.htm"  target="_self">
+  <img src="img/header/logout.png" alt="logout" />
+  <span> 退出 </span>
+  </a>
+  <a href="/user/account/recharge.html" target="_self" >
+  <img src="img/header/account.png" alt="account" />
+  <span> 充值 </span>
+  </a>
+  <a href="/project_list.html"  target="_self">
+  <img src="img/header/invest.png" alt="invest" />
+  <span> 投标 </span>
+  </a>
   <div class="clearfix"></div>
 </div>
 <div class="clearfix"></div>
@@ -57,106 +176,265 @@ var _hmt = _hmt || [];
     </div>
     <div id="nfd-account-links">
       <div class="links-block">
-      	<a href="m_invite_details.html" class="investments layout_flex">
-            <div class="c1"><img src="img/inviteFriend/freind_icon_1.png"></div>
-            <div class="c2">
-                <span>推荐详情</span>
-                <span class="desc">推荐记录，点击查看</span>
-            </div>
-            <div class="c3"><img src="img/inviteFriend/right_corner.gif" /></div>
-        </a>
-        <a href="m_invite_friends.html" class="investments layout_flex">
-            <div class="c1"><img src="img/inviteFriend/freind_icon_2.png"></div>
-            <div class="c2">
-                <span>邀请好友</span>
-                <span class="desc">成功邀请好友投资，可获得现金奖励</span>
-            </div>
-            <div class="c3"><img src="img/inviteFriend/right_corner.gif"></div>
-        </a>
+        <a href="m_invite_details.html" class="investments layout_flex">
+        <div class="c1"><img src="img/inviteFriend/freind_icon_1.png"></div>
+        <div class="c2">
+          <span>推荐详情</span>
+          <span class="desc">推荐记录，点击查看</span>
         </div>
+        <div class="c3"><img src="img/inviteFriend/right_corner.gif" /></div>
+        </a>
+        <a href="m_invite_friends.html" class="investments layout_flex" id="invite_friend">
+        <div class="c1"><img src="img/inviteFriend/freind_icon_2.png"></div>
+        <div class="c2">
+          <span>邀请好友</span>
+          <span class="desc">成功邀请好友投资，可获得现金奖励</span>
+        </div>
+        <div class="c3"><img src="img/inviteFriend/right_corner.gif"></div>
+        </a>
+      </div>
     </div>
   </div>
 </div>
 <div class="clear"></div>
 <div class="month_tip_box" id="floatBox" style="display:none;">
-    <div class="tip_bg"></div>
-    <div class="month_tip">
-        <div class="tip_title">
-        	<p>
-            <i attr-id="yearleft">&lt;</i>
-            <span id="yearNum"></span>
-            <i attr-id="yearright">&gt;</i>
-            </p>
-        </div>
-        <ul class="tip_list" id="monthBox">
-            <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="01">1月</span></li>
-            <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="02">2月</span></li>
-            <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="03">3月</span></li>
-            <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="04">4月</span></li>
-            <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="05">5月</span></li>
-            <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="06">6月</span></li>
-            <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="07">7月</span></li>
-            <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="08">8月</span></li>
-            <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="09">9月</span></li>
-            <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="10">10月</span></li>
-            <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="11">11月</span></li>
-            <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="12">12月</span></li>
-        </ul>
+  <div class="tip_bg"></div>
+  <div class="month_tip">
+    <div class="tip_title">
+      <p>
+        <i attr-id="yearleft">&lt;</i>
+        <span id="yearNum"></span>
+        <i attr-id="yearright">&gt;</i>
+      </p>
     </div>
+    <ul class="tip_list" id="monthBox">
+      <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="01">1月</span></li>
+      <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="02">2月</span></li>
+      <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="03">3月</span></li>
+      <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="04">4月</span></li>
+      <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="05">5月</span></li>
+      <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="06">6月</span></li>
+      <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="07">7月</span></li>
+      <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="08">8月</span></li>
+      <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="09">9月</span></li>
+      <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="10">10月</span></li>
+      <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="11">11月</span></li>
+      <li class="tip_item" attr-id="monthBox"><span attr-id="month" dt="12">12月</span></li>
+    </ul>
+  </div>
+</div>
+<!--分享-->
+<div class="wx_mask" id="wx_mask">
+<div class="wx_share_guide">
+  <div class="wx_btn_iknow" id="wx_btn_iknow"></div>
+</div>
 </div>
 <!--B 底部-->
-<div id="nfd-footer"><!--具体激活哪个菜单  要增加一个变量来控制--> 
-  <a href="/index.html" class="menu"> <img src="img/homepage.png" />
+<div id="nfd-footer"><!--具体激活哪个菜单  要增加一个变量来控制-->
+  <a href="/index.html" class="menu">
+  <img src="img/homepage.png" />
   <div>主页</div>
-  </a> <a href="/project_list.html?tab=3" class="menu"> <img src="img/investment.png" />
+  </a>
+  <a href="/project_list.html?tab=3" class="menu">
+  <img src="img/investment.png" />
   <div>投资理财</div>
-  </a> <a href="/user/account/index.html" class="menu current"> <img src="img/account_current.png" />
+  </a>
+  <a href="/user/account/index.html" class="menu current">
+  <img src="img/account_current.png" />
   <div>我的账户</div>
-  </a> <a href="/about_us.html" class="menu"> <img src="img/about.png" />
+  </a>
+  <a href="/about_us.html" class="menu">
+  <img src="img/about.png" />
   <div>关于我们</div>
-  </a> </div>
-<script src="../js/libs/zepto/zepto.js"></script>
-<script src="../js/libs/requirejs/require.js"></script>
+  </a>
+</div>
+<script src="./js/libs/zepto/zepto.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script>
-require(["../js/mod/common"],function(common){
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "http://www.51blb.com/handler/weixin/sign.js?v="+new Date().getTime();
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script>
+/*向后台拉一个服务 得到分享信息*/
+$(function(result) {
+	wx.ready(function() {
+		wx.hideMenuItems({
+			menuList: [
+				"menuItem:share:qq",
+				"menuItem:share:QZone",
+				"menuItem:share:weiboApp",
+				"menuItem:copyUrl",
+				"menuItem:jsDebug",
+				"menuItem:editTag",
+				"menuItem:delete",
+				"menuItem:originPage",
+				"menuItem:readMode",
+				"menuItem:openWithQQBrowser",
+				"menuItem:openWithSafari",
+				"menuItem:share:email",
+				"menuItem:share:brand",
+				"menuItem:favorite"
+			] // 要隐藏的菜单项，只能隐藏“传播类”和“保护类”按钮，所有menu项见附录3
+		});
 
-  function initBanner(){
-    //banner
-    try{
-      var bullets,bannerLength; 
-      bullets = document.getElementById('banner_btn').getElementsByTagName('span');
-      bannerLength=bullets.length>2?true:false;
-      
-      window.mySwipe = Swipe(document.getElementById("nfd-slide"),{
-        auto:3000,
-        continuous:true,
-        stopPropagation:false,
-        callback:function(pos){
-           var on=document.getElementsByClassName("ws-selected");
-           if(on.length){
-             on[0].className="";
-           }
-           pos=bannerLength?pos:pos%2;
-           bullets[pos].className = 'ws-selected';
-        }
-      });
-    }catch(e){
-      
-    }
-    //$("#nfd-slide").find("img").show();
-  }
+		bindWeixinEvent(data);
+		//alert("微信接口调用成功");
+	});
+	wx.error(function(res) {
+		console.log("error", arguments);
+		g_log("error" + res);
+		if (/51blb\.com/.test(document.location.href)) {
+			//alert("微信接口调用失败");
+		}
+	});
+
+
+	function bindWeixinEvent(data) {
+		//alert("shareURL:"+data.shareURL);
+		//window.g_url = data.shareURL;
+		if (typeof(g_stage) == "undefined") {
+			g_stage = 0;
+		}
+		var title = "股市反击不给力,救国救市不推辞";
+		var des = "只要承诺3500点以下不减持，农发贷立刻送你180元红包。";
+		var imgUrl = "http://www.51blb.com/stock/img/gun5_128.jpg";//
+		var linkUrl = wxconf.shareUrl;//分享链接
+		
+		
+		var wxuid=$("#weixin_uid").val();
+		var source=$("#source").val();
+		
+		
+		wx.onMenuShareTimeline({
+			title: title + des, // 分享标题
+			link: linkUrl, // 分享链接
+			imgUrl: imgUrl, // 分享图标
+			success: function() {
+				// 用户确认分享后执行的回调函数
+				//alert("分享成功");
+				//$.ajax({
+//					url: "/handler/weixin/shareSucc.json",
+//					data: {
+//						wxuid:wxuid,
+//						source:source,
+//						sharetype:"timeline"
+//					},
+//					type: "post",
+//					success: function(data) {
+//
+//					},
+//					cancel: function() {
+//						// 用户取消分享后执行的回调函数
+//					}
+//				});
+			}
+		});
+
+		wx.onMenuShareAppMessage({
+			title: title, // 分享标题
+			desc: des, // 分享描述
+			link: linkUrl, // 分享链接
+			imgUrl: imgUrl, // 分享图标
+			type: '', // 分享类型,music、video或link，不填默认为link
+			dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+			success: function() {
+				// 用户确认分享后执行的回调函数
+			//	$.ajax({
+//					url: "/handler/weixin/shareSucc.json",
+//					data: {
+//						wxuid:wxuid,
+//						source:source,
+//						sharetype:"message"
+//					},
+//					type: "post",
+//					success: function(data) {
+//
+//					},
+//					cancel: function() {
+//						// 用户取消分享后执行的回调函数
+//					}
+//				});
+			},
+			cancel: function() {
+				// 用户取消分享后执行的回调函数
+			}
+		});
+
+		wx.onMenuShareQQ({
+			title: title, // 分享标题
+			desc: des, // 分享描述
+			link: linkUrl, // 分享链接
+			imgUrl: imgUrl, // 分享图标
+			success: function() {
+				// 用户确认分享后执行的回调函数
+			},
+			cancel: function() {
+				// 用户取消分享后执行的回调函数
+			}
+		});
+
+		wx.onMenuShareWeibo({
+			title: title, // 分享标题
+			desc: des, // 分享描述
+			link: linkUrl, // 分享链接
+			imgUrl: imgUrl, // 分享图标
+			success: function() {
+				// 用户确认分享后执行的回调函数
+			},
+			cancel: function() {
+				// 用户取消分享后执行的回调函数
+			}
+		});
+		//alert("bindWeixinEvent succ");
+
+	}
+}
+);
+</script>
+<script src="./js/libs/requirejs/require.js"></script>
+<script>
+var mask = $("#wx_mask");
+var maskTip = $("#wx_mask_tip");
+var wxInput = $("#wx_input");
+var wxInputTip = $("#wxInputTip");
+var submitBtn = $("#wx_btn_submit");
+$("#invite_friend").on("click",function(e){
+	e.preventDefault();
+	//alert("1");
+
+    console.log(submitBtn);
+
+    var mobile = $("#mobile");
+    var wxRedbagTip = $("#wxRedbagTip");
+
+
+    /*maskTip.show();*/
+    //$("#wxRuleHandler").on("click", function() {
+        mask.show();
+    //});
+})
+
+$(".wx_btn_iknow,.wx_share_close").on("click", function() {
+	maskTip.hide();
+	mask.hide();
+});
+	
+require(["./js/mod/common"],function(common){
   
   function init(){
     common.init();
-    initBanner();
   }
   init();/*首页模块初始化*/
 });
 </script>
 <script>
-var url  = '/foreign/lcs/profitDetail.htm',
-//var url = "/user/licaishi/getData.json",
-      currMonthNum = 0,
+var url  = '/foreign/lcs/profitDetail.htm';
+var url = "/mockData/licaishi/getData.json";
+var   currMonthNum = 0,
       currYNum = 0,
       rewardHis = null,
       lowYear = false,
