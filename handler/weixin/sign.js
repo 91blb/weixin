@@ -186,7 +186,7 @@ module.exports = function(req, res) {
 
         var endTime=new Date();//记录方法结束时间
         console.log("___________cost time",endTime-startTime);
-        res.send(str);
+        res.end(str);
     });
     /*对referer进行签名*/
 }
