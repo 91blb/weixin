@@ -281,23 +281,19 @@ $(function(result) {
       ] // 要隐藏的菜单项，只能隐藏“传播类”和“保护类”按钮，所有menu项见附录3
     });
 
-    bindWeixinEvent(data);
-    alert("微信接口调用成功");
+    bindWeixinEvent();
+    //alert("微信接口调用成功");
   });
   wx.error(function(res) {
     console.log("error", arguments);
-    g_log("error" + res);
-    if (/51blb\.com/.test(document.location.href)) {
-      //alert("微信接口调用失败");
-    }
   });
 
 
   function bindWeixinEvent(data) {
     //alert("shareURL:"+data.shareURL);
     //window.g_url = data.shareURL;
-    var title = "股市反击不给力,救国救市不推辞";
-    var des = "只要承诺3500点以下不减持，农发贷立刻送你180元红包。";
+    var title = "送你180元,来农发贷一起安全理财";
+    var des = "农发贷背靠上市公司“诺普信”，所有产品均提供100%本息保障。";
     var imgUrl = "http://www.51blb.com/stock/img/gun5_128.jpg";//
     var linkUrl = "http://www.51blb.com";//分享链接
     
@@ -312,7 +308,7 @@ $(function(result) {
       imgUrl: imgUrl, // 分享图标
       success: function() {
         // 用户确认分享后执行的回调函数
-        alert("分享成功");
+        //alert("分享成功");
         //$.ajax({
 //          url: "/handler/weixin/shareSucc.json",
 //          data: {
