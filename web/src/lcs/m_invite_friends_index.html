@@ -394,21 +394,12 @@ var maskTip = $("#wx_mask_tip");
 var wxInput = $("#wx_input");
 var wxInputTip = $("#wxInputTip");
 var submitBtn = $("#wx_btn_submit");
-$("#invite_friend").on("click",function(e){
-  e.preventDefault();
-  //alert("1");
-
-    console.log(submitBtn);
-
-    var mobile = $("#mobile");
-    var wxRedbagTip = $("#wxRedbagTip");
-
-
-    /*maskTip.show();*/
-    //$("#wxRuleHandler").on("click", function() {
-        mask.show();
-    //});
-})
+if (navigator.appVersion&&navigator.appVersion.match(/MicroMessenger/i)) {
+  $("#invite_friend").on("click",function(e){
+      e.preventDefault();
+      mask.show();
+  })
+}
 
 $(".wx_btn_iknow,.wx_share_close").on("click", function() {
   maskTip.hide();
