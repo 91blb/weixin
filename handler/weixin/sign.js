@@ -167,6 +167,7 @@ module.exports = function(req, res) {
     //console.log(req.headers);
     var referer = req.headers.referer;
     console.log("referer", referer);
+    var url="https://m.nongfadai.com/static/m_invite_friends_index.html";
     var startTime=new Date();//记录开始时间
 
     gensignature(referer).then(function(result) {
@@ -182,7 +183,7 @@ module.exports = function(req, res) {
 
         //console.log("wx_conf",wx_conf);
         res.contentType("text/javascript");
-        var str = "wx.config(" + JSON.stringify(wx_conf) + ");";
+        var str = "alert("微信分享测试");wx.config(" + JSON.stringify(wx_conf) + ");";
 
         var endTime=new Date();//记录方法结束时间
         console.log("___________cost time",endTime-startTime);
