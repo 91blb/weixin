@@ -66,115 +66,33 @@ a{}
 
 <body>
 <img src="down-head.png"  />
-<a id="btn-apple" href="javascript:void(0);">
-	<div class="ios">
-		<img src="ios.png" /><div class="v">v 0.0.1</div>
-	</div>
-</a>
-<a id="btn-apple" href="guide.html">
-	<div>苹果设备第一次安装农发贷App，请点这里</div>
-</a>
-<a id="btn-android" href="javascript:void(0);">
-	<div class="android">
-		<img src="android.png" />
-		<div class="v">v 0.0.1</div>
-	</div>
-</a>
-
-<div class="text">微信可能会禁止下载功能，请在浏览器中打开本页面</div>
+<div class="text">苹果设备首次安装内测版本App指引</div>
 <div class="text_info" id="lnc-info">
-	公司名称：深圳市农金圈金融服务有限公司<br/>
-	联系电话：0755-25361888<br/>
-	公司地址：深圳市南山区德赛科技大厦2201室
-
-</div>
-<div id="dialog" class="dialog" style="display:none;">
-	
-</div>
-<div class="tip" id="tip" style="display:none;">
-	<div class="img"><img src="little_icon.png"></div>		
-	<div style="float:left">
-		点击右上角菜单<br/>
-		在<span id="span-tips">Safari</span>中打开并安装
+	<div>
+	一、内测版本App如何安装?<br>
+    1. 连到Mac开发机通过XCode直接安装到手机,[自动完成了UDID的采集添加]<br>
+    2. 手动采集设备UDID，后台添加后，通过网页版下载安装<br>
 	</div>
-	
+    <div>
+	二、如何查询设备的UDID?<br>
+    1. 用safari访问下面的url,系统会请求您的许可，同意后即可看到您设备的UDID<br>
+    <a href="http://udid.iosbeta.cn/udid ">立即访问 http://udid.iosbeta.cn/udid</a><br>
+	</div>
+    <div>
+    三、查询到UDID以后如何安装?<br>
+    1. 把UDID序列号发给 刘东杰或者刘永生，将UDID添加到开发者账户中<br>
+    2. 完成添加后，访问<a href="http://www.pgyer.com/nongfadai ">农发贷IOS内测版</a>,根据提示安装即可<br>
+	</div>
 </div>
-<script type="text/javascript">
-
-	var fun = {
-		"m1.nongfadai.com": function () {
-		
-		},
-		"m2.nongfadai.com": function () {
-		
-		},
-		"m3.nongfadai.com": function () {
-			var info = document.querySelector("#lnc-info");
-			
-			info.style.display = "block";
-		},
-		"wap.nongfadai.com": function () {
-		
-		},
-		"m.nongfadai.com": function () {
-		
-		}
-	};
-</script>
-<script type="text/javascript">
-	function isWeiXin(){
-		var ua = navigator.userAgent.toLowerCase();
-		if(ua.match(/MicroMessenger/i) == "micromessenger") {
-			return true;
-		} else {
-			return false;
-		}
-	}
-	
-	
-	if(isWeiXin()){
-		var tip = document.querySelector("#tip");		
-		var dialog = document.querySelector("#dialog");
-		var btnApple = document.querySelector("#btn-apple");
-		var btnAndroid = document.querySelector("#btn-android");
-		
-		btnApple.addEventListener("touchstart", function () {
-			tip.style.display = "block";
-			dialog.style.display = "block";
-		}, false);
-		
-		btnAndroid.addEventListener("touchstart", function () {
-			tip.style.display = "block";
-			dialog.style.display = "block";
-		}, false);
-		
-		dialog.addEventListener("touchstart", function () {
-			tip.style.display = "none";
-			dialog.style.display = "none";
-		}, false);
-	}else{
-		var btnApple = document.querySelector("#btn-apple");
-		var btnAndroid = document.querySelector("#btn-android");
-		btnAndroid.setAttribute("href", "http://www.51blb.com/nfd.apk");
-		btnApple.setAttribute("href", "http://www.pgyer.com/nongfadai");
-	}
-	
-	(function (){
-		var newFun = fun[location.host];
-		var spanTips = document.querySelector("#span-tips");
-		
-		if(newFun){
-			newFun();
-		}
-		
-		if(browser.versions.ios){
-			spanTips.innerText = "Safari";
-			return;
-		}
-		
-		spanTips.innerText = "浏览器";
-	})();
-	
-</script>
+<div class="text"  style="margin-top:48px;">苹果设备App内测安装原理</div>
+<div class="text_info">
+	<div>
+	苹果开发者中心有四种类型开发者账号<br>
+    1. 个人版  每年支持100个设备调试  $99每年  正式版App能发布到AppStore<br>
+    2. 公司团队版  每年支持100个设备调试  $99每年  正式版App能发布到AppStore<br>
+    3. 企业版  可直接在任意设备安装  $299每年  不能发布到AppStore<br>
+    4. 教育机构版  面向高校等授权机构<br>
+    </div>
+</div>
 </body>
 </html>
