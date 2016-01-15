@@ -8,6 +8,7 @@ function main(){
 
 	//var myUrl="http://www.51blb.com/handler/weixin/bonus.html";
 	var myUrl="http://www.51blb.com/handler/weixin/stock.html?a=10&b=20";
+	var myUrl="https://itunes.apple.com/cn/app/com.nongfadai.ios/id1027197919";
 	var baseUrl="https://open.weixin.qq.com/connect/oauth2/authorize?";
 	var url=baseUrl+"appid=";
 	url+=appid;
